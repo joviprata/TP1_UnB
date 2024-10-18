@@ -23,6 +23,26 @@ class Horario {
             }
 };
 
+// Função temporária, a ser adicionada na classe Horario
+bool eh_horario_valido(string horario) {
+    if (size(horario) != 5 or horario[2] != ':')
+        return false;
+
+    string str_HH = horario.substr(0, 2);
+    string str_mm = horario.substr(3, 2);
+    if (!isdigit(str_HH[0]) or !isdigit(str_HH[1])
+        or !isdigit(str_mm[0]) or !isdigit(str_mm[1]))
+        return false;
+
+    int HH = stoi(str_HH);
+    int mm = stoi(str_mm);
+    if (HH > 23 or mm > 59)
+        return false;
+    
+    return true;
+}
+
+
 int32_t main() {
     //sws;
 
@@ -33,25 +53,8 @@ int32_t main() {
 
     string horario;
     cin >> horario;
-    
-    string str_HH = horario.substr(0, 2);
-    int HH = stoi(str_HH);
 
-    string str_mm = horario.substr(3, 2);
-    int mm = stoi(str_mm);
-
-    bool eh_horario_valido = true;
-
-    if (
-        size(horario) != 5
-        or horario[2] != ':'
-        or !isdigit(str_HH[0]) or !isdigit(str_HH[1])
-        or !isdigit(str_mm[0]) or !isdigit(str_mm[1])
-        or HH > 23 or mm > 59
-    )
-        eh_horario_valido = false;
-
-    if (eh_horario_valido)
+    if (eh_horario_valido(horario))
         cout << "Horário definido com sucesso: " << horario << endl;
     else 
         cout << "Formato inválido. Por favor, digite o horário em formato HH:mm, entre 00:00 a 23:59." << endl;

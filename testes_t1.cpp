@@ -1,3 +1,6 @@
+// Este arquivo funciona por si só, mas foi desenvolvido apenas para testes, podendo ser descartado na entrega final.
+// O projeto final deverá rodar com arquivos separados funcionando em conjunto (dominios.cpp, dominios.hpp, main.cpp, etc).
+
 #include <bits/stdc++.h> // Importa bibliotecas padrão de C++ - iostream, vector, string, etc
 using namespace std; // Facilita ao tornar desnecessário escrever std:: antes de classes padrão do C++
 #define sws ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); // Aguarda todo o programa rodar antes de printar qualquer coisa. Torna o programa mais rápido

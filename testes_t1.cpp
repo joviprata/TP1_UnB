@@ -16,6 +16,14 @@ using namespace std; // Facilita ao tornar desnecessário escrever std:: antes d
 #define pb push_back
 #define all(x) x.begin(), x.end() // Para funções como sort(all(x))
 
+// Função para classe Horario, Data, etc
+bool string_eh_int(string str) {
+    for (char chr : str) {
+        if (!isdigit(chr))
+            return false;
+    }
+    return true;
+}
 
 // Função para classe Horario
 bool eh_horario_valido(string horario) {
@@ -24,8 +32,7 @@ bool eh_horario_valido(string horario) {
 
     string str_HH = horario.substr(0, 2);
     string str_mm = horario.substr(3, 2);
-    if (!isdigit(str_HH[0]) or !isdigit(str_HH[1])
-        or !isdigit(str_mm[0]) or !isdigit(str_mm[1]))
+    if (!string_eh_int(str_HH) or !string_eh_int(str_mm))
         return false;
 
     int HH = stoi(str_HH);

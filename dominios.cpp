@@ -1,7 +1,7 @@
 #include "dominios.hpp"
 
 bool Horario::validar(string horario) {
-    if (size(horario) != 5 or horario[2] != ':')
+    if (horario.size() != 5 or horario[2] != ':')
         return false;
 
     string str_HH = horario.substr(0, 2);

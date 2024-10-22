@@ -17,18 +17,9 @@ using namespace std; // Facilita ao tornar desnecessário escrever std:: antes d
 #define all(x) x.begin(), x.end() // Para funções como sort(all(x))
 
 
-class Horario {
-    private:
-    
-    public:
-            void setHorario(string horario) {
-
-            }
-};
-
-// Função temporária, a ser adicionada na classe Horario
+// Função para classe Horario
 bool eh_horario_valido(string horario) {
-    if (size(horario) != 5 or horario[2] != ':')
+    if (horario.size() != 5 or horario[2] != ':')
         return false;
 
     string str_HH = horario.substr(0, 2);
@@ -41,7 +32,15 @@ bool eh_horario_valido(string horario) {
     int mm = stoi(str_mm);
     if (HH > 23 or mm > 59)
         return false;
-    
+
+    return true;
+}
+
+
+// Função para Nome
+bool eh_nome_valido(string nome) {
+    if (nome.size() > 30)
+        return false;
     return true;
 }
 
@@ -50,18 +49,30 @@ int32_t main() {
     //sws;
 
 
-    // Teste de classe de horário: 
+    // Teste de horário:
 
-    cout << "Defina o horário: "  << endl;
+    cout << "Defina o horario: "  << endl;
 
-    string horario;
-    cin >> horario;
+    string horario_teste;
+    cin >> horario_teste;
 
-    if (eh_horario_valido(horario))
-        cout << "Horário definido com sucesso: " << horario << endl;
-    else 
-        cout << "Formato inválido. Por favor, digite o horário em formato HH:mm, entre 00:00 a 23:59." << endl;
+    if (eh_horario_valido(horario_teste))
+        cout << "Horario definido com sucesso: " << horario_teste << endl;
+    else
+        cout << "Formato de horario invalido. Por favor, digite o horario em formato HH:mm, entre 00:00 a 23:59." << endl;
 
+
+    // Teste de Nome:
+
+    cout << "Defina o nome: "  << endl;
+
+    string nome_teste;
+    cin >> nome_teste;
+
+    if (eh_nome_valido(nome_teste))
+        cout << "Nome definido com sucesso: " << nome_teste << endl;
+    else
+        cout << "Nome invalido. Por favor, digite um nome com ate 30 letras.";
 
     return 0;
 }

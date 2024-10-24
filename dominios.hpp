@@ -18,4 +18,18 @@ inline string Horario::getHorario() const {
     return horario;
 }
 
+
+class Nome {
+    private:
+            string nome;
+            bool validar(string);
+    public:
+            bool setNome(string);
+            string getNome() const;
+};
+
+inline string Nome::getNome() const {
+    return nome;
+}
+
 #endif // DOMINIOS_HPP_INCLUDED

@@ -32,4 +32,18 @@ inline string Nome::getNome() const {
     return nome;
 }
 
+
+class Senha {
+    private:
+        string senha;
+        bool validar(string);
+
+    public:
+        bool setSenha(string);
+        string getSenha() const;
+};
+
+inline string Senha::getSenha() const {
+    return senha;
+}
 #endif // DOMINIOS_HPP_INCLUDED

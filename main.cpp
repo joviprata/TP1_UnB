@@ -123,6 +123,19 @@ int main() {
 
     delete ptr;
 
-    
+
+    Data data;
+
+    cout << "Defina a data: "  << endl;
+
+    string data_temp;
+    cin >> data_temp;
+
+    if (data.setData(data_temp))
+        cout << "Data definida com sucesso: " << data.getData() << endl;
+    else
+        cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
+
+
     return 0;
 }

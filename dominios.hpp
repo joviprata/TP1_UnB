@@ -47,4 +47,18 @@ inline string Senha::getSenha() const {
     return senha;
 }
 
+
+class Data{
+private:
+    string data;
+    bool validar(string);
+public:
+    bool setData(string);
+    string getData() const;
+};
+
+inline string Data::getData() const{
+    return data;
+}
+
 #endif // DOMINIOS_HPP_INCLUDED

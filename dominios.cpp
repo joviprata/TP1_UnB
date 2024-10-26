@@ -82,3 +82,45 @@ bool Senha::setSenha(string senha) {
     this->senha = senha; 
     return true;
 }
+
+// Funções para classe data:
+bool Data::validar(string data){
+    if (data.size() != 8 or (data[2] != '-' and data[5] != '-'))
+        return false;
+
+    string str_DD = data.substr(0,2);
+    string str_MM = data.substr(3,2);
+    string str_AA = data.substr(6,2);
+
+    if (!string_eh_int(str_DD) or !string_eh_int(str_MM) or !string_eh_int(str_AA))
+        return false;
+
+    int DD = stoi(str_DD);
+    int MM = stoi(str_MM);
+    int AA = stoi(str_AA);
+
+     // Verifica se o mes e valido
+    if (DD > 31 or MM > 12 or AA > 99 or DD <= 0 or MM < 1 or AA <= 00)
+        return false;
+
+    // Verifica dias validos para cada mes
+    if ((MM == 4 or MM == 6 or MM == 9 or MM == 11 or MM == 2)and DD > 30){
+        return false;
+    }
+
+    if (MM == 2){
+        bool bissexto = (AA % 4 == 0 and (AA % 100 != 0 or AA % 400 == 0));
+        if ((bissexto and DD > 29) or (!bissexto and DD > 28)){
+                return false;
+        }
+    }
+
+    return true;
+}
+
+bool Data::setData(string data){
+    if (!validar(data))
+        return false;
+    this ->data = data;
+    return true;
+}

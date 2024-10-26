@@ -92,6 +92,37 @@ int main() {
 
     delete ptr;
 
+
+    Senha senha;
+
+     // Teste feito conforme o roteiro do projeto:
+    if(senha.setSenha("21348"))
+        cout << "Valor = " << senha.getSenha() << endl;
+    else
+        cout << "Valor invalido" << endl;
+
+    if(senha.setSenha("54321"))
+        cout << "Valor = " << senha.getSenha() << endl;
+    else
+        cout << "Valor invalido" << endl;
+
+    // Teste usando ponteiros, feito conforme o roteiro do projeto:
+    Senha *ptr;
+
+    ptr = new Senha();
+
+    if(ptr -> setSenha("21348"))
+        cout << "Valor = " << ptr -> getSenha() << endl;
+    else
+        cout << "Valor invalido " << endl;
+
+    if(ptr->setSenha("54321"))
+        cout << "Valor = " << ptr->getSenha() << endl;
+    else
+        cout << "Valor invalido" << endl;
+
+    delete ptr;
+
     
     return 0;
 }

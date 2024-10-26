@@ -46,4 +46,5 @@ class Senha {
 inline string Senha::getSenha() const {
     return senha;
 }
+
 #endif // DOMINIOS_HPP_INCLUDED

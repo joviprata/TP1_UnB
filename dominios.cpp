@@ -48,3 +48,37 @@ bool Nome::setNome(string nome) {
     this->nome = nome;
     return true;
 }
+
+// Funções para classe Senha:
+bool Senha::validar(string senha) {
+    int contador = 0;
+    bool tamanho, duplicata = false, crescente = true, decrescente = true;
+
+    for (int i = 0; senha[i] != '\0'; i++) {
+        for (int j = i + 1; senha[j] != '\0'; j++) {
+            if (senha[i] == senha[j]) {
+                duplicata = true;
+            }
+
+            if (senha[i] > senha[j]) {
+                crescente = false;
+            } else if (senha[i] < senha[j]) {
+                decrescente = false;
+            }
+        }
+        contador++;
+    }
+
+    tamanho = (contador == 5);
+
+    return tamanho && !duplicata && !crescente && !decrescente;
+}
+
+bool Senha::setSenha(string senha) {
+    if (!validar(senha)) {
+        return false;
+    }
+
+    this->senha = senha; 
+    return true;
+}

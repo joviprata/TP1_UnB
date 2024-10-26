@@ -97,14 +97,14 @@ int main() {
 
      // Teste feito conforme o roteiro do projeto:
     if(senha.setSenha("21348"))
-        cout << "Valor = " << senha.getSenha() << endl;
+        cout << "Senha = " << senha.getSenha() << endl;
     else
-        cout << "Valor invalido" << endl;
+        cout << "Senha invalido" << endl;
 
     if(senha.setSenha("54321"))
-        cout << "Valor = " << senha.getSenha() << endl;
+        cout << "Senha = " << senha.getSenha() << endl;
     else
-        cout << "Valor invalido" << endl;
+        cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
     Senha *ptr;
@@ -112,14 +112,14 @@ int main() {
     ptr = new Senha();
 
     if(ptr -> setSenha("21348"))
-        cout << "Valor = " << ptr -> getSenha() << endl;
+        cout << "Senha = " << ptr -> getSenha() << endl;
     else
-        cout << "Valor invalido " << endl;
+        cout << "Senha invalido " << endl;
 
     if(ptr->setSenha("54321"))
-        cout << "Valor = " << ptr->getSenha() << endl;
+        cout << "Senha = " << ptr->getSenha() << endl;
     else
-        cout << "Valor invalido" << endl;
+        cout << "Senha invalido" << endl;
 
     delete ptr;
 

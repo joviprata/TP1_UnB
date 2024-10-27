@@ -61,4 +61,19 @@ inline string Data::getData() const{
     return data;
 }
 
+
+class Avaliacao {
+    private:
+        int value; // Armazena valor
+        bool validate(int); //Método de validação
+    public:
+        bool setValue(int);
+        int getValue() const;
+};
+
+inline int Avaliacao::getValue() const{
+    return value;
+}
+
+
 #endif // DOMINIOS_HPP_INCLUDED

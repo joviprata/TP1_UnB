@@ -76,21 +76,21 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Nome *ptr;
+    Nome *ptr1;
 
-    ptr = new Nome();
+    ptr1 = new Nome();
 
-    if (ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (ptr1->setNome("Pedrinho Camarada"))
+        cout << "Nome = " << ptr1->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    if (ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (ptr1->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
+        cout << "Nome = " << ptr1->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    delete ptr;
+    delete ptr1;
 
 
     Senha senha;
@@ -107,21 +107,21 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Senha *ptr;
+    Senha *ptr2;
 
-    ptr = new Senha();
+    ptr2 = new Senha();
 
-    if(ptr -> setSenha("21348"))
-        cout << "Senha = " << ptr -> getSenha() << endl;
+    if(ptr2 -> setSenha("21348"))
+        cout << "Senha = " << ptr2 -> getSenha() << endl;
     else
         cout << "Senha invalido " << endl;
 
-    if(ptr->setSenha("54321"))
-        cout << "Senha = " << ptr->getSenha() << endl;
+    if(ptr2->setSenha("54321"))
+        cout << "Senha = " << ptr2->getSenha() << endl;
     else
         cout << "Senha invalido" << endl;
 
-    delete ptr;
+    delete ptr2;
 
 
     Data data;
@@ -136,6 +136,12 @@ int main() {
     else
         cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
+    Avaliacao av1;
+
+    if(av1.setValue(1))
+        cout << "Valor = " << av1.getValue() << endl;
+    if (av1.setValue(10))
+        cout << "Valor = " << av1.getValue() << endl;
 
     return 0;
 }

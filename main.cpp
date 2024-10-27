@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-//#include <iostream>
 #include "dominios.hpp"
 using namespace std;
 
@@ -32,21 +31,21 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Horario *ptr;
+    Horario *horario_ptr;
 
-    ptr = new Horario();
+    horario_ptr = new Horario();
 
-    if (ptr->setHorario("00:00"))
-        cout << "Horario = " << ptr->getHorario() << endl;
+    if (horario_ptr->setHorario("00:00"))
+        cout << "Horario = " << horario_ptr->getHorario() << endl;
     else
         cout << "Horario invalido" << endl;
 
-    if (ptr->setHorario("24:00"))
-        cout << "Horario = " << ptr->getHorario() << endl;
+    if (horario_ptr->setHorario("24:00"))
+        cout << "Horario = " << horario_ptr->getHorario() << endl;
     else
         cout << "Horario invalido" << endl;
 
-    delete ptr;
+    delete horario_ptr;
 
 
     Nome nome;
@@ -76,26 +75,26 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Nome *ptr;
+    Nome *nome_ptr;
 
-    ptr = new Nome();
+    nome_ptr = new Nome();
 
-    if (ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (nome_ptr->setNome("Pedrinho Camarada"))
+        cout << "Nome = " << nome_ptr->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    if (ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (nome_ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
+        cout << "Nome = " << nome_ptr->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    delete ptr;
+    delete nome_ptr;
 
 
     Senha senha;
 
-     // Teste feito conforme o roteiro do projeto:
+    // Teste feito conforme o roteiro do projeto:
     if(senha.setSenha("21348"))
         cout << "Senha = " << senha.getSenha() << endl;
     else
@@ -107,21 +106,21 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Senha *ptr;
+    Senha *senha_ptr;
 
-    ptr = new Senha();
+    senha_ptr = new Senha();
 
-    if(ptr -> setSenha("21348"))
-        cout << "Senha = " << ptr -> getSenha() << endl;
+    if(senha_ptr->setSenha("21348"))
+        cout << "Senha = " << senha_ptr -> getSenha() << endl;
     else
-        cout << "Senha invalido " << endl;
+        cout << "Senha invalida " << endl;
 
-    if(ptr->setSenha("54321"))
-        cout << "Senha = " << ptr->getSenha() << endl;
+    if(senha_ptr->setSenha("54321"))
+        cout << "Senha = " << senha_ptr->getSenha() << endl;
     else
-        cout << "Senha invalido" << endl;
+        cout << "Senha invalida" << endl;
 
-    delete ptr;
+    delete senha_ptr;
 
 
     Data data;

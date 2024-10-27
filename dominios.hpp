@@ -61,4 +61,17 @@ inline string Data::getData() const{
     return data;
 }
 
+class Codigo {
+    private:
+            string codigo;
+            bool validar (string);
+    public:
+            bool setCodigo(string);
+            string getCodigo() const;
+};
+
+inline string Codigo::getCodigo() const {
+    return codigo;
+}
+
 #endif // DOMINIOS_HPP_INCLUDED

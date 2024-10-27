@@ -32,21 +32,21 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Horario *ptr;
+    Horario *Horarioptr;
 
-    ptr = new Horario();
+    Horarioptr = new Horario();
 
-    if (ptr->setHorario("00:00"))
-        cout << "Horario = " << ptr->getHorario() << endl;
+    if (Horarioptr->setHorario("00:00"))
+        cout << "Horario = " << Horarioptr->getHorario() << endl;
     else
         cout << "Horario invalido" << endl;
 
-    if (ptr->setHorario("24:00"))
-        cout << "Horario = " << ptr->getHorario() << endl;
+    if (Horarioptr->setHorario("24:00"))
+        cout << "Horario = " << Horarioptr->getHorario() << endl;
     else
         cout << "Horario invalido" << endl;
 
-    delete ptr;
+    delete Horarioptr;
 
 
     Nome nome;
@@ -76,21 +76,21 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Nome *ptr;
+    Nome *Nomeptr;
 
-    ptr = new Nome();
+    Nomeptr = new Nome();
 
-    if (ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (Nomeptr->setNome("Pedrinho Camarada"))
+        cout << "Nome = " << Nomeptr->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    if (ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << ptr->getNome() << endl;
+    if (Nomeptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
+        cout << "Nome = " << Nomeptr->getNome() << endl;
     else
         cout << "Nome invalido" << endl;
 
-    delete ptr;
+    delete Nomeptr;
 
 
     Senha senha;
@@ -107,21 +107,21 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Senha *ptr;
+    Senha *Senhaptr;
 
-    ptr = new Senha();
+    Senhaptr = new Senha();
 
-    if(ptr -> setSenha("21348"))
-        cout << "Senha = " << ptr -> getSenha() << endl;
+    if(Senhaptr -> setSenha("21348"))
+        cout << "Senha = " << Senhaptr -> getSenha() << endl;
     else
         cout << "Senha invalido " << endl;
 
-    if(ptr->setSenha("54321"))
-        cout << "Senha = " << ptr->getSenha() << endl;
+    if(Senhaptr->setSenha("54321"))
+        cout << "Senha = " << Senhaptr->getSenha() << endl;
     else
         cout << "Senha invalido" << endl;
 
-    delete ptr;
+    delete Senhaptr;
 
 
     Data data;
@@ -136,6 +136,40 @@ int main() {
     else
         cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
+    Codigo codigo;
+
+    cout << "Defina o código:" << endl;
+
+    string codigo_temp;
+    cin >> codigo_temp;
+
+    if (codigo.setCodigo(codigo_temp))
+        cout << "Código definido com sucesso: " << codigo.getCodigo() << endl;
+    else
+        cout << "Código inválido. Por favor, digite um código de 6 caracteres alfanuméricos." << endl;
+    
+    if (codigo.setCodigo("A1B2C3"))
+        cout << "Código = " << codigo.getCodigo() << endl;
+    else
+        cout << "Código inválido" << endl;
+    if (codigo.setCodigo("1234567")) 
+        cout << "Código = " << codigo.getCodigo() << endl;
+    else
+        cout << "Código inválido" << endl;
+    
+    Codigo* Codigoptr = new Codigo();
+
+    if (Codigoptr->setCodigo("XYZ789"))
+        cout << "Código = " << Codigoptr->getCodigo() << endl;
+    else
+        cout << "Código inválido" << endl;
+
+    if (Codigoptr->setCodigo("A!B#1C"))
+        cout << "Código = " << Codigoptr->getCodigo() << endl;
+    else
+        cout << "Código inválido" << endl;
+
+    delete Codigoptr;
 
     return 0;
 }

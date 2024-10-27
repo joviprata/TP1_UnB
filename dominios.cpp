@@ -1,4 +1,5 @@
 #include "dominios.hpp"
+#include <cctype> // para isdigit e isalpha
 
 // Função para classe Horario, Data, etc
 bool string_eh_int(string str) {
@@ -123,4 +124,24 @@ bool Data::setData(string data){
         return false;
     this ->data = data;
     return true;
+}
+
+// Funções para a classe Codigo:
+bool Codigo::validar(string codigo) {
+    if (codigo.size() != 6) 
+        return false;
+    
+    for (char c: codigo) 
+        if (!isalnum(c)) // isalnum identifica se o caracter é alfanumérico (A-Z, a-z ou 0-9)
+            return false;
+                       
+    return true;
+}
+
+bool Codigo::setCodigo (string codigo) {
+    if(!validar(codigo)) {
+        return false;
+    }
+    this->codigo = codigo;
+    return true; 
 }

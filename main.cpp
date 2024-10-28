@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <stdexcept>
 #include "dominios.hpp"
 using namespace std;
 
@@ -188,5 +189,16 @@ int main() {
     if (avaliacao.setAvaliacao(10))
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
     
+    return 0;
+
+    Duracao duracao;
+
+    try {
+        duracao.setDuracao(200);
+        cout << "Duração = " << duracao.getDuracao() << endl;
+    } catch (const invalid_argument& erro) {
+        cout << "Erro: " << erro.what() << endl;
+    }
+
     return 0;
 }

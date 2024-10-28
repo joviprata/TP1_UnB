@@ -9,6 +9,7 @@ bool string_eh_int(string str) {
     return true;
 }
 
+
 // Funções para classe Horario:
 bool Horario::validar(string horario) {
     if (horario.size() != 5 or horario[2] != ':')
@@ -49,6 +50,7 @@ bool Nome::setNome(string nome) {
     return true;
 }
 
+
 // Funções para classe Senha:
 bool Senha::validar(string senha) {
     int contador = 0;
@@ -79,9 +81,10 @@ bool Senha::setSenha(string senha) {
         return false;
     }
 
-    this->senha = senha; 
+    this->senha = senha;
     return true;
 }
+
 
 // Funções para classe data:
 bool Data::validar(string data){
@@ -122,5 +125,26 @@ bool Data::setData(string data){
     if (!validar(data))
         return false;
     this ->data = data;
+    return true;
+}
+
+
+// Funções para a classe Codigo:
+bool Codigo::validar(string codigo) {
+    if (codigo.size() != 6)
+        return false;
+
+    for (char c: codigo)
+        if (!isalnum(c)) // isalnum identifica se o caracter é alfanumérico (A-Z, a-z ou 0-9)
+            return false;
+
+    return true;
+}
+
+bool Codigo::setCodigo (string codigo) {
+    if(!validar(codigo)) {
+        return false;
+    }
+    this->codigo = codigo;
     return true;
 }

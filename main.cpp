@@ -136,5 +136,42 @@ int main() {
         cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
 
-    return 0;
+    Codigo codigo;
+
+    cout << "Defina o codigo:" << endl;
+
+    string codigo_temp;
+    cin >> codigo_temp;
+
+    // Teste feito conforme o roteiro do projeto:
+    if (codigo.setCodigo(codigo_temp))
+        cout << "Codigo definido com sucesso: " << codigo.getCodigo() << endl;
+    else
+        cout << "Codigo invalido. Por favor, digite um codigo de 6 caracteres alfanumericos." << endl;
+
+    if (codigo.setCodigo("A1B2C3"))
+        cout << "Codigo = " << codigo.getCodigo() << endl;
+    else
+        cout << "Codigo invalido" << endl;
+    if (codigo.setCodigo("1234567"))
+        cout << "Codigo = " << codigo.getCodigo() << endl;
+    else
+        cout << "Codigo invalido" << endl;
+
+    // Teste usando ponteiros, feito conforme o roteiro do projeto:
+    Codigo *codigo_ptr;
+
+    codigo_ptr = new Codigo();
+
+    if (codigo_ptr->setCodigo("XYZ789"))
+        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
+    else
+        cout << "Codigo invalido" << endl;
+
+    if (codigo_ptr->setCodigo("A!B#1C"))
+        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
+    else
+        cout << "Codigo invalido" << endl;
+
+    delete codigo_ptr;
 }

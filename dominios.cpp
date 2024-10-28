@@ -1,6 +1,7 @@
 #include "dominios.hpp"
 #include <cctype> // para isdigit e isalpha
 #include <iostream>
+#include <stdexcept> // Facilita tratar erros como de argumento inválido
 using namespace std;
 
 // Função para classe Horario, Data, etc
@@ -170,4 +171,19 @@ bool Avaliacao::setAvaliacao(int avaliacao){
         return false;
     this->avaliacao = avaliacao;
     return true;
+}
+
+// Funções para a classe Duracao
+void Duracao::setDuracao(int duracao) {
+    // Verifica se duracao maior que 0 e menor que 360
+    if (duracao < 0) {
+        // lança exceção em caso de formato inválido
+        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
+
+    } else if (duracao > 360) {
+        // lança exceção em caso de formato inválido
+        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
+        } else {
+        this->duracao  = duracao;   
+    }
 }

@@ -75,7 +75,6 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
     Nome *nome_ptr;
 
     nome_ptr = new Nome();
@@ -107,7 +106,6 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
- 
     Senha *senha_ptr;
 
     senha_ptr = new Senha();
@@ -123,8 +121,6 @@ int main() {
         cout << "Senha invalida" << endl;
 
     delete senha_ptr;
-
-
 
     Data data;
 

@@ -74,7 +74,6 @@ inline string Codigo::getCodigo() const {
     return codigo;
 }
 
-
 class Avaliacao {
     private:
         int avaliacao; // Armazena valor
@@ -87,6 +86,5 @@ class Avaliacao {
 inline int Avaliacao::getAvaliacao() const{
     return avaliacao;
 }
-
 
 #endif // DOMINIOS_HPP_INCLUDED

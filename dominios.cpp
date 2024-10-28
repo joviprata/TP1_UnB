@@ -1,4 +1,5 @@
 #include "dominios.hpp"
+#include <cctype> // para isdigit e isalpha
 #include <iostream>
 using namespace std;
 
@@ -132,6 +133,7 @@ bool Data::setData(string data){
 
 // Funções para a classe Codigo:
 bool Codigo::validar(string codigo) {
+
     if (codigo.size() != 6)
         return false;
 

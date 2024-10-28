@@ -148,3 +148,23 @@ bool Codigo::setCodigo (string codigo) {
     this->codigo = codigo;
     return true;
 }
+
+
+//Funções para classe Avaliacao:
+bool Avaliacao::validate(int avaliacao){
+
+    for (int i = 0; i<=5; i++){
+        if (avaliacao==i){
+            return true;
+        }
+    }
+    cout << "Valor invalido" << endl;
+    return false;
+}
+
+bool Avaliacao::setAvaliacao(int avaliacao){
+    if(!validate(avaliacao))
+        return false;
+    this->avaliacao = avaliacao;
+    return true;
+}

@@ -76,4 +76,18 @@ inline string Codigo::getCodigo() const {
 }
 
 
+class Avaliacao {
+    private:
+        int avaliacao; // Armazena valor
+        bool validate(int); //Método de validação
+    public:
+        bool setAvaliacao(int);
+        int getAvaliacao() const;
+};
+
+inline int Avaliacao::getAvaliacao() const{
+    return avaliacao;
+}
+
+
 #endif // DOMINIOS_HPP_INCLUDED

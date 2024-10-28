@@ -174,4 +174,14 @@ int main() {
         cout << "Codigo invalido" << endl;
 
     delete codigo_ptr;
+
+
+    Avaliacao avaliacao;
+
+    if(avaliacao.setAvaliacao(1))
+        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
+    if (avaliacao.setAvaliacao(10))
+        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
+    
+    return 0;
 }

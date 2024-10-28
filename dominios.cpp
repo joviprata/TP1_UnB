@@ -1,4 +1,6 @@
 #include "dominios.hpp"
+#include <iostream>
+using namespace std;
 
 // Função para classe Horario, Data, etc
 bool string_eh_int(string str) {
@@ -127,7 +129,6 @@ bool Data::setData(string data){
     this ->data = data;
     return true;
 }
-
 
 // Funções para a classe Codigo:
 bool Codigo::validar(string codigo) {

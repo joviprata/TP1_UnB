@@ -61,7 +61,6 @@ inline string Data::getData() const{
     return data;
 }
 
-
 class Codigo {
     private:
             string codigo;

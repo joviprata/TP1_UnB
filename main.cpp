@@ -75,6 +75,7 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
+
     Nome *nome_ptr;
 
     nome_ptr = new Nome();
@@ -106,6 +107,7 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
+ 
     Senha *senha_ptr;
 
     senha_ptr = new Senha();
@@ -123,6 +125,7 @@ int main() {
     delete senha_ptr;
 
 
+
     Data data;
 
     cout << "Defina a data: "  << endl;
@@ -135,6 +138,12 @@ int main() {
     else
         cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
+    Avaliacao av1;
+
+    if(av1.setValue(1))
+        cout << "Valor = " << av1.getValue() << endl;
+    if (av1.setValue(10))
+        cout << "Valor = " << av1.getValue() << endl;
 
     Codigo codigo;
 

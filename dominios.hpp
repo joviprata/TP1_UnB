@@ -49,30 +49,43 @@ inline string Senha::getSenha() const {
 
 
 class Data{
-private:
-    string data;
-    bool validar(string);
-public:
-    bool setData(string);
-    string getData() const;
+    private:
+        string data;
+        bool validar(string);
+    public:
+        bool setData(string);
+        string getData() const;
 };
 
 inline string Data::getData() const{
     return data;
 }
 
+class Codigo {
+    private:
+            string codigo;
+            bool validar (string);
+    public:
+            bool setCodigo(string);
+            string getCodigo() const;
+};
+
+inline string Codigo::getCodigo() const {
+    return codigo;
+}
+
 
 class Avaliacao {
     private:
-        int value; // Armazena valor
+        int avaliacao; // Armazena valor
         bool validate(int); //Método de validação
     public:
-        bool setValue(int);
-        int getValue() const;
+        bool setAvaliacao(int);
+        int getAvaliacao() const;
 };
 
-inline int Avaliacao::getValue() const{
-    return value;
+inline int Avaliacao::getAvaliacao() const{
+    return avaliacao;
 }
 
 

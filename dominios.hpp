@@ -49,12 +49,12 @@ inline string Senha::getSenha() const {
 
 
 class Data{
-private:
-    string data;
-    bool validar(string);
-public:
-    bool setData(string);
-    string getData() const;
+    private:
+        string data;
+        bool validar(string);
+    public:
+        bool setData(string);
+        string getData() const;
 };
 
 inline string Data::getData() const{
@@ -72,6 +72,19 @@ class Codigo {
 
 inline string Codigo::getCodigo() const {
     return codigo;
+}
+
+class Avaliacao {
+    private:
+        int avaliacao; // Armazena valor
+        bool validate(int); //Método de validação
+    public:
+        bool setAvaliacao(int);
+        int getAvaliacao() const;
+};
+
+inline int Avaliacao::getAvaliacao() const{
+    return avaliacao;
 }
 
 #endif // DOMINIOS_HPP_INCLUDED

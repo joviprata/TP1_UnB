@@ -1,5 +1,7 @@
 #include "dominios.hpp"
 #include <cctype> // para isdigit e isalpha
+#include <iostream>
+using namespace std;
 
 // Função para classe Horario, Data, etc
 bool string_eh_int(string str) {
@@ -9,6 +11,7 @@ bool string_eh_int(string str) {
     }
     return true;
 }
+
 
 // Funções para classe Horario:
 bool Horario::validar(string horario) {
@@ -50,6 +53,7 @@ bool Nome::setNome(string nome) {
     return true;
 }
 
+
 // Funções para classe Senha:
 bool Senha::validar(string senha) {
     int contador = 0;
@@ -80,9 +84,10 @@ bool Senha::setSenha(string senha) {
         return false;
     }
 
-    this->senha = senha; 
+    this->senha = senha;
     return true;
 }
+
 
 // Funções para classe data:
 bool Data::validar(string data){
@@ -128,13 +133,14 @@ bool Data::setData(string data){
 
 // Funções para a classe Codigo:
 bool Codigo::validar(string codigo) {
-    if (codigo.size() != 6) 
+
+    if (codigo.size() != 6)
         return false;
-    
-    for (char c: codigo) 
+
+    for (char c: codigo)
         if (!isalnum(c)) // isalnum identifica se o caracter é alfanumérico (A-Z, a-z ou 0-9)
             return false;
-                       
+
     return true;
 }
 
@@ -143,5 +149,25 @@ bool Codigo::setCodigo (string codigo) {
         return false;
     }
     this->codigo = codigo;
-    return true; 
+    return true;
+}
+
+
+//Funções para classe Avaliacao:
+bool Avaliacao::validate(int avaliacao){
+
+    for (int i = 0; i<=5; i++){
+        if (avaliacao==i){
+            return true;
+        }
+    }
+    cout << "Valor invalido" << endl;
+    return false;
+}
+
+bool Avaliacao::setAvaliacao(int avaliacao){
+    if(!validate(avaliacao))
+        return false;
+    this->avaliacao = avaliacao;
+    return true;
 }

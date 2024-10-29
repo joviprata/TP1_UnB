@@ -2,11 +2,29 @@
 #include <stdexcept>
 #include "dominios.hpp"
 #include "entidades.hpp"
+
 using namespace std;
 
 int main() {
 
     Horario horario;
+    Horario *horario_ptr;
+
+    Nome nome;
+    Nome *nome_ptr;
+
+    Senha senha;
+    Senha *senha_ptr;
+
+    Data data;
+
+    Avaliacao avaliacao;
+
+
+    Codigo codigo;
+    Codigo *codigo_ptr;
+
+    Viagem viagem;
 
     // Teste de classe de horario, usado durante desenvolvimento do codigo (sera removido na entrega final):
     cout << "Defina o horario: "  << endl;
@@ -33,7 +51,7 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Horario *horario_ptr;
+
 
     horario_ptr = new Horario();
 
@@ -50,7 +68,7 @@ int main() {
     delete horario_ptr;
 
 
-    Nome nome;
+
 
     // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):
     cout << "Defina o nome: "  << endl;
@@ -77,7 +95,7 @@ int main() {
 
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Nome *nome_ptr;
+
 
     nome_ptr = new Nome();
 
@@ -94,7 +112,6 @@ int main() {
     delete nome_ptr;
 
 
-    Senha senha;
 
     // Teste feito conforme o roteiro do projeto:
     if(senha.setSenha("21348"))
@@ -108,7 +125,6 @@ int main() {
         cout << "Senha invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Senha *senha_ptr;
 
     senha_ptr = new Senha();
 
@@ -124,7 +140,6 @@ int main() {
 
     delete senha_ptr;
 
-    Data data;
 
     cout << "Defina a data: "  << endl;
 
@@ -136,14 +151,6 @@ int main() {
     else
         cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
-    Avaliacao av1;
-
-    if(av1.setAvaliacao(1))
-        cout << "Valor = " << av1.getAvaliacao() << endl;
-    if (av1.setAvaliacao(10))
-        cout << "Valor = " << av1.getAvaliacao() << endl;
-
-    Codigo codigo;
 
     cout << "Defina o codigo:" << endl;
 
@@ -166,7 +173,6 @@ int main() {
         cout << "Codigo invalido" << endl;
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-    Codigo *codigo_ptr;
 
     codigo_ptr = new Codigo();
 
@@ -183,13 +189,10 @@ int main() {
     delete codigo_ptr;
 
 
-    Avaliacao avaliacao;
-
     if(avaliacao.setAvaliacao(1))
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
     if (avaliacao.setAvaliacao(10))
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
-
 
     Duracao duracao;
 
@@ -200,9 +203,23 @@ int main() {
         cout << "Erro: " << erro.what() << endl;
     }
 
+    codigo.setCodigo("A1B2C3");
+    nome.setNome("P1");
+    avaliacao.setAvaliacao(1);
+
 
     // Testes com entidades:
+    
+    viagem.setCodigo(codigo);
+    viagem.setNome(nome);
+    viagem.setAvaliacao(avaliacao);
 
+
+    cout<< viagem.getCodigo().getCodigo() <<endl;
+    cout<< viagem.getNome().getNome() <<endl;
+    cout<< viagem.getAvaliacao().getAvaliacao() <<endl;
+
+    
     Destino destino;
 
     codigo.setCodigo("A1B2CE");
@@ -211,8 +228,6 @@ int main() {
 
     cout << "teste" << endl;
     cout << destino.getCodigo().getCodigo() << endl;
-
-
 
     return 0;
 }

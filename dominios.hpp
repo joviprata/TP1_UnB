@@ -78,7 +78,7 @@ inline string Codigo::getCodigo() const {
 class Avaliacao {
     private:
         int avaliacao; // Armazena valor
-        bool validate(int); //Método de validação
+        bool validar(int); //Método de validação
     public:
         bool setAvaliacao(int);
         int getAvaliacao() const;

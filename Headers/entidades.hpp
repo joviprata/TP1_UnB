@@ -60,4 +60,5 @@ inline Codigo Destino::getCodigo() const{
     return codigo;
 }
 
+
 #endif // ENTIDADES_HPP_INCLUDED

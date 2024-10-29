@@ -137,10 +137,10 @@ int main() {
 
     Avaliacao av1;
 
-    if(av1.setValue(1))
-        cout << "Valor = " << av1.getValue() << endl;
-    if (av1.setValue(10))
-        cout << "Valor = " << av1.getValue() << endl;
+    if(av1.setAvaliacao(1))
+        cout << "Valor = " << av1.getAvaliacao() << endl;
+    if (av1.setAvaliacao(10))
+        cout << "Valor = " << av1.getAvaliacao() << endl;
 
     Codigo codigo;
 

@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <stdexcept>
 #include "dominios.hpp"
+#include "entidades.hpp"
 using namespace std;
 
 int main() {
@@ -188,8 +189,7 @@ int main() {
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
     if (avaliacao.setAvaliacao(10))
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
-    
-    return 0;
+
 
     Duracao duracao;
 
@@ -199,6 +199,20 @@ int main() {
     } catch (const invalid_argument& erro) {
         cout << "Erro: " << erro.what() << endl;
     }
+
+
+    // Testes com entidades:
+
+    Destino destino;
+
+    codigo.setCodigo("A1B2CE");
+
+    destino.setCodigo(codigo);
+
+    cout << "teste" << endl;
+    cout << destino.getCodigo().getCodigo() << endl;
+
+
 
     return 0;
 }

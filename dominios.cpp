@@ -155,7 +155,7 @@ bool Codigo::setCodigo (string codigo) {
 
 
 //Funções para classe Avaliacao:
-bool Avaliacao::validate(int avaliacao){
+bool Avaliacao::validar(int avaliacao){
 
     for (int i = 0; i<=5; i++){
         if (avaliacao==i){

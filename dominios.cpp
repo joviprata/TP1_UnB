@@ -167,7 +167,7 @@ bool Avaliacao::validar(int avaliacao){
 }
 
 bool Avaliacao::setAvaliacao(int avaliacao){
-    if(!validate(avaliacao))
+    if(!validar(avaliacao))
         return false;
     this->avaliacao = avaliacao;
     return true;

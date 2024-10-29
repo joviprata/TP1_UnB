@@ -42,4 +42,23 @@ inline Nome Viagem::getNome() const{
 inline Avaliacao Viagem::getAvaliacao() const{
     return avaliacao;
 }
+
+
+class Destino {
+    private:
+        Codigo codigo;
+    public:
+        void setCodigo(const Codigo&);
+        Codigo getCodigo() const;
+};
+
+inline void Destino::setCodigo(const Codigo &codigo){
+    this->codigo = codigo;
+}
+
+inline Codigo Destino::getCodigo() const{
+    return codigo;
+}
+
+
 #endif // ENTIDADES_HPP_INCLUDED

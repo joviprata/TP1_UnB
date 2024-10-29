@@ -207,6 +207,9 @@ int main() {
     nome.setNome("P1");
     avaliacao.setAvaliacao(1);
 
+
+    // Testes com entidades:
+    
     viagem.setCodigo(codigo);
     viagem.setNome(nome);
     viagem.setAvaliacao(avaliacao);
@@ -215,6 +218,16 @@ int main() {
     cout<< viagem.getCodigo().getCodigo() <<endl;
     cout<< viagem.getNome().getNome() <<endl;
     cout<< viagem.getAvaliacao().getAvaliacao() <<endl;
+
+    
+    Destino destino;
+
+    codigo.setCodigo("A1B2CE");
+
+    destino.setCodigo(codigo);
+
+    cout << "teste" << endl;
+    cout << destino.getCodigo().getCodigo() << endl;
 
     return 0;
 }

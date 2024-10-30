@@ -93,6 +93,8 @@ class Duracao {
         // Inicia com 0 como valor da duracao
         Duracao(int duracao = 0);
 
+        bool validateDuracao(int duracao);
+
         void setDuracao(int duracao);
         
         inline int getDuracao() const;
@@ -105,5 +107,23 @@ inline int Duracao::getDuracao() const {
     return duracao;
 }
 
+
+class Dinheiro {
+    private:
+        double dinheiro;
+
+    public:
+        Dinheiro(double dinheiro = 0.00);
+
+        bool validateDinheiro(double dinheiro);
+
+        void setDinheiro(double dinheiro);
+
+        inline double getDinheiro() const;
+};
+
+inline double Dinheiro::getDinheiro() const {
+    return dinheiro;
+}
 
 #endif // DOMINIOS_HPP_INCLUDED

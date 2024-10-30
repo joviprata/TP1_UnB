@@ -194,19 +194,22 @@ int main() {
     if (avaliacao.setAvaliacao(10))
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
 
+    // Teste de Duracao e Dinheiro conforme o roteiro
     Duracao duracao;
 
-    try {
-        duracao.setDuracao(200);
+    // Entrada de uma duração específica válida
+    if (duracao.setDuracao(200)) {
         cout << "Duração = " << duracao.getDuracao() << endl;
-    } catch (const invalid_argument& erro) {
-        cout << "Erro: " << erro.what() << endl;
+    } else {
+        cout << "Duração Inválida\n";
     }
 
-    codigo.setCodigo("A1B2C3");
-    nome.setNome("P1");
-    avaliacao.setAvaliacao(1);
+    Dinheiro dinheiro;
 
+    if (dinheiro.setDinheiro(200))
+        cout << "Valor = " << dinheiro.getDinheiro() << endl;
+    else
+        cout << "Valor Inválido\n";
 
     // Testes com entidades:
     

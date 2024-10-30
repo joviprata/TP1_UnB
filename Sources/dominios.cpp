@@ -174,16 +174,39 @@ bool Avaliacao::setAvaliacao(int avaliacao){
 }
 
 // Funções para a classe Duracao
-void Duracao::setDuracao(int duracao) {
-    // Verifica se duracao maior que 0 e menor que 360
-    if (duracao < 0) {
-        // lança exceção em caso de formato inválido
-        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
-
-    } else if (duracao > 360) {
-        // lança exceção em caso de formato inválido
-        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
-        } else {
-        this->duracao  = duracao;   
+bool Duracao::validateDuracao(int duracao) {
+    // Verifica se duracao maior que 0 e menor que 360, ou seja, válida
+    if (duracao > 0) {
+        if (duracao < 360) {
+            return true;
+        }
     }
+    return false;
+}
+
+bool Duracao::setDuracao(int duracao) {
+    if (!validateDuracao(duracao))
+        cout << "Duração Inválida.\n";
+    
+    this->duracao = duracao;
+    return true;
+}
+
+// Funções para a classe Dinheiro
+bool Dinheiro::validateDinheiro(double dinheiro) {
+    // Apenas valore maiores que 0,00 e menores ou iguais a 200000,00
+    if (dinheiro > 0.00) {
+        if (dinheiro < 200000.00) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Dinheiro::setDinheiro(double dinheiro) {
+    if (!validateDinheiro(dinheiro))
+        cout << "Valor Inválido.\n";
+    
+    this->dinheiro = dinheiro;
+    return true;
 }

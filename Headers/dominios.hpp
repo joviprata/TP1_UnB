@@ -93,16 +93,35 @@ class Duracao {
         // Inicia com 0 como valor da duracao
         Duracao(int duracao = 0);
 
-        void setDuracao(int duracao);
+        bool setDuracao(int duracao);
         
         inline int getDuracao() const;
 
     private:
         int duracao;
+        bool validateDuracao(int duracao);
 };
 
 inline int Duracao::getDuracao() const {
     return duracao;
+}
+
+class Dinheiro {
+    public:
+
+        Dinheiro(double dinheiro = 0.00);
+
+        bool setDinheiro(double dinheiro);
+
+        inline double getDinheiro() const;
+        
+    private:
+        double dinheiro;
+        bool validateDinheiro(double dinheiro);
+};
+
+inline double Dinheiro::getDinheiro() const {
+    return dinheiro;
 }
 
 

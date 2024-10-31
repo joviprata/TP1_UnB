@@ -218,6 +218,8 @@ int main() {
 
     // Testes com entidades:
 
+    // Viagem:
+
     viagem.setCodigo(codigo);
     viagem.setNome(nome);
     viagem.setAvaliacao(avaliacao);
@@ -228,14 +230,28 @@ int main() {
     cout<< viagem.getAvaliacao().getAvaliacao() <<endl;
 
 
-
+    // Destino:
 
     codigo.setCodigo("A1B2CE");
-
     destino.setCodigo(codigo);
 
-    cout << "teste" << endl;
+    nome.setNome("Batman");
+    destino.setNome(nome);
+
+    data.setData("01-01-01");
+    destino.setDataInicio(data);
+
+    data.setData("09-09-09");
+    destino.setDataTermino(data);
+
+    avaliacao.setAvaliacao(5);
+    destino.setAvaliacao(avaliacao);
+
     cout << destino.getCodigo().getCodigo() << endl;
+    cout << destino.getNome().getNome() << endl;
+    cout << destino.getDataInicio().getData() << endl;
+    cout << destino.getDataTermino().getData() << endl;
+    cout << destino.getAvaliacao().getAvaliacao() << endl;
 
     return 0;
 }

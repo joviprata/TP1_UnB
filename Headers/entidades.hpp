@@ -47,9 +47,26 @@ inline Avaliacao Viagem::getAvaliacao() const{
 class Destino {
     private:
         Codigo codigo;
+        Nome nome;
+        Data dataInicio;
+        Data dataTermino;
+        Avaliacao avaliacao;
+
     public:
         void setCodigo(const Codigo&);
         Codigo getCodigo() const;
+
+        void setNome(const Nome&);
+        Nome getNome() const;
+
+        void setDataInicio(const Data&);
+        Data getDataInicio() const;
+
+        void setDataTermino(const Data&);
+        Data getDataTermino() const;
+
+        void setAvaliacao(const Avaliacao&);
+        Avaliacao getAvaliacao() const;
 };
 
 inline void Destino::setCodigo(const Codigo &codigo){
@@ -59,6 +76,39 @@ inline void Destino::setCodigo(const Codigo &codigo){
 inline Codigo Destino::getCodigo() const{
     return codigo;
 }
+
+inline void Destino::setNome(const Nome &nome){
+    this->nome = nome;
+}
+
+inline Nome Destino::getNome() const{
+    return nome;
+}
+
+inline void Destino::setDataInicio(const Data &dataInicio){
+    this->dataInicio = dataInicio;
+}
+
+inline Data Destino::getDataInicio() const{
+    return dataInicio;
+}
+
+inline void Destino::setDataTermino(const Data &dataTermino){
+    this->dataTermino = dataTermino;
+}
+
+inline Data Destino::getDataTermino() const{
+    return dataTermino;
+}
+
+inline void Destino::setAvaliacao(const Avaliacao &avaliacao){
+    this->avaliacao = avaliacao;
+}
+
+inline Avaliacao Destino::getAvaliacao() const{
+    return avaliacao;
+}
+
 
 
 #endif // ENTIDADES_HPP_INCLUDED

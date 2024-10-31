@@ -92,7 +92,7 @@ bool Senha::setSenha(string senha) {
 
 // Funções para classe data:
 bool Data::validar(string data){
-    if (data.size() != 8 or (data[2] != '-' and data[5] != '-'))
+    if (data.size() != 8 or (data[2] != '-' or data[5] != '-'))
         return false;
 
     string str_DD = data.substr(0,2);

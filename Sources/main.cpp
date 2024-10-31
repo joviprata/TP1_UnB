@@ -7,6 +7,19 @@ using namespace std;
 
 int main() {
 
+    // Declaração de domínios:
+
+    Avaliacao avaliacao;
+
+    Codigo codigo;
+    Codigo *codigo_ptr;
+
+    Data data;
+
+    Dinheiro dinheiro;
+
+    Duracao duracao;
+
     Horario horario;
     Horario *horario_ptr;
 
@@ -16,15 +29,15 @@ int main() {
     Senha senha;
     Senha *senha_ptr;
 
-    Data data;
 
-    Avaliacao avaliacao;
-
-
-    Codigo codigo;
-    Codigo *codigo_ptr;
+    // Declaração de entidades:
 
     Viagem viagem;
+
+    Destino destino;
+
+
+    // Testes:
 
     // Teste de classe de horario, usado durante desenvolvimento do codigo (sera removido na entrega final):
     cout << "Defina o horario: "  << endl;
@@ -52,7 +65,6 @@ int main() {
 
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
 
-
     horario_ptr = new Horario();
 
     if (horario_ptr->setHorario("00:00"))
@@ -68,8 +80,6 @@ int main() {
     delete horario_ptr;
 
 
-
-
     // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):
     cout << "Defina o nome: "  << endl;
 
@@ -80,7 +90,6 @@ int main() {
         cout << "Nome definido com sucesso: " << nome.getNome() << endl;
     else
         cout << "Nome invalido. Por favor, digite um nome com ate 30 caracteres." << endl;
-
 
     // Teste feito conforme o roteiro do projeto:
     if (nome.setNome("Pedrinho Camarada"))
@@ -93,9 +102,7 @@ int main() {
     else
         cout << "Nome invalido" << endl;
 
-
     // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
 
     nome_ptr = new Nome();
 
@@ -110,7 +117,6 @@ int main() {
         cout << "Nome invalido" << endl;
 
     delete nome_ptr;
-
 
 
     // Teste feito conforme o roteiro do projeto:
@@ -195,7 +201,6 @@ int main() {
         cout << "Valor = " << avaliacao.getAvaliacao() << endl;
 
     // Teste de Duracao e Dinheiro conforme o roteiro
-    Duracao duracao;
 
     // Entrada de uma duração específica válida
     if (duracao.setDuracao(200)) {
@@ -204,15 +209,15 @@ int main() {
         cout << "Duração Inválida\n";
     }
 
-    Dinheiro dinheiro;
 
     if (dinheiro.setDinheiro(200))
         cout << "Valor = " << dinheiro.getDinheiro() << endl;
     else
         cout << "Valor Inválido\n";
 
+
     // Testes com entidades:
-    
+
     viagem.setCodigo(codigo);
     viagem.setNome(nome);
     viagem.setAvaliacao(avaliacao);
@@ -222,8 +227,8 @@ int main() {
     cout<< viagem.getNome().getNome() <<endl;
     cout<< viagem.getAvaliacao().getAvaliacao() <<endl;
 
-    
-    Destino destino;
+
+
 
     codigo.setCodigo("A1B2CE");
 

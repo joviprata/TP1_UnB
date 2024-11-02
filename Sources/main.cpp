@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <stdexcept>
-#include "/home/isabela-furlan/TP1_UnB/Headers/dominios.hpp"
-#include "/home/isabela-furlan/TP1_UnB/Headers/entidades.hpp"
+#include "dominios.hpp"
+#include "entidades.hpp"
 
 using namespace std;
 

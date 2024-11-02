@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <stdexcept>
-#include "dominios.hpp"
-#include "entidades.hpp"
+#include "/home/isabela-furlan/TP1_UnB/Headers/dominios.hpp"
+#include "/home/isabela-furlan/TP1_UnB/Headers/entidades.hpp"
 
 using namespace std;
 
@@ -210,7 +210,7 @@ int main() {
     }
 
 
-    if (dinheiro.setDinheiro(200))
+    if (dinheiro.setDinheiro(200.00))
         cout << "Valor = " << dinheiro.getDinheiro() << endl;
     else
         cout << "Valor Inválido\n";

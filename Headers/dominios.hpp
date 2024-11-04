@@ -91,7 +91,7 @@ inline int Avaliacao::getAvaliacao() const{
 class Duracao {
     private:
         int duracao;
-        bool validarDuracao(int duracao);
+        bool validar(int duracao);
     
     public:
         bool setDuracao(int duracao);
@@ -105,7 +105,7 @@ inline int Duracao::getDuracao() const {
 class Dinheiro {
     private:
         double dinheiro;
-        bool validarDinheiro(double dinheiro);
+        bool validar(double dinheiro);
 
     public:
         bool setDinheiro(double dinheiro);

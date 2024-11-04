@@ -210,7 +210,7 @@ int main() {
     }
 
 
-    if (dinheiro.setDinheiro(200))
+    if (dinheiro.setDinheiro(200.00))
         cout << "Valor = " << dinheiro.getDinheiro() << endl;
     else
         cout << "Valor Inválido\n";

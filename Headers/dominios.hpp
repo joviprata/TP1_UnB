@@ -89,17 +89,13 @@ inline int Avaliacao::getAvaliacao() const{
 }
 
 class Duracao {
-    public:
-        // Inicia com 0 como valor da duracao
-        Duracao(int duracao = 0);
-
-        bool setDuracao(int duracao);
-
-        inline int getDuracao() const;
-
     private:
         int duracao;
-        bool validateDuracao(int duracao);
+        bool validar(int duracao);
+    
+    public:
+        bool setDuracao(int duracao);
+        inline int getDuracao() const;
 };
 
 inline int Duracao::getDuracao() const {
@@ -107,17 +103,13 @@ inline int Duracao::getDuracao() const {
 }
 
 class Dinheiro {
-    public:
-
-        Dinheiro(double dinheiro = 0.00);
-
-        bool setDinheiro(double dinheiro);
-
-        inline double getDinheiro() const;
-        
     private:
         double dinheiro;
-        bool validateDinheiro(double dinheiro);
+        bool validar(double dinheiro);
+
+    public:
+        bool setDinheiro(double dinheiro);
+        inline double getDinheiro() const;
 };
 
 inline double Dinheiro::getDinheiro() const {

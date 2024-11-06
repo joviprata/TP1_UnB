@@ -1,7 +1,7 @@
 #ifndef ENTIDADES_HPP_INCLUDED
 #define ENTIDADES_HPP_INCLUDED
-
 using namespace std;
+
 
 class Viagem{
     private:
@@ -137,4 +137,59 @@ inline void Conta::setSenha(const Senha &senha){
 inline Senha Conta::getSenha() const{
     return senha;
 }
+
+class Hospedagem {
+    private:
+        Codigo codigo;
+        Nome nome;
+        Dinheiro diaria;
+        Avaliacao avaliacao;
+    public:
+        void setCodigo(const Codigo&);
+        Codigo getCodigo() const;
+
+        void setNome(const Nome&);
+        Nome getNome() const;
+
+        void setDinheiro(const Dinheiro&);
+        Dinheiro getDinheiro() const;
+
+        void setAvaliacao(const Avaliacao&);
+        Avaliacao getAvaliacao() const;
+};
+
+inline void Hospedagem::setCodigo(const Codigo &codigo){
+    this->codigo = codigo;
+}
+
+inline void Hospedagem::setNome(const Nome &nome){
+    this->nome = nome;
+}
+
+inline void Hospedagem::setDinheiro(const Dinheiro &diaria){
+    this ->diaria = diaria;
+}
+
+inline void Hospedagem::setAvaliacao(const Avaliacao &avaliacao){
+    this->avaliacao = avaliacao;
+}
+
+inline Codigo Hospedagem::getCodigo() const{
+    return codigo;
+}
+
+inline Nome Hospedagem::getNome() const{
+    return nome;
+}
+
+inline Dinheiro Hospedagem::getDinheiro() const{
+    return diaria;
+}
+
+inline Avaliacao Hospedagem::getAvaliacao() const{
+    return avaliacao;
+}
+
+
+
 #endif // ENTIDADES_HPP_INCLUDED

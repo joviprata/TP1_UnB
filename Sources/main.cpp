@@ -36,6 +36,8 @@ int main() {
 
     Destino destino;
 
+    Conta conta;
+  
     Hospedagem hospedagem;
 
 
@@ -255,6 +257,13 @@ int main() {
     cout << destino.getDataTermino().getData() << endl;
     cout << destino.getAvaliacao().getAvaliacao() << endl;
 
+    // Conta
+
+    conta.setCodigo(codigo);
+    conta.setSenha(senha);
+
+    cout << conta.getCodigo().getCodigo() << endl;
+    cout << conta.getSenha().getSenha() << endl;
 
     // Hospedagem:
 
@@ -268,6 +277,7 @@ int main() {
     cout<< hospedagem.getNome().getNome() <<endl;
     cout<< hospedagem.getDinheiro().getDinheiro() <<endl;
     cout<< hospedagem.getAvaliacao().getAvaliacao() <<endl;
+
 
     return 0;
 }

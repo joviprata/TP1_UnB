@@ -36,6 +36,8 @@ int main() {
 
     Destino destino;
 
+    Conta conta;
+
 
     // Testes:
 
@@ -252,6 +254,14 @@ int main() {
     cout << destino.getDataInicio().getData() << endl;
     cout << destino.getDataTermino().getData() << endl;
     cout << destino.getAvaliacao().getAvaliacao() << endl;
+
+    // Conta
+
+    conta.setCodigo(codigo);
+    conta.setSenha(senha);
+
+    cout << conta.getCodigo().getCodigo() << endl;
+    cout << conta.getSenha().getSenha() << endl;
 
     return 0;
 }

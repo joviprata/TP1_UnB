@@ -36,6 +36,8 @@ int main() {
 
     Destino destino;
 
+    Hospedagem hospedagem;
+
 
     // Testes:
 
@@ -252,6 +254,20 @@ int main() {
     cout << destino.getDataInicio().getData() << endl;
     cout << destino.getDataTermino().getData() << endl;
     cout << destino.getAvaliacao().getAvaliacao() << endl;
+
+
+    // Hospedagem:
+
+    hospedagem.setCodigo(codigo);
+    hospedagem.setNome(nome);
+    hospedagem.setDinheiro(dinheiro);
+    hospedagem.setAvaliacao(avaliacao);
+
+
+    cout<< hospedagem.getCodigo().getCodigo() <<endl;
+    cout<< hospedagem.getNome().getNome() <<endl;
+    cout<< hospedagem.getDinheiro().getDinheiro() <<endl;
+    cout<< hospedagem.getAvaliacao().getAvaliacao() <<endl;
 
     return 0;
 }

@@ -109,6 +109,32 @@ inline Avaliacao Destino::getAvaliacao() const{
     return avaliacao;
 }
 
+class Conta{
+    private:
+        Codigo codigo;
+        Senha senha;
+    public:
+        void setCodigo(const Codigo&);
+        Codigo getCodigo() const;
 
+        void setSenha(const Senha&);
+        Senha getSenha() const;
 
+};
+
+inline void Conta::setCodigo(const Codigo &codigo){
+    this->codigo = codigo;
+}
+
+inline Codigo Conta::getCodigo() const{
+    return codigo;
+}
+
+inline void Conta::setSenha(const Senha &senha){
+    this->senha = senha;
+}
+
+inline Senha Conta::getSenha() const{
+    return senha;
+}
 #endif // ENTIDADES_HPP_INCLUDED

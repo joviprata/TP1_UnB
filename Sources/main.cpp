@@ -40,6 +40,8 @@ int main() {
   
     Hospedagem hospedagem;
 
+    Atividades atividades;
+
 
     // Testes:
 
@@ -278,6 +280,23 @@ int main() {
     cout<< hospedagem.getDinheiro().getDinheiro() <<endl;
     cout<< hospedagem.getAvaliacao().getAvaliacao() <<endl;
 
+    //Atividades
+
+    atividades.setCodigo(codigo);
+    atividades.setNome(nome);
+    atividades.setData(data);
+    atividades.setHorario(horario);
+    atividades.setDuracao(duracao);
+    atividades.setDinheiro(dinheiro);
+    atividades.setAvaliacao(avaliacao);
+
+    cout<< atividades.getCodigo().getCodigo() <<endl;
+    cout<< atividades.getNome().getNome() <<endl;
+    cout<< atividades.getData().getData() <<endl;
+    cout<< atividades.getHorario().getHorario() <<endl;
+    cout<< atividades.getDuracao().getDuracao() <<endl;
+    cout<< atividades.getDinheiro().getDinheiro() <<endl;
+    cout<< atividades.getAvaliacao().getAvaliacao() <<endl;
 
     return 0;
 }

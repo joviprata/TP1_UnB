@@ -379,6 +379,90 @@ inline Avaliacao Hospedagem::getAvaliacao() const{
     return avaliacao;
 }
 
+class Atividades { 
 
+    private:
+        Codigo codigo;
+        Nome nome;
+        Data data;
+        Horario horario;
+        Duracao duracao;
+        Dinheiro dinheiro;
+        Avaliacao avaliacao;
+    public: 
+        void setCodigo(const Codigo&); // Declarar método set para cada atributo. 
+        void setNome(const Nome&);
+        void setData(const Data&);
+        void setHorario(const Horario&);
+        void setDuracao(const Duracao&);
+        void setDinheiro(const Dinheiro&);
+        void setAvaliacao(const Avaliacao&);
+        Codigo getCodigo() const;
+        Nome getNome() const;
+        Data getData() const;
+        Horario getHorario() const; 
+        Duracao getDuracao() const; 
+        Dinheiro getDinheiro() const; 
+        Avaliacao getAvaliacao() const; 
+        
+    };
+    
+    // Implementar métodos set e get para cada atributo. 
+    
+    inline void Atividades::setCodigo(const Codigo &codigo) { 
+        this->codigo = codigo; 
+    }
+
+    inline void Atividades::setNome(const Nome &nome) { 
+        this->nome = nome; 
+    }
+
+    inline void Atividades::setData(const Data &data) { 
+        this->data = data; 
+    }
+
+    inline void Atividades::setHorario(const Horario &horario) { 
+        this->horario = horario; 
+    }
+
+    inline void Atividades::setDuracao(const Duracao &duracao) { 
+        this->duracao = duracao; 
+    }
+
+    inline void Atividades::setDinheiro(const Dinheiro &dinheiro) { 
+        this->dinheiro = dinheiro; 
+    }
+
+    inline void Atividades::setAvaliacao(const Avaliacao &avaliacao) { 
+        this->avaliacao = avaliacao; 
+    }
+
+    inline Codigo Atividades::getCodigo() const { 
+        return codigo; 
+    }
+
+    inline Nome Atividades::getNome() const { 
+        return nome; 
+    }
+
+    inline Data Atividades::getData() const { 
+        return data; 
+    }
+
+    inline Horario Atividades::getHorario() const { 
+        return horario; 
+    }
+
+    inline Duracao Atividades::getDuracao() const { 
+        return duracao; 
+    }
+
+    inline Dinheiro Atividades::getDinheiro() const { 
+        return dinheiro; 
+    }
+
+    inline Avaliacao Atividades::getAvaliacao() const { 
+        return avaliacao; 
+    }
 
 #endif // ENTIDADES_HPP_INCLUDED

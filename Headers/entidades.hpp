@@ -379,35 +379,126 @@ inline Avaliacao Hospedagem::getAvaliacao() const{
     return avaliacao;
 }
 
+//---------------------------------------------------------------------
+// ENTIDADE ATIVIDADES
+
+/**
+ * @brief Classe que representa uma Atividade.
+ * 
+ * A classe Atividades contém os atributos e métodos para manipulação dos dados
+ * de uma atividade de viagem, incluindo código, nome, data, horário, duração, valor e avaliação.
+ */
+
 class Atividades { 
 
     private:
-        Codigo codigo;
-        Nome nome;
-        Data data;
-        Horario horario;
-        Duracao duracao;
-        Dinheiro dinheiro;
-        Avaliacao avaliacao;
-    public: 
-        void setCodigo(const Codigo&); // Declarar método set para cada atributo. 
+        Codigo codigo; ///< Código da atividade.
+        Nome nome;  ///< Nome da atividade.
+        Data data;  ///< Data da atividade.
+        Horario horario;  ///< Horário da atividade.
+        Duracao duracao;  ///< Duração da atividade.
+        Dinheiro dinheiro;  ///< Valor associado à atividade.
+        Avaliacao avaliacao;  ///< Avaliação da atividade.
+    public:
+        /**
+         * @brief Define o código da atividade.
+         * 
+         * @param codigo Objeto do tipo Codigo.
+         */
+        void setCodigo(const Codigo&);
+
+        /**
+         * @brief Define o nome da atividade.
+         * 
+         * @param nome Objeto do tipo Nome.
+         */
         void setNome(const Nome&);
+
+        /**
+         * @brief Define a data da atividade.
+         * 
+         * @param data Objeto do tipo Data.
+         */
         void setData(const Data&);
+
+        /**
+         * @brief Define o horário da atividade.
+         * 
+         * @param horario Objeto do tipo Horário.
+         */
         void setHorario(const Horario&);
-        void setDuracao(const Duracao&);
+
+        /**
+         * @brief Define a duração da atividade.
+         * 
+         * @param duracao Objeto do tipo Duração.
+         */
+        void setDuracao(const Duracao&); 
+
+        /**
+         * @brief Define o valor associado à atividade.
+         * 
+         * @param dinheiro Objeto do tipo Dinheiro.
+         */
         void setDinheiro(const Dinheiro&);
+
+        /**
+         * @brief Define a avaliação da atividade.
+         * 
+         * @param avaliacao Objeto do tipo Avaliação.
+         */
         void setAvaliacao(const Avaliacao&);
+
+        /**
+         * @brief Retorna o código da atividade.
+         * 
+         * @return Objeto do tipo Codigo.
+         */
         Codigo getCodigo() const;
+
+        /**
+         * @brief Retorna o nome da atividade.
+         * 
+         * @return Objeto do tipo Nome.
+         */
         Nome getNome() const;
+
+        /**
+         * @brief Retorna a data da atividade.
+         * 
+         * @return Objeto do tipo Data.
+         */
         Data getData() const;
-        Horario getHorario() const; 
-        Duracao getDuracao() const; 
-        Dinheiro getDinheiro() const; 
+
+        /**
+         * @brief Retorna o horário da atividade.
+         * 
+         * @return Objeto do tipo Horário.
+         */
+        Horario getHorario() const;
+
+        /**
+         * @brief Retorna a duração da atividade.
+         * 
+         * @return Objeto do tipo Duração.
+         */
+        Duracao getDuracao() const;
+
+        /**
+         * @brief Retorna o valor associado à atividade.
+         * 
+         * @return Objeto do tipo Dinheiro.
+         */
+        Dinheiro getDinheiro() const;
+
+        /**
+         * @brief Retorna a avaliação da atividade.
+         * 
+         * @return Objeto do tipo Avaliação.
+         */
         Avaliacao getAvaliacao() const; 
         
     };
-    
-    // Implementar métodos set e get para cada atributo. 
     
     inline void Atividades::setCodigo(const Codigo &codigo) { 
         this->codigo = codigo; 

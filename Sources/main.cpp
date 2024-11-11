@@ -36,6 +36,12 @@ int main() {
 
     Destino destino;
 
+    Conta conta;
+  
+    Hospedagem hospedagem;
+
+    Atividades atividades;
+
 
     // Testes:
 
@@ -210,7 +216,7 @@ int main() {
     }
 
 
-    if (dinheiro.setDinheiro(200))
+    if (dinheiro.setDinheiro(200.00))
         cout << "Valor = " << dinheiro.getDinheiro() << endl;
     else
         cout << "Valor Inválido\n";
@@ -252,6 +258,45 @@ int main() {
     cout << destino.getDataInicio().getData() << endl;
     cout << destino.getDataTermino().getData() << endl;
     cout << destino.getAvaliacao().getAvaliacao() << endl;
+
+    // Conta
+
+    conta.setCodigo(codigo);
+    conta.setSenha(senha);
+
+    cout << conta.getCodigo().getCodigo() << endl;
+    cout << conta.getSenha().getSenha() << endl;
+
+    // Hospedagem:
+
+    hospedagem.setCodigo(codigo);
+    hospedagem.setNome(nome);
+    hospedagem.setDinheiro(dinheiro);
+    hospedagem.setAvaliacao(avaliacao);
+
+
+    cout<< hospedagem.getCodigo().getCodigo() <<endl;
+    cout<< hospedagem.getNome().getNome() <<endl;
+    cout<< hospedagem.getDinheiro().getDinheiro() <<endl;
+    cout<< hospedagem.getAvaliacao().getAvaliacao() <<endl;
+
+    //Atividades
+
+    atividades.setCodigo(codigo);
+    atividades.setNome(nome);
+    atividades.setData(data);
+    atividades.setHorario(horario);
+    atividades.setDuracao(duracao);
+    atividades.setDinheiro(dinheiro);
+    atividades.setAvaliacao(avaliacao);
+
+    cout<< atividades.getCodigo().getCodigo() <<endl;
+    cout<< atividades.getNome().getNome() <<endl;
+    cout<< atividades.getData().getData() <<endl;
+    cout<< atividades.getHorario().getHorario() <<endl;
+    cout<< atividades.getDuracao().getDuracao() <<endl;
+    cout<< atividades.getDinheiro().getDinheiro() <<endl;
+    cout<< atividades.getAvaliacao().getAvaliacao() <<endl;
 
     return 0;
 }

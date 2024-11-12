@@ -57,6 +57,9 @@ bool Nome::setNome(string nome) {
 
 // Funções para classe Senha:
 bool Senha::validar(string senha) {
+    if (!string_eh_int(senha))
+        return false;
+    
     int contador = 0;
     bool tamanho, duplicata = false, crescente = true, decrescente = true;
 

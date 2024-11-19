@@ -41,9 +41,9 @@ inline string Horario::getHorario() const {
 class Nome {
     private:
             string nome;
-            bool validar(string);
+            void validar(string);
     public:
-            bool setNome(string);
+            void setNome(string);
             string getNome() const;
 };
 

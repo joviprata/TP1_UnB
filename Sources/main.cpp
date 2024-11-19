@@ -37,7 +37,7 @@ int main() {
     Destino destino;
 
     Conta conta;
-  
+
     Hospedagem hospedagem;
 
     Atividades atividades;
@@ -45,45 +45,21 @@ int main() {
 
     // Testes:
 
-    // Teste de classe de horario, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o horario: "  << endl;
 
-    string horario_temp;
-    cin >> horario_temp;
+    // Teste de classe Horario:
+    try {
+        horario.setHorario("12:53");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
-    if (horario.setHorario(horario_temp))
-        cout << "Horario definido com sucesso: " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido. Por favor, digite o horario em formato HH:mm, entre 00:00 a 23:59." << endl;
-
-
-    // Teste feito conforme o roteiro do projeto:
-    if (horario.setHorario("23:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    if (horario.setHorario("-1:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    horario_ptr = new Horario();
-
-    if (horario_ptr->setHorario("00:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    if (horario_ptr->setHorario("24:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    delete horario_ptr;
+    try {
+        horario.setHorario("1A:53");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
 
     // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):

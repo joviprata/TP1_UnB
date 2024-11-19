@@ -1,3 +1,4 @@
+
 #ifndef DOMINIOS_HPP_INCLUDED
 #define DOMINIOS_HPP_INCLUDED
 
@@ -10,7 +11,7 @@ using namespace std; // Facilita ao tornar desnecessario escrever std:: antes de
 
 /**
  * @brief Classe para representar um horário no formato HH:MM.
- * 
+ *
  * Regras de Formato:
  * - Formato: HH:MM
  * - HH: de 00 a 23
@@ -34,7 +35,7 @@ inline string Horario::getHorario() const {
 
 /**
  * @brief Classe para representar um Nome com até 30 caracteres.
- * 
+ *
  * Regras de Formato:
  * - Texto de até 30 caracteres.
  */
@@ -56,7 +57,7 @@ inline string Nome::getNome() const {
 
 /**
  * @brief Classe para representar uma Senha de cinco dígitos.
- * 
+ *
  * Regras de Formato:
  * - Cinco dígitos (0-9).
  * - Não há dígito duplicado.
@@ -81,7 +82,7 @@ inline string Senha::getSenha() const {
 
 /**
  * @brief Classe para representar uma Data no formato DD-MM-AA.
- * 
+ *
  * Regras de Formato:
  * - Formato: DD-MM-AA
  * - DD: de 00 a 31
@@ -92,9 +93,9 @@ inline string Senha::getSenha() const {
 class Data{
     private:
         string data;
-        bool validar(string);
+        void validar(string);
     public:
-        bool setData(string);
+        void setData(string);
         string getData() const;
 };
 
@@ -107,7 +108,7 @@ inline string Data::getData() const{
 
 /**
  * @brief Classe para representar um Código de seis caracteres.
- * 
+ *
  * Regras de Formato:
  * - Seis caracteres.
  * - Cada caractere pode ser letra (A-Z, a-z) ou dígito (0-9).
@@ -130,14 +131,14 @@ inline string Codigo::getCodigo() const {
 
 /**
  * @brief Classe para representar uma Avaliação de 0 a 5.
- * 
+ *
  * Regras de Formato:
  * - Apenas dígitos de 0 a 5.
  */
 class Avaliacao {
     private:
-        int avaliacao; 
-        bool validar(int); 
+        int avaliacao;
+        bool validar(int);
     public:
         bool setAvaliacao(int);
         int getAvaliacao() const;
@@ -152,7 +153,7 @@ inline int Avaliacao::getAvaliacao() const{
 
 /**
  * @brief Classe para representar a duração em minutos.
- * 
+ *
  * Regras de Formato:
  * - Valor entre 0 e 360.
  */
@@ -160,7 +161,7 @@ class Duracao {
     private:
         int duracao;
         bool validar(int duracao);
-    
+
     public:
         bool setDuracao(int duracao);
         inline int getDuracao() const;
@@ -175,7 +176,7 @@ inline int Duracao::getDuracao() const {
 
 /**
  * @brief Classe para representar um valor monetário.
- * 
+ *
  * Regras de Formato:
  * - Valor entre 0,00 e 200.000,00.
  */

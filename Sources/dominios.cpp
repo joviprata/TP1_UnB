@@ -15,28 +15,24 @@ bool string_eh_int(string str) {
 
 
 // Funções para classe Horario:
-bool Horario::validar(string horario) {
+void Horario::validar(string horario) {
     if (horario.size() != 5 or horario[2] != ':')
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     string str_HH = horario.substr(0, 2);
     string str_mm = horario.substr(3, 2);
     if (!string_eh_int(str_HH) or !string_eh_int(str_mm))
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     int HH = stoi(str_HH);
     int mm = stoi(str_mm);
     if (HH > 23 or mm > 59)
-        return false;
-
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Horario::setHorario(string horario) {
-    if(!validar(horario))
-        return false;
+void Horario::setHorario(string horario) {
+    validar(horario);
     this->horario = horario;
-    return true;
 }
 
 
@@ -59,7 +55,7 @@ bool Nome::setNome(string nome) {
 bool Senha::validar(string senha) {
     if (!string_eh_int(senha))
         return false;
-    
+
     int contador = 0;
     bool tamanho, duplicata = false, crescente = true, decrescente = true;
 
@@ -191,7 +187,7 @@ bool Duracao::setDuracao(int duracao) {
     // Se "validar" retorna falso
     if (!validar(duracao))
         cout << "Duração Inválida.\n";
-    
+
     this->duracao = duracao;
     return true;
 }
@@ -210,7 +206,7 @@ bool Dinheiro::validar(double dinheiro) {
 bool Dinheiro::setDinheiro(double dinheiro) {
     if (!validar(dinheiro))
         cout << "Valor Inválido.\n";
-    
+
     this->dinheiro = dinheiro;
     return true;
 }

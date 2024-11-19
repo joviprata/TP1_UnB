@@ -37,17 +37,14 @@ void Horario::setHorario(string horario) {
 
 
 // Funções para classe Nome:
-bool Nome::validar(string nome) {
+void Nome::validar(string nome) {
     if (nome.size() > 30)
-        return false;
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Nome::setNome(string nome) {
-    if(!validar(nome))
-        return false;
+void Nome::setNome(string nome) {
+    validar(nome);
     this->nome = nome;
-    return true;
 }
 
 

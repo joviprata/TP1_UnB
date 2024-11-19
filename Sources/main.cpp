@@ -15,21 +15,7 @@ int main() {
     Codigo *codigo_ptr;
 
     Data data;
-
-    try{
-        data.setData("11-09-01");       //Escolher valor válido
-    }
-    catch(invalid_argument&exp){
-        cout<<"Excecao:"<<exp.what()<<endl;
-    }
-
-    try{
-        data.setData("30-02-05");      //Escolher valor inválido
-    }
-    catch(invalid_argument&exp){
-        cout<<"Excecao:"<<exp.what()<<endl;
-    }
-
+    
     Dinheiro dinheiro;
 
     Duracao duracao;
@@ -91,7 +77,23 @@ int main() {
         cout << "Excecao (Nome): " << exp.what() << endl;
     }
 
+    
+    // Testes de classe Data
+    try{
+        data.setData("11-09-01");       //Escolher valor válido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
 
+    try{
+        data.setData("30-02-05");      //Escolher valor inválido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
+
+    
     // Teste feito conforme o roteiro do projeto:
     if(senha.setSenha("21348"))
         cout << "Senha = " << senha.getSenha() << endl;

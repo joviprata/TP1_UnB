@@ -62,43 +62,20 @@ int main() {
     }
 
 
-    // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o nome: "  << endl;
+    // Teste de classe Nome:
+    try {
+        nome.setNome("Pedro");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
-    string nome_temp;
-    cin >> nome_temp;
-
-    if (nome.setNome(nome_temp))
-        cout << "Nome definido com sucesso: " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido. Por favor, digite um nome com ate 30 caracteres." << endl;
-
-    // Teste feito conforme o roteiro do projeto:
-    if (nome.setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    nome_ptr = new Nome();
-
-    if (nome_ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome_ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    delete nome_ptr;
+    try {
+        nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
 
     // Teste feito conforme o roteiro do projeto:

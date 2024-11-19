@@ -59,7 +59,7 @@ bool Nome::setNome(string nome) {
 bool Senha::validar(string senha) {
     if (!string_eh_int(senha))
         return false;
-    
+
     int contador = 0;
     bool tamanho, duplicata = false, crescente = true, decrescente = true;
 
@@ -94,16 +94,16 @@ bool Senha::setSenha(string senha) {
 
 
 // Funções para classe data:
-bool Data::validar(string data){
+void Data::validar(string data){
     if (data.size() != 8 or (data[2] != '-' or data[5] != '-'))
-        return false;
+          throw invalid_argument("Argumento invalido");
 
     string str_DD = data.substr(0,2);
     string str_MM = data.substr(3,2);
     string str_AA = data.substr(6,2);
 
     if (!string_eh_int(str_DD) or !string_eh_int(str_MM) or !string_eh_int(str_AA))
-        return false;
+         throw invalid_argument("Argumento invalido");
 
     int DD = stoi(str_DD);
     int MM = stoi(str_MM);
@@ -111,28 +111,27 @@ bool Data::validar(string data){
 
      // Verifica se o mes e valido
     if (DD > 31 or MM > 12 or AA > 99 or DD <= 0 or MM < 1 or AA <= 00)
-        return false;
+         throw invalid_argument("Argumento invalido");
 
     // Verifica dias validos para cada mes
     if ((MM == 4 or MM == 6 or MM == 9 or MM == 11 or MM == 2)and DD > 30){
-        return false;
+         throw invalid_argument("Argumento invalido");
     }
 
     if (MM == 2){
         bool bissexto = (AA % 4 == 0 and (AA % 100 != 0 or AA % 400 == 0));
         if ((bissexto and DD > 29) or (!bissexto and DD > 28)){
-                return false;
+                 throw invalid_argument("Argumento invalido");
         }
     }
 
-    return true;
+
 }
 
-bool Data::setData(string data){
-    if (!validar(data))
-        return false;
+void Data::setData(string data){
+    validar(data);
     this ->data = data;
-    return true;
+
 }
 
 // Funções para a classe Codigo:
@@ -191,7 +190,7 @@ bool Duracao::setDuracao(int duracao) {
     // Se "validar" retorna falso
     if (!validar(duracao))
         cout << "Duração Inválida.\n";
-    
+
     this->duracao = duracao;
     return true;
 }
@@ -210,7 +209,7 @@ bool Dinheiro::validar(double dinheiro) {
 bool Dinheiro::setDinheiro(double dinheiro) {
     if (!validar(dinheiro))
         cout << "Valor Inválido.\n";
-    
+
     this->dinheiro = dinheiro;
     return true;
 }

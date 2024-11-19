@@ -16,6 +16,20 @@ int main() {
 
     Data data;
 
+    try{
+        data.setData("11-09-01");       //Escolher valor válido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
+
+    try{
+        data.setData("30-02-05");      //Escolher valor inválido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
+
     Dinheiro dinheiro;
 
     Duracao duracao;
@@ -37,7 +51,7 @@ int main() {
     Destino destino;
 
     Conta conta;
-  
+
     Hospedagem hospedagem;
 
     Atividades atividades;
@@ -151,17 +165,6 @@ int main() {
         cout << "Senha invalida" << endl;
 
     delete senha_ptr;
-
-
-    cout << "Defina a data: "  << endl;
-
-    string data_temp;
-    cin >> data_temp;
-
-    if (data.setData(data_temp))
-        cout << "Data definida com sucesso: " << data.getData() << endl;
-    else
-        cout << "Data invalida. Por favor, digite uma data em formato DD-MM-AA" << endl;
 
 
     cout << "Defina o codigo:" << endl;

@@ -15,43 +15,36 @@ bool string_eh_int(string str) {
 
 
 // Funções para classe Horario:
-bool Horario::validar(string horario) {
+void Horario::validar(string horario) {
     if (horario.size() != 5 or horario[2] != ':')
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     string str_HH = horario.substr(0, 2);
     string str_mm = horario.substr(3, 2);
     if (!string_eh_int(str_HH) or !string_eh_int(str_mm))
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     int HH = stoi(str_HH);
     int mm = stoi(str_mm);
     if (HH > 23 or mm > 59)
-        return false;
-
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Horario::setHorario(string horario) {
-    if(!validar(horario))
-        return false;
+void Horario::setHorario(string horario) {
+    validar(horario);
     this->horario = horario;
-    return true;
 }
 
 
 // Funções para classe Nome:
-bool Nome::validar(string nome) {
+void Nome::validar(string nome) {
     if (nome.size() > 30)
-        return false;
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Nome::setNome(string nome) {
-    if(!validar(nome))
-        return false;
+void Nome::setNome(string nome) {
+    validar(nome);
     this->nome = nome;
-    return true;
 }
 
 

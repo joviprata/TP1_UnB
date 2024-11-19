@@ -59,84 +59,37 @@ int main() {
 
     // Testes:
 
-    // Teste de classe de horario, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o horario: "  << endl;
 
-    string horario_temp;
-    cin >> horario_temp;
+    // Teste de classe Horario:
+    try {
+        horario.setHorario("12:53");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
-    if (horario.setHorario(horario_temp))
-        cout << "Horario definido com sucesso: " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido. Por favor, digite o horario em formato HH:mm, entre 00:00 a 23:59." << endl;
-
-
-    // Teste feito conforme o roteiro do projeto:
-    if (horario.setHorario("23:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    if (horario.setHorario("-1:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
+    try {
+        horario.setHorario("1A:53");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
 
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
+    // Teste de classe Nome:
+    try {
+        nome.setNome("Pedro");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
-    horario_ptr = new Horario();
-
-    if (horario_ptr->setHorario("00:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    if (horario_ptr->setHorario("24:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    delete horario_ptr;
-
-
-    // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o nome: "  << endl;
-
-    string nome_temp;
-    cin >> nome_temp;
-
-    if (nome.setNome(nome_temp))
-        cout << "Nome definido com sucesso: " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido. Por favor, digite um nome com ate 30 caracteres." << endl;
-
-    // Teste feito conforme o roteiro do projeto:
-    if (nome.setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    nome_ptr = new Nome();
-
-    if (nome_ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome_ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    delete nome_ptr;
+    try {
+        nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
 
     // Teste feito conforme o roteiro do projeto:

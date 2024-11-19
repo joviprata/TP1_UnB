@@ -20,9 +20,9 @@ using namespace std; // Facilita ao tornar desnecessario escrever std:: antes de
 class Horario {
     private:
             string horario;
-            bool validar(string);
+            void validar(string);
     public:
-            bool setHorario(string);
+            void setHorario(string);
             string getHorario() const;
 };
 
@@ -42,9 +42,9 @@ inline string Horario::getHorario() const {
 class Nome {
     private:
             string nome;
-            bool validar(string);
+            void validar(string);
     public:
-            bool setNome(string);
+            void setNome(string);
             string getNome() const;
 };
 

@@ -138,15 +138,16 @@ inline string Codigo::getCodigo() const {
 class Avaliacao {
     private:
         int avaliacao;
-        bool validar(int);
+        void validar(int);
     public:
-        bool setAvaliacao(int);
+        void setAvaliacao(int);
         int getAvaliacao() const;
 };
 
 inline int Avaliacao::getAvaliacao() const{
     return avaliacao;
 }
+
 
 //---------------------------------------------------------------------
 // DOMINIO DURACAO

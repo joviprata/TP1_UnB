@@ -10,6 +10,7 @@ using namespace std; // Facilita ao tornar desnecessario escrever std:: antes de
 // DOMINIO HORARIO
 
 /**
+ * João Victor Prata Tavares Pereira - 202028857
  * @brief Classe para representar um horário no formato HH:MM.
  *
  * Regras de Formato:
@@ -34,6 +35,7 @@ inline string Horario::getHorario() const {
 // DOMINIO NOME
 
 /**
+ * João Victor Prata Tavares Pereira - 202028857
  * @brief Classe para representar um Nome com até 30 caracteres.
  *
  * Regras de Formato:
@@ -56,6 +58,7 @@ inline string Nome::getNome() const {
 // DOMINIO SENHA
 
 /**
+ * Nikolas Negrão Pessoa - 202024722
  * @brief Classe para representar uma Senha de cinco dígitos.
  *
  * Regras de Formato:
@@ -81,6 +84,7 @@ inline string Senha::getSenha() const {
 // DOMINIO DATA
 
 /**
+ * Gabriel Balder Oliveira Lemos - 231013618
  * @brief Classe para representar uma Data no formato DD-MM-AA.
  *
  * Regras de Formato:
@@ -107,6 +111,7 @@ inline string Data::getData() const{
 // DOMINIO CODIGO
 
 /**
+ * Mariana Soares Oliveira - 231013663
  * @brief Classe para representar um Código de seis caracteres.
  *
  * Regras de Formato:
@@ -130,6 +135,7 @@ inline string Codigo::getCodigo() const {
 // DOMINIO AVALIACAO
 
 /**
+ * Mauro Ribeiro da Silva - 231013592
  * @brief Classe para representar uma Avaliação de 0 a 5.
  *
  * Regras de Formato:
@@ -153,6 +159,7 @@ inline int Avaliacao::getAvaliacao() const{
 // DOMINIO DURACAO
 
 /**
+ * Isabela Soares Furlan - 231013636
  * @brief Classe para representar a duração em minutos.
  *
  * Regras de Formato:
@@ -161,10 +168,10 @@ inline int Avaliacao::getAvaliacao() const{
 class Duracao {
     private:
         int duracao;
-        bool validar(int duracao);
-
+        void validar(int duracao);
+    
     public:
-        bool setDuracao(int duracao);
+        void setDuracao(int duracao);
         inline int getDuracao() const;
 };
 
@@ -176,6 +183,7 @@ inline int Duracao::getDuracao() const {
 // DOMINIO DINHEIRO
 
 /**
+ * Isabela Soares Furlan - 231013636
  * @brief Classe para representar um valor monetário.
  *
  * Regras de Formato:
@@ -184,10 +192,10 @@ inline int Duracao::getDuracao() const {
 class Dinheiro {
     private:
         double dinheiro;
-        bool validar(double dinheiro);
+        void validar(double dinheiro);
 
     public:
-        bool setDinheiro(double dinheiro);
+        void setDinheiro(double dinheiro);
         inline double getDinheiro() const;
 };
 

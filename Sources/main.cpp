@@ -175,17 +175,30 @@ int main() {
     // Teste de Duracao e Dinheiro conforme o roteiro
 
     // Entrada de uma duração específica válida
-    if (duracao.setDuracao(200)) {
-        cout << "Duração = " << duracao.getDuracao() << endl;
-    } else {
-        cout << "Duração Inválida\n";
+    try {
+        duracao.setDuracao(200);    
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
+    // Entrada de uma duração específica inválida
+    try {
+        duracao.setDuracao(3610);
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
     }
 
-
-    if (dinheiro.setDinheiro(200.00))
-        cout << "Valor = " << dinheiro.getDinheiro() << endl;
-    else
-        cout << "Valor Inválido\n";
+    // Entrada de um valor específico válido
+    try {
+        dinheiro.setDinheiro(200.00);    
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
+    // Entrada de um valor específico inválido
+    try {
+        dinheiro.setDinheiro(300000.00); 
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
 
 
     // Testes com entidades:

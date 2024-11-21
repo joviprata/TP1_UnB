@@ -159,10 +159,18 @@ int main() {
     delete codigo_ptr;
 
 
-    if(avaliacao.setAvaliacao(1))
-        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
-    if (avaliacao.setAvaliacao(10))
-        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
+    try{
+        avaliacao.setAvaliacao(1);
+    }
+    catch(invalid_argument &exp){
+        cout << "Execcao: " << exp.what() << endl;
+    }
+    try{
+        avaliacao.setAvaliacao(7);
+    }
+    catch(invalid_argument &exp){
+        cout << "Execcao: " << exp.what() << endl;
+    }
 
     // Teste de Duracao e Dinheiro conforme o roteiro
 

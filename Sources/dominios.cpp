@@ -150,23 +150,17 @@ bool Codigo::setCodigo (string codigo) {
 
 
 //Funções para classe Avaliacao:
-bool Avaliacao::validar(int avaliacao){
+void Avaliacao::validar(int avaliacao){
 
-    for (int i = 0; i<=5; i++){
-        if (avaliacao==i){
-            return true;
-        }
-    }
-    cout << "Valor invalido" << endl;
-    return false;
+    if ((avaliacao < 1) || (avaliacao>5))
+        throw invalid_argument("Argumento Invalido");
 }
 
-bool Avaliacao::setAvaliacao(int avaliacao){
-    if(!validar(avaliacao))
-        return false;
+void Avaliacao::setAvaliacao(int avaliacao){
+    validar(avaliacao);
     this->avaliacao = avaliacao;
-    return true;
 }
+
 
 // Funções para a classe Duracao
 bool Duracao::validar(int duracao) {

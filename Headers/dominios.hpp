@@ -121,11 +121,12 @@ inline string Data::getData() const{
 class Codigo {
     private:
         string codigo;
-        bool validar (string);
+        void validar (string);
     public:
-        bool setCodigo(string);
+        void setCodigo(string);
         string getCodigo() const;
 };
+
 
 inline string Codigo::getCodigo() const {
     return codigo;

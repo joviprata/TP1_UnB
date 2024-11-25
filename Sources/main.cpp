@@ -12,7 +12,6 @@ int main() {
     Avaliacao avaliacao;
 
     Codigo codigo;
-    Codigo *codigo_ptr;
 
     Data data;
     
@@ -121,44 +120,21 @@ int main() {
 
     delete senha_ptr;
 
+    // Teste do Código, feito conforme roteiro do projeto
+    try {
+        codigo.setCodigo("ABC123");
+    }
+    catch(invalid_argument & exp) {
+        cout << "Excecao :" << exp.what() << endl;
+    }
+     try {
+        codigo.setCodigo("!2*08");
+    }
+    catch(invalid_argument & exp) {
+        cout << "Excecao :" << exp.what() << endl;
+    }
 
-    cout << "Defina o codigo:" << endl;
-
-    string codigo_temp;
-    cin >> codigo_temp;
-
-    // Teste feito conforme o roteiro do projeto:
-    if (codigo.setCodigo(codigo_temp))
-        cout << "Codigo definido com sucesso: " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido. Por favor, digite um codigo de 6 caracteres alfanumericos." << endl;
-
-    if (codigo.setCodigo("A1B2C3"))
-        cout << "Codigo = " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-    if (codigo.setCodigo("1234567"))
-        cout << "Codigo = " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    codigo_ptr = new Codigo();
-
-    if (codigo_ptr->setCodigo("XYZ789"))
-        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-
-    if (codigo_ptr->setCodigo("A!B#1C"))
-        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-
-    delete codigo_ptr;
-
-
+    // Teste da Avaliação, feito conforme roteiro do projeto
     try{
         avaliacao.setAvaliacao(1);
     }

@@ -128,26 +128,20 @@ void Data::setData(string data){
 }
 
 // Funções para a classe Codigo:
-bool Codigo::validar(string codigo) {
+void Codigo::validar(string codigo) {
 
     if (codigo.size() != 6)
-        return false;
+        throw invalid_argument("Codigo invalido");
 
     for (char c: codigo)
         if (!isalnum(c)) // isalnum identifica se o caracter é alfanumérico (A-Z, a-z ou 0-9)
-            return false;
-
-    return true;
+            throw invalid_argument("Codigo Invalido");
 }
 
-bool Codigo::setCodigo (string codigo) {
-    if(!validar(codigo)) {
-        return false;
-    }
+void Codigo::setCodigo (string codigo) {
+    validar(codigo);
     this->codigo = codigo;
-    return true;
 }
-
 
 //Funções para classe Avaliacao:
 void Avaliacao::validar(int avaliacao){

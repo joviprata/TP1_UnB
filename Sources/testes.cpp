@@ -114,6 +114,50 @@ void TUNome::testarCenarioNomeInvalido(){
 int TUNome::run(){
     setUp();
     testarCenarioNomeValido();
+
+
+// Teste Unitário Data:
+
+void TUData::setUp(){
+    data = new Data();
+    estado = SUCESSO;
+
+}
+
+void TUData::tearDown(){
+    delete data;
+}
+
+void TUData::testarCenarioDataValido(){
+    try{
+            data->setData(DATA_VALIDO);
+            if(data->getData() != DATA_VALIDO)
+            estado = FALHA;
+    }
+    catch(invalid_argument&execao){
+        estado = FALHA;
+    }
+}
+
+void TUData::testarCenarioDataInvalido(){
+    try{
+            data->setData(DATA_INVALIDO);
+            estado = FALHA;
+    }
+    catch(invalid_argument&execao){
+        if(data->getData()== DATA_INVALIDO)
+        estado = FALHA;
+    }
+}
+
+int TUData::run(){
+    setUp();
+    testarCenarioDataValido();
+    testarCenarioDataInvalido();
+    tearDown();
+    return estado;
+}
+
     testarCenarioNomeInvalido();
     tearDown();
     return estado;

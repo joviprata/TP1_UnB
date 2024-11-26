@@ -99,6 +99,16 @@ int main() {
 
 
     // Testes de classe Data
+
+    TUData testeData;
+    
+    switch(testeData.run()){
+        case TUData::SUCESSO: cout<<"SUCESSO"<<endl;
+        break;
+    case TUData::FALHA: cout<<"FALHA" <<endl;
+        break;
+    }
+    
     try{
         data.setData("11-09-01");       //Escolher valor válido
     }

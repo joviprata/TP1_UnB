@@ -93,32 +93,22 @@ int main() {
     }
 
     
-    // Teste feito conforme o roteiro do projeto:
-    if(senha.setSenha("21348"))
-        cout << "Senha = " << senha.getSenha() << endl;
-    else
-        cout << "Senha invalido" << endl;
+    // Teste de classe Senha
+    try{
+        senha.setSenha("21345");
+    }
+        
+    catch(invalid_argument &exp){
+        cout << "Excecao : " << exp.what()<<endl;
+    }
+    
+    try{
+        senha.setSenha("12345");
+    }
 
-    if(senha.setSenha("54321"))
-        cout << "Senha = " << senha.getSenha() << endl;
-    else
-        cout << "Senha invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    senha_ptr = new Senha();
-
-    if(senha_ptr->setSenha("21348"))
-        cout << "Senha = " << senha_ptr -> getSenha() << endl;
-    else
-        cout << "Senha invalida " << endl;
-
-    if(senha_ptr->setSenha("54321"))
-        cout << "Senha = " << senha_ptr->getSenha() << endl;
-    else
-        cout << "Senha invalida" << endl;
-
-    delete senha_ptr;
+    catch(invalid_argument &exp){
+        cout << "Excecao : " << exp.what()<<endl;
+    }
 
     // Teste do Código, feito conforme roteiro do projeto
     try {

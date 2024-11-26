@@ -146,17 +146,11 @@ int main() {
     }
 
     // Teste da Avaliação, feito conforme roteiro do projeto
-    try{
-        avaliacao.setAvaliacao(1);
-    }
-    catch(invalid_argument &exp){
-        cout << "Execcao: " << exp.what() << endl;
-    }
-    try{
-        avaliacao.setAvaliacao(7);
-    }
-    catch(invalid_argument &exp){
-        cout << "Execcao: " << exp.what() << endl;
+    switch(testeAvaliacao.run()){
+        case TUAvaliacao::SUCESSO: cout << "SUCESSO" << endl;
+            break;
+        case TUAvaliacao::FALHA : cout << "FALHA" << endl;
+            break;
     }
 
     // Teste de Duracao e Dinheiro conforme o roteiro

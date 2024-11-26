@@ -24,5 +24,22 @@ public:
     int run();
 };
 
+class TUNome {
+private:
+    const string NOME_VALIDO = "Pedro";
+    const string NOME_INVALIDO = "Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga";
+    Nome *nome;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioNomeValido();
+    void testarCenarioNomeInvalido();
+
+public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
+
 
 #endif // TESTES_HPP_INCLUDED

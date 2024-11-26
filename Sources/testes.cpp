@@ -34,7 +34,9 @@ int TUAvaliacao::run(){
     setUp();
     testarCenarioValorValido();
     testarCenarioValorInvalido();
-
+    tearDown();
+    return estado;
+}
 
 // Teste Unitário Horario:
 
@@ -114,6 +116,10 @@ void TUNome::testarCenarioNomeInvalido(){
 int TUNome::run(){
     setUp();
     testarCenarioNomeValido();
+    testarCenarioNomeInvalido();
+    tearDown();
+    return estado;
+}
 
 
 // Teste Unitário Data:
@@ -154,11 +160,6 @@ int TUData::run(){
     setUp();
     testarCenarioDataValido();
     testarCenarioDataInvalido();
-    tearDown();
-    return estado;
-}
-
-    testarCenarioNomeInvalido();
     tearDown();
     return estado;
 }

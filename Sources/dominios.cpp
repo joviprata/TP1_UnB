@@ -49,12 +49,9 @@ void Nome::setNome(string nome) {
 
 
 // Funções para classe Senha:
-bool Senha::validar(string senha) {
-    if (!string_eh_int(senha))
-        return false;
-
+void Senha::validar(string senha) {
     int contador = 0;
-    bool tamanho, duplicata = false, crescente = true, decrescente = true;
+    bool duplicata = false, crescente = true, decrescente = true;
 
     for (int i = 0; senha[i] != '\0'; i++) {
         for (int j = i + 1; senha[j] != '\0'; j++) {
@@ -71,18 +68,18 @@ bool Senha::validar(string senha) {
         contador++;
     }
 
-    tamanho = (contador == 5);
 
-    return tamanho && !duplicata && !crescente && !decrescente;
-}
-
-bool Senha::setSenha(string senha) {
-    if (!validar(senha)) {
-        return false;
+    if((!duplicata && !crescente && !decrescente) == false){
+        throw invalid_argument("Argumento invalido.");
     }
 
+    
+}
+
+void Senha::setSenha(string senha) {
+    validar(senha);
     this->senha = senha;
-    return true;
+    
 }
 
 

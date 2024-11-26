@@ -43,12 +43,20 @@ int main() {
     Atividades atividades;
 
 
-    // Testes:
-
-
-    // Teste de classe Horario:
+    // Declaração de testes unitários de domínios:
 
     TUHorario testeHorario;
+
+    TUAvaliacao testeAvaliacao;
+
+    TUNome testeNome;
+
+    TUData testeData;
+
+
+    // Testes:
+
+    // Teste de classe Horario:
 
     switch(testeHorario.run()){
         case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
@@ -74,8 +82,6 @@ int main() {
 
     // Teste de classe Nome:
 
-    TUNome testeNome;
-
     switch(testeNome.run()){
         case TUNome::SUCESSO: cout << "SUCESSO (NOME)" << endl;
         break;
@@ -100,15 +106,13 @@ int main() {
 
     // Testes de classe Data
 
-    TUData testeData;
-    
     switch(testeData.run()){
-        case TUData::SUCESSO: cout<<"SUCESSO"<<endl;
+        case TUData::SUCESSO: cout<<"SUCESSO (DATA)"<<endl;
         break;
-    case TUData::FALHA: cout<<"FALHA" <<endl;
+    case TUData::FALHA: cout<<"FALHA (DATA)" <<endl;
         break;
     }
-    
+
     try{
         data.setData("11-09-01");       //Escolher valor válido
     }
@@ -166,9 +170,9 @@ int main() {
 
     // Teste da Avaliação, feito conforme roteiro do projeto
     switch(testeAvaliacao.run()){
-        case TUAvaliacao::SUCESSO: cout << "SUCESSO" << endl;
+        case TUAvaliacao::SUCESSO: cout << "SUCESSO (AVALIACAO)" << endl;
             break;
-        case TUAvaliacao::FALHA : cout << "FALHA" << endl;
+        case TUAvaliacao::FALHA : cout << "FALHA (AVALIACAO)" << endl;
             break;
     }
 

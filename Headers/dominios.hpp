@@ -67,19 +67,18 @@ inline string Nome::getNome() const {
  * - Os cinco dígitos não podem estar em ordem crescente nem decrescente.
  */
 class Senha {
-    private:
-        string senha;
-        bool validar(string);
+private:
+    string senha;
+    void validar(string);
 
-    public:
-        bool setSenha(string);
-        string getSenha() const;
+public:
+    void setSenha(string);
+    string getSenha() const;
 };
 
 inline string Senha::getSenha() const {
     return senha;
 }
-
 //---------------------------------------------------------------------
 // DOMINIO DATA
 

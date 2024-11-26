@@ -42,4 +42,20 @@ public:
 };
 
 
+class TUData{
+    private:
+                const string DATA_VALIDO = "11-09-01";
+                const string DATA_INVALIDO = "32-14-04";
+                Data *data;
+                int estado;
+                void setUp();
+                void tearDown();
+                void testarCenarioDataValido();
+                void testarCenarioDataInvalido();
+    public:
+                const static int SUCESSO = 0;
+                const static int FALHA = -1;
+                int run();
+};
+
 #endif // TESTES_HPP_INCLUDED

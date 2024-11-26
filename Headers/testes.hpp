@@ -1,6 +1,6 @@
 #ifndef TESTES_HPP_INCLUDED
 #define TESTES_HPP_INCLUDED
-include <stdexcept>
+#include <stdexcept>
 #include "dominios.hpp"
 using namespace std;
 
@@ -20,11 +20,6 @@ class TUAvaliacao {
         int run();
 };
 
-#include <stdexcept>
-
-#include "dominios.hpp"
-
-using namespace std;
 
 class TUHorario {
 private:
@@ -42,6 +37,7 @@ public:
     const static int FALHA = -1;
     int run();
 };
+
 
 class TUNome {
 private:

@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include "dominios.hpp"
 #include "entidades.hpp"
+#include "testes.hpp"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int main() {
     Codigo codigo;
 
     Data data;
-    
+
     Dinheiro dinheiro;
 
     Duracao duracao;
@@ -46,6 +47,16 @@ int main() {
 
 
     // Teste de classe Horario:
+
+    TUHorario testeHorario;
+
+    switch(testeHorario.run()){
+        case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
+        break;
+    case TUHorario::FALHA: cout << "FALHA (HORARIO)" << endl;
+        break;
+    }
+
     try {
         horario.setHorario("12:53");
     }
@@ -76,7 +87,7 @@ int main() {
         cout << "Excecao (Nome): " << exp.what() << endl;
     }
 
-    
+
     // Testes de classe Data
     try{
         data.setData("11-09-01");       //Escolher valor válido
@@ -92,16 +103,16 @@ int main() {
         cout<<"Excecao:"<<exp.what()<<endl;
     }
 
-    
+
     // Teste de classe Senha
     try{
         senha.setSenha("21345");
     }
-        
+
     catch(invalid_argument &exp){
         cout << "Excecao : " << exp.what()<<endl;
     }
-    
+
     try{
         senha.setSenha("12345");
     }
@@ -142,7 +153,7 @@ int main() {
 
     // Entrada de uma duração específica válida
     try {
-        duracao.setDuracao(200);    
+        duracao.setDuracao(200);
     } catch (const invalid_argument &exp) {
         cout << "Exceção: " << exp.what() << endl;
     }
@@ -155,13 +166,13 @@ int main() {
 
     // Entrada de um valor específico válido
     try {
-        dinheiro.setDinheiro(200.00);    
+        dinheiro.setDinheiro(200.00);
     } catch (const invalid_argument &exp) {
         cout << "Exceção: " << exp.what() << endl;
     }
     // Entrada de um valor específico inválido
     try {
-        dinheiro.setDinheiro(300000.00); 
+        dinheiro.setDinheiro(300000.00);
     } catch (const invalid_argument &exp) {
         cout << "Exceção: " << exp.what() << endl;
     }

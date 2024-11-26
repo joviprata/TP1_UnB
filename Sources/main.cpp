@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include "dominios.hpp"
 #include "entidades.hpp"
+#include "testes.hpp"
 
 using namespace std;
 
@@ -12,23 +13,8 @@ int main() {
     Avaliacao avaliacao;
 
     Codigo codigo;
-    Codigo *codigo_ptr;
 
     Data data;
-
-    try{
-        data.setData("11-09-01");       //Escolher valor válido
-    }
-    catch(invalid_argument&exp){
-        cout<<"Excecao:"<<exp.what()<<endl;
-    }
-
-    try{
-        data.setData("30-02-05");      //Escolher valor inválido
-    }
-    catch(invalid_argument&exp){
-        cout<<"Excecao:"<<exp.what()<<endl;
-    }
 
     Dinheiro dinheiro;
 
@@ -59,170 +45,137 @@ int main() {
 
     // Testes:
 
-    // Teste de classe de horario, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o horario: "  << endl;
 
-    string horario_temp;
-    cin >> horario_temp;
+    // Teste de classe Horario:
 
-    if (horario.setHorario(horario_temp))
-        cout << "Horario definido com sucesso: " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido. Por favor, digite o horario em formato HH:mm, entre 00:00 a 23:59." << endl;
+    TUHorario testeHorario;
 
+    switch(testeHorario.run()){
+        case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
+        break;
+    case TUHorario::FALHA: cout << "FALHA (HORARIO)" << endl;
+        break;
+    }
 
-    // Teste feito conforme o roteiro do projeto:
-    if (horario.setHorario("23:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
+    try {
+        horario.setHorario("12:53");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
-    if (horario.setHorario("-1:59"))
-        cout << "Horario = " << horario.getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    horario_ptr = new Horario();
-
-    if (horario_ptr->setHorario("00:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    if (horario_ptr->setHorario("24:00"))
-        cout << "Horario = " << horario_ptr->getHorario() << endl;
-    else
-        cout << "Horario invalido" << endl;
-
-    delete horario_ptr;
+    try {
+        horario.setHorario("1A:53");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Horario): " << exp.what() << endl;
+    }
 
 
-    // Teste de classe de nome, usado durante desenvolvimento do codigo (sera removido na entrega final):
-    cout << "Defina o nome: "  << endl;
+    // Teste de classe Nome:
+    try {
+        nome.setNome("Pedro");
+    }
+    catch(invalid_argument &exp){
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
-    string nome_temp;
-    cin >> nome_temp;
-
-    if (nome.setNome(nome_temp))
-        cout << "Nome definido com sucesso: " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido. Por favor, digite um nome com ate 30 caracteres." << endl;
-
-    // Teste feito conforme o roteiro do projeto:
-    if (nome.setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome.getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    nome_ptr = new Nome();
-
-    if (nome_ptr->setNome("Pedrinho Camarada"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    if (nome_ptr->setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga"))
-        cout << "Nome = " << nome_ptr->getNome() << endl;
-    else
-        cout << "Nome invalido" << endl;
-
-    delete nome_ptr;
+    try {
+        nome.setNome("Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga");
+    }
+    catch(invalid_argument &exp) {
+        cout << "Excecao (Nome): " << exp.what() << endl;
+    }
 
 
-    // Teste feito conforme o roteiro do projeto:
-    if(senha.setSenha("21348"))
-        cout << "Senha = " << senha.getSenha() << endl;
-    else
-        cout << "Senha invalido" << endl;
+    // Testes de classe Data
+    try{
+        data.setData("11-09-01");       //Escolher valor válido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
 
-    if(senha.setSenha("54321"))
-        cout << "Senha = " << senha.getSenha() << endl;
-    else
-        cout << "Senha invalido" << endl;
-
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
-
-    senha_ptr = new Senha();
-
-    if(senha_ptr->setSenha("21348"))
-        cout << "Senha = " << senha_ptr -> getSenha() << endl;
-    else
-        cout << "Senha invalida " << endl;
-
-    if(senha_ptr->setSenha("54321"))
-        cout << "Senha = " << senha_ptr->getSenha() << endl;
-    else
-        cout << "Senha invalida" << endl;
-
-    delete senha_ptr;
+    try{
+        data.setData("30-02-05");      //Escolher valor inválido
+    }
+    catch(invalid_argument&exp){
+        cout<<"Excecao:"<<exp.what()<<endl;
+    }
 
 
-    cout << "Defina o codigo:" << endl;
+    // Teste de classe Senha
+    try{
+        senha.setSenha("21345");
+    }
 
-    string codigo_temp;
-    cin >> codigo_temp;
+    catch(invalid_argument &exp){
+        cout << "Excecao : " << exp.what()<<endl;
+    }
 
-    // Teste feito conforme o roteiro do projeto:
-    if (codigo.setCodigo(codigo_temp))
-        cout << "Codigo definido com sucesso: " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido. Por favor, digite um codigo de 6 caracteres alfanumericos." << endl;
+    try{
+        senha.setSenha("12345");
+    }
 
-    if (codigo.setCodigo("A1B2C3"))
-        cout << "Codigo = " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-    if (codigo.setCodigo("1234567"))
-        cout << "Codigo = " << codigo.getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
+    catch(invalid_argument &exp){
+        cout << "Excecao : " << exp.what()<<endl;
+    }
 
-    // Teste usando ponteiros, feito conforme o roteiro do projeto:
+    // Teste do Código, feito conforme roteiro do projeto
+    try {
+        codigo.setCodigo("ABC123");
+    }
+    catch(invalid_argument & exp) {
+        cout << "Excecao :" << exp.what() << endl;
+    }
+     try {
+        codigo.setCodigo("!2*08");
+    }
+    catch(invalid_argument & exp) {
+        cout << "Excecao :" << exp.what() << endl;
+    }
 
-    codigo_ptr = new Codigo();
-
-    if (codigo_ptr->setCodigo("XYZ789"))
-        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-
-    if (codigo_ptr->setCodigo("A!B#1C"))
-        cout << "Codigo = " << codigo_ptr->getCodigo() << endl;
-    else
-        cout << "Codigo invalido" << endl;
-
-    delete codigo_ptr;
-
-
-    if(avaliacao.setAvaliacao(1))
-        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
-    if (avaliacao.setAvaliacao(10))
-        cout << "Valor = " << avaliacao.getAvaliacao() << endl;
+    // Teste da Avaliação, feito conforme roteiro do projeto
+    try{
+        avaliacao.setAvaliacao(1);
+    }
+    catch(invalid_argument &exp){
+        cout << "Execcao: " << exp.what() << endl;
+    }
+    try{
+        avaliacao.setAvaliacao(7);
+    }
+    catch(invalid_argument &exp){
+        cout << "Execcao: " << exp.what() << endl;
+    }
 
     // Teste de Duracao e Dinheiro conforme o roteiro
 
     // Entrada de uma duração específica válida
-    if (duracao.setDuracao(200)) {
-        cout << "Duração = " << duracao.getDuracao() << endl;
-    } else {
-        cout << "Duração Inválida\n";
+    try {
+        duracao.setDuracao(200);
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
+    // Entrada de uma duração específica inválida
+    try {
+        duracao.setDuracao(3610);
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
     }
 
-
-    if (dinheiro.setDinheiro(200.00))
-        cout << "Valor = " << dinheiro.getDinheiro() << endl;
-    else
-        cout << "Valor Inválido\n";
+    // Entrada de um valor específico válido
+    try {
+        dinheiro.setDinheiro(200.00);
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
+    // Entrada de um valor específico inválido
+    try {
+        dinheiro.setDinheiro(300000.00);
+    } catch (const invalid_argument &exp) {
+        cout << "Exceção: " << exp.what() << endl;
+    }
 
 
     // Testes com entidades:

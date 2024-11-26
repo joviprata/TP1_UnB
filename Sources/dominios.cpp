@@ -15,53 +15,43 @@ bool string_eh_int(string str) {
 
 
 // Funções para classe Horario:
-bool Horario::validar(string horario) {
+void Horario::validar(string horario) {
     if (horario.size() != 5 or horario[2] != ':')
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     string str_HH = horario.substr(0, 2);
     string str_mm = horario.substr(3, 2);
     if (!string_eh_int(str_HH) or !string_eh_int(str_mm))
-        return false;
+        throw invalid_argument("Argumento invalido");
 
     int HH = stoi(str_HH);
     int mm = stoi(str_mm);
     if (HH > 23 or mm > 59)
-        return false;
-
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Horario::setHorario(string horario) {
-    if(!validar(horario))
-        return false;
+void Horario::setHorario(string horario) {
+    validar(horario);
     this->horario = horario;
-    return true;
 }
 
 
 // Funções para classe Nome:
-bool Nome::validar(string nome) {
+void Nome::validar(string nome) {
     if (nome.size() > 30)
-        return false;
-    return true;
+        throw invalid_argument("Argumento invalido");
 }
 
-bool Nome::setNome(string nome) {
-    if(!validar(nome))
-        return false;
+void Nome::setNome(string nome) {
+    validar(nome);
     this->nome = nome;
-    return true;
 }
 
 
 // Funções para classe Senha:
-bool Senha::validar(string senha) {
-    if (!string_eh_int(senha))
-        return false;
-
+void Senha::validar(string senha) {
     int contador = 0;
-    bool tamanho, duplicata = false, crescente = true, decrescente = true;
+    bool duplicata = false, crescente = true, decrescente = true;
 
     for (int i = 0; senha[i] != '\0'; i++) {
         for (int j = i + 1; senha[j] != '\0'; j++) {
@@ -78,18 +68,18 @@ bool Senha::validar(string senha) {
         contador++;
     }
 
-    tamanho = (contador == 5);
 
-    return tamanho && !duplicata && !crescente && !decrescente;
-}
-
-bool Senha::setSenha(string senha) {
-    if (!validar(senha)) {
-        return false;
+    if((!duplicata && !crescente && !decrescente) == false){
+        throw invalid_argument("Argumento invalido.");
     }
 
+    
+}
+
+void Senha::setSenha(string senha) {
+    validar(senha);
     this->senha = senha;
-    return true;
+    
 }
 
 
@@ -135,81 +125,57 @@ void Data::setData(string data){
 }
 
 // Funções para a classe Codigo:
-bool Codigo::validar(string codigo) {
+void Codigo::validar(string codigo) {
 
     if (codigo.size() != 6)
-        return false;
+        throw invalid_argument("Codigo invalido");
 
     for (char c: codigo)
         if (!isalnum(c)) // isalnum identifica se o caracter é alfanumérico (A-Z, a-z ou 0-9)
-            return false;
-
-    return true;
+            throw invalid_argument("Codigo Invalido");
 }
 
-bool Codigo::setCodigo (string codigo) {
-    if(!validar(codigo)) {
-        return false;
-    }
+void Codigo::setCodigo (string codigo) {
+    validar(codigo);
     this->codigo = codigo;
-    return true;
 }
-
 
 //Funções para classe Avaliacao:
-bool Avaliacao::validar(int avaliacao){
+void Avaliacao::validar(int avaliacao){
 
-    for (int i = 0; i<=5; i++){
-        if (avaliacao==i){
-            return true;
-        }
-    }
-    cout << "Valor invalido" << endl;
-    return false;
+    if ((avaliacao < 1) || (avaliacao>5))
+        throw invalid_argument("Argumento Invalido");
 }
 
-bool Avaliacao::setAvaliacao(int avaliacao){
-    if(!validar(avaliacao))
-        return false;
+void Avaliacao::setAvaliacao(int avaliacao){
+    validar(avaliacao);
     this->avaliacao = avaliacao;
-    return true;
 }
+
 
 // Funções para a classe Duracao
-bool Duracao::validar(int duracao) {
+void Duracao::validar(int duracao) {
     // Verifica se duracao maior que 0 e menor que 360, ou seja, válida
-    if (duracao > 0) {
-        if (duracao < 360) {
-            return true;
-        }
+    if (duracao < 0 || duracao > 360) {
+        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
     }
-    return false;
 }
 
-bool Duracao::setDuracao(int duracao) {
-    // Se "validar" retorna falso
-    if (!validar(duracao))
-        cout << "Duração Inválida.\n";
-
+void Duracao::setDuracao(int duracao) {
+    validar(duracao);
     this->duracao = duracao;
-    return true;
+    
 }
 
 // Funções para a classe Dinheiro
-bool Dinheiro::validar(double dinheiro) {
+void Dinheiro::validar(double dinheiro) {
     // Apenas valore maiores que 0,00 e menores ou iguais a 200000,00
-    if (dinheiro > 0.00) {
-        if (dinheiro < 200000.00) {
-            return true;
-        }
+    if (dinheiro < 0.00 || dinheiro > 200000.00) {
+        throw invalid_argument("Valor inválido. Por favor, definir valor de 0.00 a 200000.00");
     }
-    return false;
 }
 
-bool Dinheiro::setDinheiro(double dinheiro) {
-    if (!validar(dinheiro))
-        cout << "Valor Inválido.\n";
-
+void Dinheiro::setDinheiro(double dinheiro) {
+    validar(dinheiro);
     this->dinheiro = dinheiro;
-    return true;
 }

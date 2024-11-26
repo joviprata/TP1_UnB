@@ -83,3 +83,44 @@ int TUNome::run(){
     tearDown();
     return estado;
 }
+
+// Teste do Dominio Codigo, conforme roteiro do projeto
+
+void TUCodigo::setUp(){
+    codigo = new Codigo();
+    estado = SUCESSO;
+}
+
+void TUCodigo::tearDown(){
+    delete codigo;
+}
+
+void TUCodigo::testarCodigoCodigoValido(){
+    try{
+        codigo->setCodigo(CODIGO_VALIDO);
+        if (codigo->getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+ }
+}
+
+void TUCodigo::testarCodigoCodigoInvalido(){
+    try{
+        codigo->setCodigo(CODIGO_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (codigo->getCodigo() == CODIGO_INVALIDO)
+        estado = FALHA;
+    }
+}
+
+int TUCodigo::run(){
+    setUp();
+    testarCodigoCodigoValido();
+    testarCodigoCodigoInvalido();
+    tearDown();
+    return estado;
+}

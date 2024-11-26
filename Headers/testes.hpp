@@ -41,5 +41,22 @@ public:
     int run();
 };
 
+class TUCodigo {
+    private:
+        static constexpr const char* CODIGO_VALIDO = "uba123";
+        static constexpr const char* CODIGO_INVALIDO = "%*/*";
+        Codigo *codigo;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCodigoCodigoValido();
+        void testarCodigoCodigoInvalido();
+
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 
 #endif // TESTES_HPP_INCLUDED

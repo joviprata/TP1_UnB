@@ -132,6 +132,15 @@ int main() {
     }
 
     // Teste do Código, feito conforme roteiro do projeto
+    TUCodigo testeCodigo;
+    switch(testeCodigo.run()){
+        case TUCodigo::SUCESSO: cout << "SUCESSO (CODIGO)" << endl;
+        break;
+    case TUCodigo::FALHA : cout << "FALHA (CODIGO)" << endl;
+        break;
+
+    }
+
     try {
         codigo.setCodigo("ABC123");
     }

@@ -73,6 +73,16 @@ int main() {
 
 
     // Teste de classe Nome:
+
+    TUNome testeNome;
+
+    switch(testeNome.run()){
+        case TUNome::SUCESSO: cout << "SUCESSO (NOME)" << endl;
+        break;
+    case TUNome::FALHA: cout << "FALHA (NOME)" << endl;
+        break;
+    }
+
     try {
         nome.setNome("Pedro");
     }

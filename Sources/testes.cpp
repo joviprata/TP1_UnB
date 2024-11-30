@@ -12,8 +12,8 @@ void TUAvaliacao::tearDown(){
 }
 void TUAvaliacao::testarCenarioValorValido(){
     try{
-        avaliacao->setAvaliacao(5);
-        if (avaliacao->getAvaliacao() != 5)
+        avaliacao->setAvaliacao(AVALIACAO_VALIDA);
+        if (avaliacao->getAvaliacao() != AVALIACAO_VALIDA)
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
@@ -22,11 +22,11 @@ void TUAvaliacao::testarCenarioValorValido(){
 }
 void TUAvaliacao::testarCenarioValorInvalido(){
     try{
-        avaliacao->setAvaliacao(6);
+        avaliacao->setAvaliacao(AVALIACAO_INVALIDA);
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if (avaliacao->getAvaliacao() == 6)
+        if (avaliacao->getAvaliacao() == AVALIACAO_INVALIDA)
         estado = FALHA;
     }
 }

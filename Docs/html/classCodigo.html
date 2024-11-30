@@ -73,133 +73,41 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros Públicos</a> &#124;
-<a href="#pri-methods">Membros privados</a> &#124;
-<a href="#pri-attribs">Atributos Privados</a> &#124;
 <a href="classCodigo-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle"><div class="title">Referência da Classe Codigo</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Classe para representar um Código de seis caracteres.  
+<p>Classe que representa um código de seis caracteres.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:ae2a8af2d65dee631ec66a98d162c52ac" id="r_ae2a8af2d65dee631ec66a98d162c52ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2a8af2d65dee631ec66a98d162c52ac">setCodigo</a> (string)</td></tr>
-<tr class="separator:ae2a8af2d65dee631ec66a98d162c52ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac263b3f7ff4f995fa72ad9101f1a8533" id="r_ac263b3f7ff4f995fa72ad9101f1a8533"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac263b3f7ff4f995fa72ad9101f1a8533">getCodigo</a> () const</td></tr>
+<tr class="memitem:a863651a26dd7112dccced628aa96d86e" id="r_a863651a26dd7112dccced628aa96d86e"><td class="memItemLeft" align="right" valign="top"><a id="a863651a26dd7112dccced628aa96d86e" name="a863651a26dd7112dccced628aa96d86e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCodigo</b> (string)</td></tr>
+<tr class="memdesc:a863651a26dd7112dccced628aa96d86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o código, validando as regras. <br /></td></tr>
+<tr class="separator:a863651a26dd7112dccced628aa96d86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac263b3f7ff4f995fa72ad9101f1a8533" id="r_ac263b3f7ff4f995fa72ad9101f1a8533"><td class="memItemLeft" align="right" valign="top"><a id="ac263b3f7ff4f995fa72ad9101f1a8533" name="ac263b3f7ff4f995fa72ad9101f1a8533"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigo</b> () const</td></tr>
+<tr class="memdesc:ac263b3f7ff4f995fa72ad9101f1a8533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o código. <br /></td></tr>
 <tr class="separator:ac263b3f7ff4f995fa72ad9101f1a8533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Membros privados</h2></td></tr>
-<tr class="memitem:ac5f23076fb06cb67121050014b861fa8" id="r_ac5f23076fb06cb67121050014b861fa8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5f23076fb06cb67121050014b861fa8">validar</a> (string)</td></tr>
-<tr class="separator:ac5f23076fb06cb67121050014b861fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Atributos Privados</h2></td></tr>
-<tr class="memitem:a13505d54d829b35a37ed8bd62a84f0cf" id="r_a13505d54d829b35a37ed8bd62a84f0cf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13505d54d829b35a37ed8bd62a84f0cf">codigo</a></td></tr>
-<tr class="separator:a13505d54d829b35a37ed8bd62a84f0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Classe para representar um Código de seis caracteres. </p>
-<p>Regras de Formato:</p><ul>
+<div class="textblock"><p>Classe que representa um código de seis caracteres. </p>
+<p>Regras de formato:</p><ul>
 <li>Seis caracteres.</li>
-<li>Cada caractere pode ser letra (A-Z, a-z) ou dígito (0-9). </li>
+<li>Cada caractere pode ser letra (A-Z, a-z) ou dígito (0-9).</li>
 </ul>
-</div><h2 class="groupheader">Documentação das funções</h2>
-<a id="ac263b3f7ff4f995fa72ad9101f1a8533" name="ac263b3f7ff4f995fa72ad9101f1a8533"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac263b3f7ff4f995fa72ad9101f1a8533">&#9670;&#160;</a></span>getCodigo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Codigo::getCodigo </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae2a8af2d65dee631ec66a98d162c52ac" name="ae2a8af2d65dee631ec66a98d162c52ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2a8af2d65dee631ec66a98d162c52ac">&#9670;&#160;</a></span>setCodigo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Codigo::setCodigo </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac5f23076fb06cb67121050014b861fa8" name="ac5f23076fb06cb67121050014b861fa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5f23076fb06cb67121050014b861fa8">&#9670;&#160;</a></span>validar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Codigo::validar </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Atributos</h2>
-<a id="a13505d54d829b35a37ed8bd62a84f0cf" name="a13505d54d829b35a37ed8bd62a84f0cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13505d54d829b35a37ed8bd62a84f0cf">&#9670;&#160;</a></span>codigo</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Codigo::codigo</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>se o código não atender aos requisitos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Desenvolvido por: Mariana Soares Oliveira - 231013663 </p>
+</div><hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
 <li>/home/masolivs/T1-TP1/TP1_UnB/Headers/<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a></li>
 </ul>
 </div><!-- contents -->

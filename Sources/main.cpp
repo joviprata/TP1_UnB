@@ -43,6 +43,7 @@ int main() {
     Atividades atividades;
 
 
+
     // Declaração de testes unitários de domínios:
 
     TUHorario testeHorario;
@@ -219,7 +220,7 @@ int main() {
         cout << "Exceção (Dinheiro): " << exp.what() << endl;
     }
 
-    // Testes com entidades:
+// Testes com entidades:
 
     // Viagem:
 

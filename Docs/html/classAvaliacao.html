@@ -73,132 +73,40 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros Públicos</a> &#124;
-<a href="#pri-methods">Membros privados</a> &#124;
-<a href="#pri-attribs">Atributos Privados</a> &#124;
 <a href="classAvaliacao-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle"><div class="title">Referência da Classe Avaliacao</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Classe para representar uma Avaliação de 0 a 5.  
+<p>Classe que representa uma avaliação de 0 a 5.  
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a5e8e5944e3f5756fde95ead33289c6d0" id="r_a5e8e5944e3f5756fde95ead33289c6d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e8e5944e3f5756fde95ead33289c6d0">setAvaliacao</a> (int)</td></tr>
-<tr class="separator:a5e8e5944e3f5756fde95ead33289c6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae034527fd2cf437ecb49eb5de7001619" id="r_ae034527fd2cf437ecb49eb5de7001619"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae034527fd2cf437ecb49eb5de7001619">getAvaliacao</a> () const</td></tr>
+<tr class="memitem:ab97579a2bbda3e35ca77fc25e28df09a" id="r_ab97579a2bbda3e35ca77fc25e28df09a"><td class="memItemLeft" align="right" valign="top"><a id="ab97579a2bbda3e35ca77fc25e28df09a" name="ab97579a2bbda3e35ca77fc25e28df09a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAvaliacao</b> (int)</td></tr>
+<tr class="memdesc:ab97579a2bbda3e35ca77fc25e28df09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a avaliação, validando as regras. <br /></td></tr>
+<tr class="separator:ab97579a2bbda3e35ca77fc25e28df09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae034527fd2cf437ecb49eb5de7001619" id="r_ae034527fd2cf437ecb49eb5de7001619"><td class="memItemLeft" align="right" valign="top"><a id="ae034527fd2cf437ecb49eb5de7001619" name="ae034527fd2cf437ecb49eb5de7001619"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getAvaliacao</b> () const</td></tr>
+<tr class="memdesc:ae034527fd2cf437ecb49eb5de7001619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a avaliação. <br /></td></tr>
 <tr class="separator:ae034527fd2cf437ecb49eb5de7001619"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Membros privados</h2></td></tr>
-<tr class="memitem:adc494a7197638d70916eca0513e24b20" id="r_adc494a7197638d70916eca0513e24b20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc494a7197638d70916eca0513e24b20">validar</a> (int)</td></tr>
-<tr class="separator:adc494a7197638d70916eca0513e24b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Atributos Privados</h2></td></tr>
-<tr class="memitem:a8b50e90e08914336cc48fa1b8ad02330" id="r_a8b50e90e08914336cc48fa1b8ad02330"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b50e90e08914336cc48fa1b8ad02330">avaliacao</a></td></tr>
-<tr class="separator:a8b50e90e08914336cc48fa1b8ad02330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Classe para representar uma Avaliação de 0 a 5. </p>
-<p>Regras de Formato:</p><ul>
-<li>Apenas dígitos de 0 a 5. </li>
+<div class="textblock"><p>Classe que representa uma avaliação de 0 a 5. </p>
+<p>Regras de formato:</p><ul>
+<li>Apenas dígitos de 0 a 5.</li>
 </ul>
-</div><h2 class="groupheader">Documentação das funções</h2>
-<a id="ae034527fd2cf437ecb49eb5de7001619" name="ae034527fd2cf437ecb49eb5de7001619"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae034527fd2cf437ecb49eb5de7001619">&#9670;&#160;</a></span>getAvaliacao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Avaliacao::getAvaliacao </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e8e5944e3f5756fde95ead33289c6d0" name="a5e8e5944e3f5756fde95ead33289c6d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e8e5944e3f5756fde95ead33289c6d0">&#9670;&#160;</a></span>setAvaliacao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Avaliacao::setAvaliacao </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adc494a7197638d70916eca0513e24b20" name="adc494a7197638d70916eca0513e24b20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc494a7197638d70916eca0513e24b20">&#9670;&#160;</a></span>validar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Avaliacao::validar </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Atributos</h2>
-<a id="a8b50e90e08914336cc48fa1b8ad02330" name="a8b50e90e08914336cc48fa1b8ad02330"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b50e90e08914336cc48fa1b8ad02330">&#9670;&#160;</a></span>avaliacao</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Avaliacao::avaliacao</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>se a avaliação não atender aos requisitos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Desenvolvido por: Mauro Ribeiro da Silva - 231013592 </p>
+</div><hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
 <li>/home/masolivs/T1-TP1/TP1_UnB/Headers/<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a></li>
 </ul>
 </div><!-- contents -->

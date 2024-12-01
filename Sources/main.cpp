@@ -62,6 +62,7 @@ int main() {
 
     //TUSenha
 
+    TUSenha testeSenha;
 
     // Testes:
 
@@ -93,6 +94,15 @@ int main() {
     }
 
     // Teste de classe Senha
+
+    switch (testeSenha.run())
+    {
+    case TUSenha::SUCESSO:cout<<"SUCESSO"<<endl;
+        break;
+    
+    case TUSenha::FALHA:cout<<"FALHA"<<endl;
+        break;
+    }
 
     //TODO
 

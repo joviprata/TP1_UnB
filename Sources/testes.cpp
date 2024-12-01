@@ -1,4 +1,4 @@
-#include "/home/isabela-furlan/TP1_UnB/Headers/testes.hpp"
+#include "testes.hpp"
 
 
 // Teste Unitário Avaliacao:
@@ -12,8 +12,8 @@ void TUAvaliacao::tearDown(){
 }
 void TUAvaliacao::testarCenarioValorValido(){
     try{
-        avaliacao->setAvaliacao(5);
-        if (avaliacao->getAvaliacao() != 5)
+        avaliacao->setAvaliacao(AVALIACAO_VALIDA);
+        if (avaliacao->getAvaliacao() != AVALIACAO_VALIDA)
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
@@ -22,11 +22,11 @@ void TUAvaliacao::testarCenarioValorValido(){
 }
 void TUAvaliacao::testarCenarioValorInvalido(){
     try{
-        avaliacao->setAvaliacao(6);
+        avaliacao->setAvaliacao(AVALIACAO_INVALIDA);
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if (avaliacao->getAvaliacao() == 6)
+        if (avaliacao->getAvaliacao() == AVALIACAO_INVALIDA)
         estado = FALHA;
     }
 }
@@ -121,6 +121,48 @@ int TUNome::run(){
     return estado;
 }
 
+// Teste Unitário Senha:
+
+void TUSenha::setUp(){
+    senha = new Senha();
+    estado = SUCESSO;
+}
+
+void TUSenha::tearDown(){
+    delete senha;
+}
+
+void TUSenha::testarCenarioSenhaValido(){
+    try{
+        senha -> setValor(to_string(SENHA_VALIDO));
+        cout << "Valor da senha: " << senha->getValor() << endl;
+        if(senha -> getValor() != to_string(SENHA_VALIDO))
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+    }
+}
+
+void TUSenha::testarCenarioSenhaInvalido(){
+    try{
+        senha -> setValor(to_string(SENHA_INVALIDO));
+        cout << "Valor da senha: " << senha->getValor() << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if(senha -> getValor() == to_string(SENHA_INVALIDO))
+        estado = FALHA;
+    }
+}
+
+int TUSenha::run(){
+    setUp();
+    testarCenarioSenhaValido();
+    testarCenarioSenhaInvalido();
+    tearDown();
+    return estado;
+}
 
 // Teste Unitário Data:
 
@@ -205,6 +247,7 @@ int TUCodigo::run(){
     return estado;
 }
 
+
 // Teste Dominio Duracao
 
 void TUDuracao::setUp() {
@@ -221,7 +264,8 @@ void TUDuracao::testarCenarioDuracaoValida() {
         duracao->setDuracao(DURACAO_VALIDA);
         if(duracao->getDuracao() != DURACAO_VALIDA)
             estado = FALHA;
-    }catch(invalid_argument &excecao) {
+    }
+    catch(invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -230,7 +274,8 @@ void TUDuracao::testarCenarioDuracaoInvalida() {
     try {
         duracao->setDuracao(DURACAO_INVALIDA);
         estado = FALHA;
-    }catch(invalid_argument &excecao) {
+    }
+    catch(invalid_argument &excecao) {
         if(duracao->getDuracao() == DURACAO_INVALIDA)
             estado = FALHA;
     }
@@ -259,7 +304,8 @@ void TUDinheiro::testarCenarioDinheiroValido() {
         if(dinheiro->getDinheiro() != DINHEIRO_VALIDO)
             estado = FALHA;
 
-    }catch(invalid_argument &excecao) {
+    }
+    catch(invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -267,8 +313,9 @@ void TUDinheiro::testarCenarioDinheiroValido() {
 void TUDinheiro::testarCenarioDinheiroInvalido() {
     try {
         dinheiro->setDinheiro(DINHEIRO_INVALIDO);
-        estado = FALHA;
-    }catch(invalid_argument &excecao) {
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
         if(dinheiro->getDinheiro() == DINHEIRO_INVALIDO)
             estado = FALHA;
     }

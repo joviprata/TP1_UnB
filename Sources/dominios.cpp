@@ -100,7 +100,7 @@ void Data::validar(string data){
     int AA = stoi(str_AA);
 
      // Verifica se o mes e valido
-    if (DD > 31 or MM > 12 or DD <= 0 or MM < 1 or AA < 00)
+    if (DD > 31 or MM > 12 or DD <= 0 or MM < 1)
          throw invalid_argument("Argumento invalido");
 
     // Verifica dias validos para cada mes

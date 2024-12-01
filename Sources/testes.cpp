@@ -247,7 +247,6 @@ int TUCodigo::run(){
     return estado;
 }
 
-
 // Teste Dominio Duracao
 
 void TUDuracao::setUp() {

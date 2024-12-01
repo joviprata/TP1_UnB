@@ -73,7 +73,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros Públicos</a> &#124;
-<a href="#pri-attribs">Atributos Privados</a> &#124;
 <a href="classConta-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle"><div class="title">Referência da Classe Conta</div></div>
 </div><!--header-->
@@ -98,19 +97,11 @@ Membros Públicos</h2></td></tr>
 <tr class="memitem:aa36f37646e006dc200f82bc9f384d79b" id="r_aa36f37646e006dc200f82bc9f384d79b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSenha.html">Senha</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa36f37646e006dc200f82bc9f384d79b">getSenha</a> () const</td></tr>
 <tr class="memdesc:aa36f37646e006dc200f82bc9f384d79b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a senha da conta.  <br /></td></tr>
 <tr class="separator:aa36f37646e006dc200f82bc9f384d79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Atributos Privados</h2></td></tr>
-<tr class="memitem:ade15405c2df012eb02b0c307d6ddad6d" id="r_ade15405c2df012eb02b0c307d6ddad6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCodigo.html">Codigo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade15405c2df012eb02b0c307d6ddad6d">codigo</a></td></tr>
-<tr class="memdesc:ade15405c2df012eb02b0c307d6ddad6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Código da conta.  <br /></td></tr>
-<tr class="separator:ade15405c2df012eb02b0c307d6ddad6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc0ffd077dacef15e668fd52649f5b3" id="r_a1dc0ffd077dacef15e668fd52649f5b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSenha.html">Senha</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc0ffd077dacef15e668fd52649f5b3">senha</a></td></tr>
-<tr class="memdesc:a1dc0ffd077dacef15e668fd52649f5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSenha.html" title="Classe para representar uma Senha de cinco dígitos.">Senha</a> da conta.  <br /></td></tr>
-<tr class="separator:a1dc0ffd077dacef15e668fd52649f5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe que representa uma <a class="el" href="classConta.html" title="Classe que representa uma Conta.">Conta</a>. </p>
-<p>A classe <a class="el" href="classConta.html" title="Classe que representa uma Conta.">Conta</a> contém os atributos e métodos para manipulação dos dados de uma conta no sistema, incluindo código e senha. </p>
+<p>A classe <a class="el" href="classConta.html" title="Classe que representa uma Conta.">Conta</a> contém os atributos e métodos para manipulação dos dados de uma conta no sistema, incluindo código e senha.</p>
+<p>Desenvolvido por: Mauro Ribeiro da Silva - 231013592 </p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="a9d3a61695cbe05fc5a0b25f710c0cd0a" name="a9d3a61695cbe05fc5a0b25f710c0cd0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d3a61695cbe05fc5a0b25f710c0cd0a">&#9670;&#160;</a></span>getCodigo()</h2>
@@ -136,7 +127,7 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna o código da conta. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Objeto do tipo <a class="el" href="classCodigo.html" title="Classe para representar um Código de seis caracteres.">Codigo</a>. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>O código associado à conta. </dd></dl>
 
 </div>
 </div>
@@ -164,7 +155,7 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna a senha da conta. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Objeto do tipo <a class="el" href="classSenha.html" title="Classe para representar uma Senha de cinco dígitos.">Senha</a>. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>A senha associada à conta. </dd></dl>
 
 </div>
 </div>
@@ -194,7 +185,7 @@ Atributos Privados</h2></td></tr>
 <p>Define o código da conta. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">codigo</td><td>Objeto do tipo <a class="el" href="classCodigo.html" title="Classe para representar um Código de seis caracteres.">Codigo</a>. </td></tr>
+    <tr><td class="paramname">codigo</td><td>Objeto do tipo <a class="el" href="classCodigo.html" title="Classe que representa um código de seis caracteres.">Codigo</a> a ser associado à conta. </td></tr>
   </table>
   </dd>
 </dl>
@@ -227,59 +218,10 @@ Atributos Privados</h2></td></tr>
 <p>Define a senha da conta. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">senha</td><td>Objeto do tipo <a class="el" href="classSenha.html" title="Classe para representar uma Senha de cinco dígitos.">Senha</a>. </td></tr>
+    <tr><td class="paramname">senha</td><td>Objeto do tipo <a class="el" href="classSenha.html" title="Classe que representa uma senha de cinco dígitos.">Senha</a> a ser associada à conta. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Atributos</h2>
-<a id="ade15405c2df012eb02b0c307d6ddad6d" name="ade15405c2df012eb02b0c307d6ddad6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade15405c2df012eb02b0c307d6ddad6d">&#9670;&#160;</a></span>codigo</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classCodigo.html">Codigo</a> Conta::codigo</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Código da conta. </p>
-
-</div>
-</div>
-<a id="a1dc0ffd077dacef15e668fd52649f5b3" name="a1dc0ffd077dacef15e668fd52649f5b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dc0ffd077dacef15e668fd52649f5b3">&#9670;&#160;</a></span>senha</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classSenha.html">Senha</a> Conta::senha</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classSenha.html" title="Classe para representar uma Senha de cinco dígitos.">Senha</a> da conta. </p>
 
 </div>
 </div>

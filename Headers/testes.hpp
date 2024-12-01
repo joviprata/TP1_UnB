@@ -71,6 +71,25 @@ class TUCodigo {
         int run();
 };
 
+class TUSenha {
+
+    private:
+        
+        const static int SENHA_VALIDO = 21345;
+        const static int SENHA_INVALIDO = 12345;
+        Senha *senha;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioSenhaValido();
+        void testarCenarioSenhaInvalido();
+    public:
+        
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 
 class TUData{
     private:

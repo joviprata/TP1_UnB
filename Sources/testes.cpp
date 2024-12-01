@@ -1,6 +1,43 @@
 #include "testes.hpp"
 
 
+// Teste Unitário Avaliacao:
+
+void TUAvaliacao::setUp(){
+    avaliacao = new Avaliacao();
+    estado = SUCESSO;
+}
+void TUAvaliacao::tearDown(){
+    delete avaliacao;
+}
+void TUAvaliacao::testarCenarioValorValido(){
+    try{
+        avaliacao->setAvaliacao(AVALIACAO_VALIDA);
+        if (avaliacao->getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+    estado = FALHA;
+    }
+}
+void TUAvaliacao::testarCenarioValorInvalido(){
+    try{
+        avaliacao->setAvaliacao(AVALIACAO_INVALIDA);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (avaliacao->getAvaliacao() == AVALIACAO_INVALIDA)
+        estado = FALHA;
+    }
+}
+int TUAvaliacao::run(){
+    setUp();
+    testarCenarioValorValido();
+    testarCenarioValorInvalido();
+    tearDown();
+    return estado;
+}
+
 // Teste Unitário Horario:
 
 void TUHorario::setUp(){
@@ -79,6 +116,10 @@ void TUNome::testarCenarioNomeInvalido(){
 int TUNome::run(){
     setUp();
     testarCenarioNomeValido();
+    testarCenarioNomeInvalido();
+    tearDown();
+    return estado;
+}
 
 
 // Teste Unitário Data:
@@ -123,7 +164,43 @@ int TUData::run(){
     return estado;
 }
 
-    testarCenarioNomeInvalido();
+// Teste do Dominio Codigo, conforme roteiro do projeto
+
+void TUCodigo::setUp(){
+    codigo = new Codigo();
+    estado = SUCESSO;
+}
+
+void TUCodigo::tearDown(){
+    delete codigo;
+}
+
+void TUCodigo::testarCodigoCodigoValido(){
+    try{
+        codigo->setCodigo(CODIGO_VALIDO);
+        if (codigo->getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+ }
+}
+
+void TUCodigo::testarCodigoCodigoInvalido(){
+    try{
+        codigo->setCodigo(CODIGO_INVALIDO);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        if (codigo->getCodigo() == CODIGO_INVALIDO)
+        estado = FALHA;
+    }
+}
+
+int TUCodigo::run(){
+    setUp();
+    testarCodigoCodigoValido();
+    testarCodigoCodigoInvalido();
     tearDown();
     return estado;
 }

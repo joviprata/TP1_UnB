@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 #include <stdexcept>
-#include "dominios.hpp"
-#include "entidades.hpp"
-#include "testes.hpp"
+#include "/home/isabela-furlan/TP1_UnB/Headers/dominios.hpp"
+#include "/home/isabela-furlan/TP1_UnB/Headers/entidades.hpp"
+#include "/home/isabela-furlan/TP1_UnB/Headers/testes.hpp"
 
 using namespace std;
 

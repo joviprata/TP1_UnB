@@ -20,11 +20,11 @@ using namespace std; // Facilita ao tornar desnecessario escrever std:: antes de
  */
 class Horario {
     private:
-            string horario;
-            void validar(string);
+        string horario;
+        void validar(string);
     public:
-            void setHorario(string);
-            string getHorario() const;
+        void setHorario(string);
+        string getHorario() const;
 };
 
 inline string Horario::getHorario() const {
@@ -43,11 +43,11 @@ inline string Horario::getHorario() const {
  */
 class Nome {
     private:
-            string nome;
-            void validar(string);
+        string nome;
+        void validar(string);
     public:
-            void setNome(string);
-            string getNome() const;
+        void setNome(string);
+        string getNome() const;
 };
 
 inline string Nome::getNome() const {
@@ -67,13 +67,13 @@ inline string Nome::getNome() const {
  * - Os cinco dígitos não podem estar em ordem crescente nem decrescente.
  */
 class Senha {
-private:
-    string senha;
-    void validar(string);
+    private:
+        string senha;
+        void validar(string);
 
-public:
-    void setSenha(string);
-    string getSenha() const;
+    public:
+        void setSenha(string);
+        string getSenha() const;
 };
 
 inline string Senha::getSenha() const {

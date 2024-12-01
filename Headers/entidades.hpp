@@ -19,7 +19,7 @@ using namespace std;
 
 /**
  * @brief Classe que representa uma Viagem.
- * 
+ *
  * A classe Viagem contém os atributos e métodos para manipulação dos dados
  * de uma viagem, incluindo código, nome e avaliação.
  * 
@@ -103,7 +103,7 @@ inline Avaliacao Viagem::getAvaliacao() const{
 
 /**
  * @brief Classe que representa um Destino.
- * 
+ *
  * A classe Destino contém os atributos e métodos para manipulação dos dados
  * de um destino de viagem, incluindo código, nome, datas de início e término, e avaliação.
  * 
@@ -234,8 +234,8 @@ inline Avaliacao Destino::getAvaliacao() const{
 
 /**
  * @brief Classe que representa uma Conta.
- * 
- * A classe Conta contém os atributos e métodos para manipulação dos dados 
+ *
+ * A classe Conta contém os atributos e métodos para manipulação dos dados
  * de uma conta no sistema, incluindo código e senha.
  * 
  * Desenvolvido por: Mauro Ribeiro da Silva - 231013592
@@ -296,7 +296,7 @@ inline Senha Conta::getSenha() const{
 
 /**
  * @brief Classe que representa uma Hospedagem.
- * 
+ *
  * A classe Hospedagem contém os atributos e métodos para manipulação dos dados
  * de uma hospedagem, incluindo código, nome, diária e avaliação.
  * 
@@ -404,14 +404,14 @@ inline Avaliacao Hospedagem::getAvaliacao() const{
 
 /**
  * @brief Classe que representa uma Atividade.
- * 
+ *
  * A classe Atividades contém os atributos e métodos para manipulação dos dados
  * de uma atividade de viagem, incluindo código, nome, data, horário, duração, valor e avaliação.
  * 
  * Desenvolvido por: Nikolas Negrão Pessoa - 202024722
  */
 
-class Atividades { 
+class Atividades {
 
     private:
         Codigo codigo; ///< Código da atividade.
@@ -423,8 +423,7 @@ class Atividades {
         Avaliacao avaliacao;  ///< Avaliação atribuída à atividade.
     public:
         /**
-         * @brief Define o código da atividade.
-         * 
+         * @brief Define o código da atividade.         * 
          * @param codigo Objeto do tipo Codigo representando o código da atividade.
          */
         void setCodigo(const Codigo&);
@@ -455,7 +454,7 @@ class Atividades {
          * 
          * @param duracao Objeto do tipo Duracao representando a duração da atividade.
          */
-        void setDuracao(const Duracao&); 
+        void setDuracao(const Duracao&);
 
         /**
          * @brief Define o valor associado à atividade.
@@ -518,64 +517,64 @@ class Atividades {
          * 
          * @return A avaliação da atividade como um objeto do tipo Avaliacao.
          */
-        Avaliacao getAvaliacao() const; 
-        
+        Avaliacao getAvaliacao() const;
+
     };
-    
-    inline void Atividades::setCodigo(const Codigo &codigo) { 
-        this->codigo = codigo; 
+
+    inline void Atividades::setCodigo(const Codigo &codigo) {
+        this->codigo = codigo;
     }
 
-    inline void Atividades::setNome(const Nome &nome) { 
-        this->nome = nome; 
+    inline void Atividades::setNome(const Nome &nome) {
+        this->nome = nome;
     }
 
-    inline void Atividades::setData(const Data &data) { 
-        this->data = data; 
+    inline void Atividades::setData(const Data &data) {
+        this->data = data;
     }
 
-    inline void Atividades::setHorario(const Horario &horario) { 
-        this->horario = horario; 
+    inline void Atividades::setHorario(const Horario &horario) {
+        this->horario = horario;
     }
 
-    inline void Atividades::setDuracao(const Duracao &duracao) { 
-        this->duracao = duracao; 
+    inline void Atividades::setDuracao(const Duracao &duracao) {
+        this->duracao = duracao;
     }
 
-    inline void Atividades::setDinheiro(const Dinheiro &dinheiro) { 
-        this->dinheiro = dinheiro; 
+    inline void Atividades::setDinheiro(const Dinheiro &dinheiro) {
+        this->dinheiro = dinheiro;
     }
 
-    inline void Atividades::setAvaliacao(const Avaliacao &avaliacao) { 
-        this->avaliacao = avaliacao; 
+    inline void Atividades::setAvaliacao(const Avaliacao &avaliacao) {
+        this->avaliacao = avaliacao;
     }
 
-    inline Codigo Atividades::getCodigo() const { 
-        return codigo; 
+    inline Codigo Atividades::getCodigo() const {
+        return codigo;
     }
 
-    inline Nome Atividades::getNome() const { 
-        return nome; 
+    inline Nome Atividades::getNome() const {
+        return nome;
     }
 
-    inline Data Atividades::getData() const { 
-        return data; 
+    inline Data Atividades::getData() const {
+        return data;
     }
 
-    inline Horario Atividades::getHorario() const { 
-        return horario; 
+    inline Horario Atividades::getHorario() const {
+        return horario;
     }
 
-    inline Duracao Atividades::getDuracao() const { 
-        return duracao; 
+    inline Duracao Atividades::getDuracao() const {
+        return duracao;
     }
 
-    inline Dinheiro Atividades::getDinheiro() const { 
-        return dinheiro; 
+    inline Dinheiro Atividades::getDinheiro() const {
+        return dinheiro;
     }
 
-    inline Avaliacao Atividades::getAvaliacao() const { 
-        return avaliacao; 
+    inline Avaliacao Atividades::getAvaliacao() const {
+        return avaliacao;
     }
 
 #endif // ENTIDADES_HPP_INCLUDED

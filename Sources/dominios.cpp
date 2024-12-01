@@ -73,13 +73,13 @@ void Senha::validar(string senha) {
         throw invalid_argument("Argumento invalido.");
     }
 
-    
+
 }
 
 void Senha::setSenha(string senha) {
     validar(senha);
     this->senha = senha;
-    
+
 }
 
 
@@ -143,7 +143,7 @@ void Codigo::setCodigo (string codigo) {
 //Funções para classe Avaliacao:
 void Avaliacao::validar(int avaliacao){
 
-    if ((avaliacao < 1) || (avaliacao>5))
+    if ((avaliacao < 0) || (avaliacao>5))
         throw invalid_argument("Argumento Invalido");
 }
 
@@ -164,7 +164,7 @@ void Duracao::validar(int duracao) {
 void Duracao::setDuracao(int duracao) {
     validar(duracao);
     this->duracao = duracao;
-    
+
 }
 
 // Funções para a classe Dinheiro

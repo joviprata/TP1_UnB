@@ -107,4 +107,38 @@ class TUData{
         int run();
 };
 
+class TUDuracao {
+    private:
+        const int DURACAO_VALIDA = 200;
+        const int DURACAO_INVALIDA = 3610;
+        Duracao *duracao;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioDuracaoValida();
+        void testarCenarioDuracaoInvalida();
+
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
+class TUDinheiro {
+    private:
+        const int DINHEIRO_VALIDO = 200.00;
+        const int DINHEIRO_INVALIDO = 300000.00;
+        Dinheiro *dinheiro;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioDinheiroValido();
+        void testarCenarioDinheiroInvalido();
+
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 #endif // TESTES_HPP_INCLUDED

@@ -52,9 +52,9 @@ int main() {
 
     TUData testeData;
 
-    //TuDinheiro
+    TUDinheiro testeDinheiro;
 
-    //TUDuracao
+    TUDuracao testeDuracao;
 
     TUHorario testeHorario;
 
@@ -125,8 +125,19 @@ int main() {
 
     // Teste de Duracao e Dinheiro conforme o roteiro
 
-        //TODO
+    switch(testeDuracao.run()) {
+        case TUDuracao::SUCESSO: cout << "SUCESSO (DURACAO)" << endl;
+            break;
+        case TUDuracao::FALHA: cout << "FALHA (DURACAO)" << endl;
+            break;
+    }
 
+    switch(testeDinheiro.run()) {
+        case TUDinheiro::SUCESSO: cout << "SUCESSO (DINHEIRO)" << endl;
+            break;
+        case TUDinheiro::FALHA: cout << "FALHA (DINHEIRO)" << endl;
+            break;
+    }
 
     return 0;
 }

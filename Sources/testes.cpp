@@ -246,3 +246,84 @@ int TUCodigo::run(){
     tearDown();
     return estado;
 }
+
+// Teste Dominio Duracao
+
+void TUDuracao::setUp() {
+    duracao = new Duracao();
+    estado = SUCESSO;
+}
+
+void TUDuracao::tearDown() {
+    delete duracao;
+}
+
+void TUDuracao::testarCenarioDuracaoValida() {
+    try {
+        duracao->setDuracao(DURACAO_VALIDA);
+        if(duracao->getDuracao() != DURACAO_VALIDA)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUDuracao::testarCenarioDuracaoInvalida() {
+    try {
+        duracao->setDuracao(DURACAO_INVALIDA);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        if(duracao->getDuracao() == DURACAO_INVALIDA)
+            estado = FALHA;
+    }
+}
+
+int TUDuracao::run() {
+    setUp();
+    testarCenarioDuracaoValida();
+    testarCenarioDuracaoInvalida();
+    tearDown();
+    return estado;
+}
+
+void TUDinheiro::setUp() {
+    dinheiro = new Dinheiro;
+    estado = SUCESSO;
+}
+
+void TUDinheiro::tearDown() {
+    delete dinheiro;
+}
+
+void TUDinheiro::testarCenarioDinheiroValido() {
+    try {
+        dinheiro->setDinheiro(DINHEIRO_VALIDO);
+        if(dinheiro->getDinheiro() != DINHEIRO_VALIDO)
+            estado = FALHA;
+
+    }
+    catch(invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUDinheiro::testarCenarioDinheiroInvalido() {
+    try {
+        dinheiro->setDinheiro(DINHEIRO_INVALIDO);
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        if(dinheiro->getDinheiro() == DINHEIRO_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+int TUDinheiro::run() {
+    setUp();
+    testarCenarioDinheiroValido();
+    testarCenarioDinheiroInvalido();
+    tearDown();
+    return estado;
+}

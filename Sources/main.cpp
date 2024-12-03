@@ -64,6 +64,10 @@ int main() {
 
     TUSenha testeSenha;
 
+    // Declaração de testes unitários de entidades:
+
+    TUDestino testeDestino;
+
     // Testes:
 
     // Teste de classe Horario:
@@ -136,6 +140,16 @@ int main() {
         case TUDinheiro::SUCESSO: cout << "SUCESSO (DINHEIRO)" << endl;
             break;
         case TUDinheiro::FALHA: cout << "FALHA (DINHEIRO)" << endl;
+            break;
+    }
+
+    
+    // Teste de Destino conforme o roteiro
+    
+    switch(testeDestino.run()){
+        case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
+            break;
+        case TUDestino::FALHA: cout << "FALHA (DESTINO)" << endl;
             break;
     }
 

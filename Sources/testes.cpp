@@ -134,9 +134,9 @@ void TUSenha::tearDown(){
 
 void TUSenha::testarCenarioSenhaValido(){
     try{
-        senha -> setValor(to_string(SENHA_VALIDO));
-        cout << "Valor da senha: " << senha->getValor() << endl;
-        if(senha -> getValor() != to_string(SENHA_VALIDO))
+        senha -> setSenha(SENHA_VALIDO);
+        cout << "Valor da senha sucesso: " << senha->getSenha() << endl;
+        if(senha -> getSenha() != SENHA_VALIDO)
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
@@ -146,12 +146,12 @@ void TUSenha::testarCenarioSenhaValido(){
 
 void TUSenha::testarCenarioSenhaInvalido(){
     try{
-        senha -> setValor(to_string(SENHA_INVALIDO));
-        cout << "Valor da senha: " << senha->getValor() << endl;
+        senha -> setSenha(SENHA_INVALIDO);
+        cout << "Valor da senha falha: " << senha->getSenha() << endl;
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if(senha -> getValor() == to_string(SENHA_INVALIDO))
+        if(senha -> getSenha() == SENHA_INVALIDO)
         estado = FALHA;
     }
 }

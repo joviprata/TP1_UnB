@@ -73,13 +73,13 @@ void Senha::validar(string senha) {
         throw invalid_argument("Argumento invalido.");
     }
 
-    
+
 }
 
 void Senha::setSenha(string senha) {
     validar(senha);
     this->senha = senha;
-    
+
 }
 
 
@@ -100,7 +100,7 @@ void Data::validar(string data){
     int AA = stoi(str_AA);
 
      // Verifica se o mes e valido
-    if (DD > 31 or MM > 12 or AA > 99 or DD <= 0 or MM < 1 or AA <= 00)
+    if (DD > 31 or MM > 12 or DD <= 0 or MM < 1)
          throw invalid_argument("Argumento invalido");
 
     // Verifica dias validos para cada mes
@@ -143,7 +143,7 @@ void Codigo::setCodigo (string codigo) {
 //Funções para classe Avaliacao:
 void Avaliacao::validar(int avaliacao){
 
-    if ((avaliacao < 1) || (avaliacao>5))
+    if ((avaliacao < 0) || (avaliacao>5))
         throw invalid_argument("Argumento Invalido");
 }
 
@@ -157,21 +157,21 @@ void Avaliacao::setAvaliacao(int avaliacao){
 void Duracao::validar(int duracao) {
     // Verifica se duracao maior que 0 e menor que 360, ou seja, válida
     if (duracao < 0 || duracao > 360) {
-        throw invalid_argument("Duração inválida. Por favor, definir duração de 0 a 360.");
+        throw invalid_argument("Argumento invalido");
     }
 }
 
 void Duracao::setDuracao(int duracao) {
     validar(duracao);
     this->duracao = duracao;
-    
+
 }
 
 // Funções para a classe Dinheiro
 void Dinheiro::validar(double dinheiro) {
     // Apenas valore maiores que 0,00 e menores ou iguais a 200000,00
     if (dinheiro < 0.00 || dinheiro > 200000.00) {
-        throw invalid_argument("Valor inválido. Por favor, definir valor de 0.00 a 200000.00");
+        throw invalid_argument("Argumento invalido");
     }
 }
 

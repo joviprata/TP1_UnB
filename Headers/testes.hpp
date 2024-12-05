@@ -75,8 +75,8 @@ class TUSenha {
 
     private:
         
-        const static int SENHA_VALIDO = 21345;
-        const static int SENHA_INVALIDO = 12345;
+        static constexpr const char* SENHA_VALIDO = "21345";
+        static constexpr const char* SENHA_INVALIDO = "12345";
         Senha *senha;
         int estado;
         void setUp();

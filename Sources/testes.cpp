@@ -1,3 +1,4 @@
+
 #include "testes.hpp"
 
 
@@ -372,6 +373,68 @@ void TUDestino::testarCenarioDestino(){
 int TUDestino::run(){
     setUp();
     testarCenarioDestino();
+    tearDown();
+    return estado;
+}
+
+
+void TUAtividades::setUp(){
+    atividades = new Atividades();
+    estado = SUCESSO;
+}
+
+void TUAtividades::tearDown(){
+    delete atividades;
+}
+
+void TUAtividades::testarCenarioAtividades(){
+
+    Nome nome;
+
+    nome.setNome(NOME_VALIDO);
+    atividades->setNome(nome);
+    if (atividades->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Data data;
+
+    data.setData(DATA_VALIDA);
+    atividades->setData(data);
+    if (atividades->getData().getData() != DATA_VALIDA)
+        estado = FALHA;
+
+    Horario horario;
+
+    horario.setHorario(HORARIO_VALIDO);
+    atividades->setHorario(horario);
+    if (atividades->getHorario().getHorario() != HORARIO_VALIDO)
+        estado = FALHA;
+
+    Duracao duracao;
+
+    duracao.setDuracao(DURACAO_VALIDA);
+    atividades->setDuracao(duracao);
+    if (atividades->getDuracao().getDuracao() != DURACAO_VALIDA)
+        estado = FALHA;
+
+    Dinheiro preco;
+
+    preco.setDinheiro(PRECO_VALIDO);
+    atividades->setDinheiro(preco);
+    if (atividades->getDinheiro().getDinheiro() != PRECO_VALIDO)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    atividades->setAvaliacao(avaliacao);
+    if (atividades->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+}
+
+int TUAtividades::run(){
+    setUp();
+    testarCenarioAtividades();
     tearDown();
     return estado;
 }

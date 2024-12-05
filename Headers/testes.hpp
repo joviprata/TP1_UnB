@@ -75,7 +75,7 @@ class TUCodigo {
 class TUSenha {
 
     private:
-        
+
         static constexpr const char* SENHA_VALIDO = "21345";
         static constexpr const char* SENHA_INVALIDO = "12345";
         Senha *senha;
@@ -85,7 +85,7 @@ class TUSenha {
         void testarCenarioSenhaValido();
         void testarCenarioSenhaInvalido();
     public:
-        
+
         const static int SUCESSO = 0;
         const static int FALHA = -1;
         int run();
@@ -127,7 +127,7 @@ class TUDuracao {
 
 class TUDinheiro {
     private:
-        const int DINHEIRO_VALIDO = 200.00;
+        const int DINHEIRO_VALIDO = 200.01;
         const int DINHEIRO_INVALIDO = 300000.00;
         Dinheiro *dinheiro;
         int estado;
@@ -154,6 +154,25 @@ class TUDestino {
         void setUp();
         void tearDown();
         void testarCenarioDestino();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
+class TUAtividades {
+    private:
+        const string NOME_VALIDO = "Mauro";
+        const string DATA_VALIDA = "11-02-04";
+        const string HORARIO_VALIDO = "12:00";
+        const static int DURACAO_VALIDA = 120;
+        const double PRECO_VALIDO = 150.00;
+        const static int AVALIACAO_VALIDA = 3;
+        Atividades *atividades;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioAtividades();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;

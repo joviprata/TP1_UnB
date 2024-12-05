@@ -68,6 +68,8 @@ int main() {
 
     TUDestino testeDestino;
 
+    TUAtividades testeAtividades;
+
     // Testes:
 
     // Teste de classe Horario:
@@ -103,7 +105,7 @@ int main() {
     {
     case TUSenha::SUCESSO:cout<<"SUCESSO"<<endl;
         break;
-    
+
     case TUSenha::FALHA:cout<<"FALHA"<<endl;
         break;
     }
@@ -143,9 +145,9 @@ int main() {
             break;
     }
 
-    
+
     // Teste de Destino conforme o roteiro
-    
+
     switch(testeDestino.run()){
         case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
             break;
@@ -153,5 +155,15 @@ int main() {
             break;
     }
 
+    //  Teste de Atividades
+
+    switch(testeAtividades.run()){
+        case TUAtividades::SUCESSO: cout << "SUCESSO (ATIVIDADES)" << endl;
+            break;
+        case TUAtividades::FALHA: cout << "FALHA (ATIVIDADES)" << endl;
+            break;
+    }
+
     return 0;
 }
+

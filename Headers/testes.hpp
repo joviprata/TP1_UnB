@@ -2,6 +2,7 @@
 #define TESTES_HPP_INCLUDED
 #include <stdexcept>
 #include "dominios.hpp"
+#include "entidades.hpp"
 using namespace std;
 
 class TUAvaliacao {

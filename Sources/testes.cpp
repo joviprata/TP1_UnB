@@ -338,38 +338,38 @@ void TUDestino::tearDown(){
     delete destino;
 }
 
-void TUDestino::testarCenario(){
+void TUDestino::testarCenarioDestino(){
     Codigo codigo;
     codigo.setCodigo(CODIGO_VALIDO);
-    destino-> setCodigo(codigo);
-    if(destino->getCodigo().getCodigo != CODIGO_VALIDO)
+    destino->setCodigo(codigo);
+    if(destino->getCodigo().getCodigo() != CODIGO_VALIDO)
         estado = FALHA;
 
     Nome nome;
     nome.setNome(NOME_VALIDO);
-    destino-> setNome(nome);
-    if(destino->getNome().getNome != NOME_VALIDO)
+    destino->setNome(nome);
+    if(destino->getNome().getNome() != NOME_VALIDO)
         estado = FALHA;
 
     Data data;
     data.setData(DATA_INICIO_VALIDA);
     destino-> setDataInicio(data);
-    if(destino->getDataInicio().getData != DATA_INICIO_VALIDA)
+    if(destino->getDataInicio().getData() != DATA_INICIO_VALIDA)
         estado = FALHA;
 
     data.setData(DATA_TERMINO_VALIDA);
     destino-> setDataTermino(data);
-    if(destino->getDataTermino().getData != DATA_TERMINO_VALIDA)
+    if(destino->getDataTermino().getData() != DATA_TERMINO_VALIDA)
         estado = FALHA;
 
     Avaliacao avaliacao;
     avaliacao.setAvaliacao(AVALIACAO_VALIDA);
-    destino-> setAvaliacaoTermino(avaliacao);
-    if(destino->getAvaliacaoTermino().getAvaliacao != AVALIACAO_VALIDA)
+    destino-> setAvaliacao(avaliacao);
+    if(destino->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
         estado = FALHA;
 }
 
-void TUDestino::run(){
+int TUDestino::run(){
     setUp();
     testarCenarioDestino();
     tearDown();

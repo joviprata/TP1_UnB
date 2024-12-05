@@ -141,4 +141,22 @@ class TUDinheiro {
         int run();
 };
 
+class TUDestino {
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string NOME_VALIDO = "Pedro";
+        const string DATA_INICIO_VALIDA = "11-09-01";
+        const string DATA_TERMINO_VALIDA = "13-09-01";
+        const static int AVALIACAO_VALIDA = 5;
+        Destino *destino;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioDestino();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 #endif // TESTES_HPP_INCLUDED

@@ -103,10 +103,10 @@ int main() {
 
     switch (testeSenha.run())
     {
-    case TUSenha::SUCESSO:cout<<"SUCESSO"<<endl;
+    case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
         break;
 
-    case TUSenha::FALHA:cout<<"FALHA"<<endl;
+    case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
         break;
     }
 

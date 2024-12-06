@@ -469,3 +469,44 @@ int TUViagem::run(){
     tearDown();
     return estado;
 }
+
+// HOSPEDAGEM 
+
+void TUHospedagem::setUp(){
+    hospedagem = new Hospedagem();
+    estado = SUCESSO;
+}
+void TUHospedagem::tearDown(){
+    delete hospedagem;
+}
+void TUHospedagem::testarCenarioHospedagem(){
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    hospedagem->setCodigo(codigo);
+    if(hospedagem->getCodigo().getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+
+    Nome nome;
+    nome.setNome(NOME_VALIDO);
+    hospedagem->setNome(nome);
+    if(hospedagem->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    hospedagem->setAvaliacao(avaliacao);
+    if(hospedagem->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+
+    Dinheiro diaria;
+    diaria.setDinheiro(DIARIA_VALIDA);
+    hospedagem->setDinheiro(diaria);
+    if(hospedagem->getDinheiro().getDinheiro() != DIARIA_VALIDA)
+        estado = FALHA;
+}
+int TUHospedagem::run(){
+    setUp();
+    testarCenarioHospedagem();
+    tearDown();
+    return estado;
+}

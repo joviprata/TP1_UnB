@@ -179,4 +179,20 @@ class TUAtividades {
         int run();
 };
 
+class TUViagem {
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string NOME_VALIDO = "Juninho Silva";
+        const static int AVALIACAO_VALIDA = 5;
+        Viagem *viagem;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioViagem();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 #endif // TESTES_HPP_INCLUDED

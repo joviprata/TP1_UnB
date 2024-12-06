@@ -436,3 +436,36 @@ int TUAtividades::run(){
     tearDown();
     return estado;
 }
+
+void TUViagem::setUp(){
+    viagem = new Viagem();
+    estado = SUCESSO;
+}
+void TUViagem::tearDown(){
+    delete viagem;
+}
+void TUViagem::testarCenarioViagem(){
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    viagem->setCodigo(codigo);
+    if(viagem->getCodigo().getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+
+    Nome nome;
+    nome.setNome(NOME_VALIDO);
+    viagem->setNome(nome);
+    if(viagem->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    viagem->setAvaliacao(avaliacao);
+    if(viagem->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+}
+int TUViagem::run(){
+    setUp();
+    testarCenarioViagem();
+    tearDown();
+    return estado;
+}

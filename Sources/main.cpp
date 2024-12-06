@@ -52,9 +52,9 @@ int main() {
 
     TUData testeData;
 
-    //TuDinheiro
+    TUDinheiro testeDinheiro;
 
-    //TUDuracao
+    TUDuracao testeDuracao;
 
     TUHorario testeHorario;
 
@@ -63,6 +63,14 @@ int main() {
     //TUSenha
 
     TUSenha testeSenha;
+
+    // Declaração de testes unitários de entidades:
+
+    TUDestino testeDestino;
+
+    TUAtividades testeAtividades;
+
+    TUViagem testeViagem;
 
     // Testes:
 
@@ -97,10 +105,10 @@ int main() {
 
     switch (testeSenha.run())
     {
-    case TUSenha::SUCESSO:cout<<"SUCESSO"<<endl;
+    case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
         break;
-    
-    case TUSenha::FALHA:cout<<"FALHA"<<endl;
+
+    case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
         break;
     }
 
@@ -125,8 +133,48 @@ int main() {
 
     // Teste de Duracao e Dinheiro conforme o roteiro
 
-        //TODO
+    switch(testeDuracao.run()) {
+        case TUDuracao::SUCESSO: cout << "SUCESSO (DURACAO)" << endl;
+            break;
+        case TUDuracao::FALHA: cout << "FALHA (DURACAO)" << endl;
+            break;
+    }
 
+    switch(testeDinheiro.run()) {
+        case TUDinheiro::SUCESSO: cout << "SUCESSO (DINHEIRO)" << endl;
+            break;
+        case TUDinheiro::FALHA: cout << "FALHA (DINHEIRO)" << endl;
+            break;
+    }
+
+
+    // Teste de Destino conforme o roteiro
+
+    switch(testeDestino.run()){
+        case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
+            break;
+        case TUDestino::FALHA: cout << "FALHA (DESTINO)" << endl;
+            break;
+    }
+
+    //  Teste de Atividades
+
+    switch(testeAtividades.run()){
+        case TUAtividades::SUCESSO: cout << "SUCESSO (ATIVIDADES)" << endl;
+            break;
+        case TUAtividades::FALHA: cout << "FALHA (ATIVIDADES)" << endl;
+            break;
+    }
+
+    // Teste de Viagem, conforme roteiro.
+
+    switch(testeViagem.run()){
+        case TUViagem::SUCESSO: cout << "SUCESSO (VIAGEM)" << endl;
+            break;
+        case TUViagem::FALHA: cout << "FALHA (VIAGEM)" << endl;
+            break;
+    }
 
     return 0;
 }
+

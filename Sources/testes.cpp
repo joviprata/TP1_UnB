@@ -1,3 +1,4 @@
+
 #include "testes.hpp"
 
 
@@ -134,9 +135,8 @@ void TUSenha::tearDown(){
 
 void TUSenha::testarCenarioSenhaValido(){
     try{
-        senha -> setValor(to_string(SENHA_VALIDO));
-        cout << "Valor da senha: " << senha->getValor() << endl;
-        if(senha -> getValor() != to_string(SENHA_VALIDO))
+        senha -> setSenha(SENHA_VALIDO);
+        if(senha -> getSenha() != SENHA_VALIDO)
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
@@ -146,12 +146,11 @@ void TUSenha::testarCenarioSenhaValido(){
 
 void TUSenha::testarCenarioSenhaInvalido(){
     try{
-        senha -> setValor(to_string(SENHA_INVALIDO));
-        cout << "Valor da senha: " << senha->getValor() << endl;
+        senha -> setSenha(SENHA_INVALIDO);
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if(senha -> getValor() == to_string(SENHA_INVALIDO))
+        if(senha -> getSenha() == SENHA_INVALIDO)
         estado = FALHA;
     }
 }
@@ -243,6 +242,230 @@ int TUCodigo::run(){
     setUp();
     testarCodigoCodigoValido();
     testarCodigoCodigoInvalido();
+    tearDown();
+    return estado;
+}
+
+// Teste Dominio Duracao
+
+void TUDuracao::setUp() {
+    duracao = new Duracao();
+    estado = SUCESSO;
+}
+
+void TUDuracao::tearDown() {
+    delete duracao;
+}
+
+void TUDuracao::testarCenarioDuracaoValida() {
+    try {
+        duracao->setDuracao(DURACAO_VALIDA);
+        if(duracao->getDuracao() != DURACAO_VALIDA)
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUDuracao::testarCenarioDuracaoInvalida() {
+    try {
+        duracao->setDuracao(DURACAO_INVALIDA);
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        if(duracao->getDuracao() == DURACAO_INVALIDA)
+            estado = FALHA;
+    }
+}
+
+int TUDuracao::run() {
+    setUp();
+    testarCenarioDuracaoValida();
+    testarCenarioDuracaoInvalida();
+    tearDown();
+    return estado;
+}
+
+void TUDinheiro::setUp() {
+    dinheiro = new Dinheiro;
+    estado = SUCESSO;
+}
+
+void TUDinheiro::tearDown() {
+    delete dinheiro;
+}
+
+void TUDinheiro::testarCenarioDinheiroValido() {
+    try {
+        dinheiro->setDinheiro(DINHEIRO_VALIDO);
+        if(dinheiro->getDinheiro() != DINHEIRO_VALIDO)
+            estado = FALHA;
+
+    }
+    catch(invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUDinheiro::testarCenarioDinheiroInvalido() {
+    try {
+        dinheiro->setDinheiro(DINHEIRO_INVALIDO);
+            estado = FALHA;
+    }
+    catch(invalid_argument &excecao) {
+        if(dinheiro->getDinheiro() == DINHEIRO_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+int TUDinheiro::run() {
+    setUp();
+    testarCenarioDinheiroValido();
+    testarCenarioDinheiroInvalido();
+    tearDown();
+    return estado;
+}
+
+
+void TUDestino::setUp(){
+    destino = new Destino();
+    estado = SUCESSO;
+}
+
+void TUDestino::tearDown(){
+    delete destino;
+}
+
+void TUDestino::testarCenarioDestino(){
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    destino->setCodigo(codigo);
+    if(destino->getCodigo().getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+
+    Nome nome;
+    nome.setNome(NOME_VALIDO);
+    destino->setNome(nome);
+    if(destino->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Data data;
+    data.setData(DATA_INICIO_VALIDA);
+    destino-> setDataInicio(data);
+    if(destino->getDataInicio().getData() != DATA_INICIO_VALIDA)
+        estado = FALHA;
+
+    data.setData(DATA_TERMINO_VALIDA);
+    destino-> setDataTermino(data);
+    if(destino->getDataTermino().getData() != DATA_TERMINO_VALIDA)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    destino-> setAvaliacao(avaliacao);
+    if(destino->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+}
+
+int TUDestino::run(){
+    setUp();
+    testarCenarioDestino();
+    tearDown();
+    return estado;
+}
+
+
+void TUAtividades::setUp(){
+    atividades = new Atividades();
+    estado = SUCESSO;
+}
+
+void TUAtividades::tearDown(){
+    delete atividades;
+}
+
+void TUAtividades::testarCenarioAtividades(){
+
+    Nome nome;
+
+    nome.setNome(NOME_VALIDO);
+    atividades->setNome(nome);
+    if (atividades->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Data data;
+
+    data.setData(DATA_VALIDA);
+    atividades->setData(data);
+    if (atividades->getData().getData() != DATA_VALIDA)
+        estado = FALHA;
+
+    Horario horario;
+
+    horario.setHorario(HORARIO_VALIDO);
+    atividades->setHorario(horario);
+    if (atividades->getHorario().getHorario() != HORARIO_VALIDO)
+        estado = FALHA;
+
+    Duracao duracao;
+
+    duracao.setDuracao(DURACAO_VALIDA);
+    atividades->setDuracao(duracao);
+    if (atividades->getDuracao().getDuracao() != DURACAO_VALIDA)
+        estado = FALHA;
+
+    Dinheiro preco;
+
+    preco.setDinheiro(PRECO_VALIDO);
+    atividades->setDinheiro(preco);
+    if (atividades->getDinheiro().getDinheiro() != PRECO_VALIDO)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    atividades->setAvaliacao(avaliacao);
+    if (atividades->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+}
+
+int TUAtividades::run(){
+    setUp();
+    testarCenarioAtividades();
+    tearDown();
+    return estado;
+}
+
+void TUViagem::setUp(){
+    viagem = new Viagem();
+    estado = SUCESSO;
+}
+void TUViagem::tearDown(){
+    delete viagem;
+}
+void TUViagem::testarCenarioViagem(){
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    viagem->setCodigo(codigo);
+    if(viagem->getCodigo().getCodigo() != CODIGO_VALIDO)
+        estado = FALHA;
+
+    Nome nome;
+    nome.setNome(NOME_VALIDO);
+    viagem->setNome(nome);
+    if(viagem->getNome().getNome() != NOME_VALIDO)
+        estado = FALHA;
+
+    Avaliacao avaliacao;
+    avaliacao.setAvaliacao(AVALIACAO_VALIDA);
+    viagem->setAvaliacao(avaliacao);
+    if(viagem->getAvaliacao().getAvaliacao() != AVALIACAO_VALIDA)
+        estado = FALHA;
+}
+int TUViagem::run(){
+    setUp();
+    testarCenarioViagem();
     tearDown();
     return estado;
 }

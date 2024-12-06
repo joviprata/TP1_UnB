@@ -72,8 +72,7 @@ int main() {
 
     TUViagem testeViagem;
 
-    TUHospedagem testeHospedagem
-
+    TUHospedagem testeHospedagem;
 
     // Testes:
 
@@ -190,4 +189,3 @@ int main() {
 
     return 0;
 }
-

@@ -195,4 +195,22 @@ class TUViagem {
         int run();
 };
 
+class TUHospedagem{
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string NOME_VALIDO = "Pedro";
+        const static int DIARIA_VALIDA = 120.01;
+        const static int AVALIACAO_VALIDA = 5;
+        Hospedagem *hospedagem;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioHospedagem();
+
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
 #endif // TESTES_HPP_INCLUDED

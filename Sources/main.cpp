@@ -72,6 +72,8 @@ int main() {
 
     TUViagem testeViagem;
 
+    TUHospedagem testeHospedagem;
+
     // Testes:
 
     // Teste de classe Horario:
@@ -175,6 +177,15 @@ int main() {
             break;
     }
 
+
+    // Teste de Hospedagem, conforme roteiro.
+
+    switch(testeHospedagem.run()){
+        case TUHospedagem::SUCESSO: cout << "SUCESSO (HOSPEDAGEM)" << endl;
+            break;
+        case TUHospedagem::FALHA: cout << "FALHA (HOSPEDAGEM)" << endl;
+            break;
+    }
+
     return 0;
 }
-

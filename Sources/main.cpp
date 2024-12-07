@@ -66,6 +66,8 @@ int main() {
 
     // Declaração de testes unitários de entidades:
 
+    TUConta testeConta;
+
     TUDestino testeDestino;
 
     TUAtividades testeAtividades;
@@ -149,6 +151,17 @@ int main() {
             break;
     }
 
+
+    // Teste de Conta conforme o roteiro
+
+    switch (testeConta.run())
+    {
+    case TUConta::SUCESSO:cout<<"SUCESSO"<<endl;
+        break;
+    
+    case TUConta::FALHA:cout<<"FALHA"<<endl;
+        break;
+    }
 
     // Teste de Destino conforme o roteiro
 

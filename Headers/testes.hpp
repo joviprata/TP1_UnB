@@ -142,6 +142,22 @@ class TUDinheiro {
         int run();
 };
 
+class TUConta{
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string SENHA_VALIDO = "21345";
+        Conta *conta;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenario();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+
+};
+
 class TUDestino {
     private:
         const string CODIGO_VALIDO = "uba123";

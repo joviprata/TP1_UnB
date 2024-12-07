@@ -191,7 +191,7 @@ inline int Avaliacao::getAvaliacao() const {
 // DOMÍNIO DURAÇÃO
 
 /**
- * @brief Classe que representa uma duração em minutos.
+ * @brief Classe que representa uma duração em dias.
  *
  * Regras de formato:
  * - Valor entre 0 e 360.
@@ -202,7 +202,7 @@ inline int Avaliacao::getAvaliacao() const {
  */
 class Duracao {
 private:
-    int duracao; ///< Valor da duração em minutos. 
+    int duracao; ///< Valor da duração em dias. 
     void validar(int); ///<Valida a duração. Lança exceção se inválida. 
 
 public:

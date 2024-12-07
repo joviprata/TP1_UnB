@@ -327,6 +327,35 @@ int TUDinheiro::run() {
     return estado;
 }
 
+void TUConta::setUp(){
+    conta = new Conta();
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown(){
+    delete conta;
+}
+
+void TUConta::testarCenario(){
+    Codigo codigo;
+    codigo.setCodigo(CODIGO_VALIDO);
+    conta -> setCodigo(codigo);
+    if(conta -> getCodigo().getCodigo() != CODIGO_VALIDO)
+    estado = FALHA;
+
+    Senha senha;
+    senha.setSenha(SENHA_VALIDO);
+    conta -> setSenha(senha);
+    if(conta -> getSenha().getSenha() != SENHA_VALIDO)
+    estado = FALHA;
+}
+
+int TUConta::run(){
+    setUp();
+    testarCenario();
+    tearDown();
+    return estado;
+}
 
 void TUDestino::setUp(){
     destino = new Destino();

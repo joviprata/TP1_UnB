@@ -9,9 +9,10 @@ using namespace std;
  * @file entidades.hpp
  * @brief Declaração de classes que representam as entidades do sistema.
  *
- * Este arquivo contém as definições de classes para Viagem, Destino,
- * Conta, Hospedagem e Atividades. Cada classe encapsula atributos e
- * comportamentos específicos de suas respectivas entidades.
+ * Este arquivo contém as definições das classes que representam as principais entidades do sistema,
+ * como Viagem, Destino, Conta, Hospedagem e Atividades. Essas classes encapsulam os dados e operações
+ * relacionadas às funcionalidades do sistema, como criação, consulta e manipulação de dados de viagens
+ * e seus componentes.
  */
 
 //---------------------------------------------------------------------
@@ -20,9 +21,10 @@ using namespace std;
 /**
  * @brief Classe que representa uma Viagem.
  *
- * A classe Viagem contém os atributos e métodos para manipulação dos dados
- * de uma viagem, incluindo código, nome e avaliação.
- * 
+ * A classe Viagem contém os atributos necessários para armazenar informações sobre uma viagem, como código, nome e avaliação. Essas informações são usadas para descrever uma viagem específica dentro do sistema.
+ *
+ * @throw invalid_argument Se o código, nome ou avaliação fornecido for inválido.
+ *
  * Desenvolvido por: João Victor Prata Tavares Pereira - 202028857
  */
 class Viagem{
@@ -33,43 +35,61 @@ class Viagem{
     public:
         /**
          * @brief Define o código da viagem.
-         * 
-         * @param codigo Objeto do tipo Codigo representando o código da viagem.
+         *
+         * Atribui um código único para identificar a viagem. O código deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param codigo O código da viagem a ser atribuído.
+         *
+         * @throw invalid_argument Se o código fornecido for inválido.
          */
         void setCodigo(const Codigo&);
 
         /**
          * @brief Retorna o código da viagem.
-         * 
-         * @return O código da viagem como um objeto do tipo Codigo.
+         *
+         * Recupera o código da viagem armazenado no objeto.
+         *
+         * @return O código da viagem.
          */
         Codigo getCodigo() const;
 
         /**
          * @brief Define o nome da viagem.
-         * 
-         * @param nome Objeto do tipo Nome representando o nome da viagem.
+         *
+         * Atribui um nome para a viagem. O nome deve ser uma string válida, caso contrário, uma exceção será lançada.
+         *
+         * @param nome O nome da viagem a ser atribuído.
+         *
+         * @throw invalid_argument Se o nome fornecido for inválido.
          */
         void setNome(const Nome&);
 
         /**
          * @brief Retorna o nome da viagem.
-         * 
-         * @return O nome da viagem como um objeto do tipo Nome.
+         *
+         * Recupera o nome da viagem armazenado no objeto.
+         *
+         * @return O nome da viagem.
          */
         Nome getNome() const;
 
         /**
          * @brief Define a avaliação da viagem.
-         * 
-         * @param avaliacao Objeto do tipo Avaliacao representando a avaliação da viagem.
+         *
+         * Atribui uma avaliação à viagem. A avaliação pode ser usada para indicar a qualidade ou experiência da viagem.
+         *
+         * @param avaliacao A avaliação a ser atribuída à viagem.
+         *
+         * @throw invalid_argument Se a avaliação fornecida for inválida.
          */
         void setAvaliacao(const Avaliacao&);
 
         /**
          * @brief Retorna a avaliação da viagem.
-         * 
-         * @return A avaliação da viagem como um objeto do tipo Avaliacao.
+         *
+         * Recupera a avaliação atribuída à viagem.
+         *
+         * @return A avaliação da viagem.
          */
         Avaliacao getAvaliacao() const;
 };
@@ -104,9 +124,10 @@ inline Avaliacao Viagem::getAvaliacao() const{
 /**
  * @brief Classe que representa um Destino.
  *
- * A classe Destino contém os atributos e métodos para manipulação dos dados
- * de um destino de viagem, incluindo código, nome, datas de início e término, e avaliação.
- * 
+ * A classe Destino armazena informações sobre o destino de uma viagem, incluindo o código, nome, datas de início e término, e a avaliação associada.
+ *
+ * @throw invalid_argument Se o código, nome, datas ou avaliação fornecidos forem inválidos.
+ *
  * Desenvolvido por: João Victor Prata Tavares Pereira - 202028857
  */
 class Destino {
@@ -120,71 +141,101 @@ class Destino {
     public:
         /**
          * @brief Define o código do destino.
-         * 
-         * @param codigo Objeto do tipo Codigo a ser associado ao destino.
+         *
+         * Atribui um código único para identificar o destino. O código deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param codigo O código do destino a ser atribuído.
+         *
+         * @throw invalid_argument Se o código fornecido for inválido.
          */
         void setCodigo(const Codigo&);
 
         /**
          * @brief Retorna o código do destino.
-         * 
-         * @return O código associado ao destino.
+         *
+         * Recupera o código do destino armazenado no objeto.
+         *
+         * @return O código do destino.
          */
         Codigo getCodigo() const;
 
         /**
          * @brief Define o nome do destino.
-         * 
-         * @param nome Objeto do tipo Nome a ser associado ao destino.
+         *
+         * Atribui um nome ao destino. O nome deve ser uma string válida, caso contrário, uma exceção será lançada.
+         *
+         * @param nome O nome do destino a ser atribuído.
+         *
+         * @throw invalid_argument Se o nome fornecido for inválido.
          */
         void setNome(const Nome&);
 
         /**
          * @brief Retorna o nome do destino.
-         * 
-         * @return O nome associado ao destino.
+         *
+         * Recupera o nome do destino armazenado no objeto.
+         *
+         * @return O nome do destino.
          */
         Nome getNome() const;
 
-         /**
-         * @brief Define a data de início da viagem ao destino.
-         * 
-         * @param dataInicio Objeto do tipo Data representando a data de início.
+        /**
+         * @brief Define a data de início da viagem para o destino.
+         *
+         * Atribui a data de início para a viagem ao destino. A data deve ser válida, caso contrário, uma exceção será lançada.
+         *
+         * @param dataInicio A data de início da viagem para o destino.
+         *
+         * @throw invalid_argument Se a data fornecida for inválida.
          */
         void setDataInicio(const Data&);
 
         /**
          * @brief Retorna a data de início da viagem ao destino.
-         * 
-         * @return A data de início associada ao destino.
+         *
+         * Recupera a data de início da viagem para o destino.
+         *
+         * @return A data de início da viagem.
          */
         Data getDataInicio() const;
 
         /**
-         * @brief Define a data de término da viagem ao destino.
-         * 
-         * @param dataTermino Objeto do tipo Data representando a data de término.
+         * @brief Define a data de término da viagem para o destino.
+         *
+         * Atribui a data de término para a viagem ao destino. A data deve ser válida, caso contrário, uma exceção será lançada.
+         *
+         * @param dataTermino A data de término da viagem para o destino.
+         *
+         * @throw invalid_argument Se a data fornecida for inválida.
          */
         void setDataTermino(const Data&);
 
         /**
          * @brief Retorna a data de término da viagem ao destino.
-         * 
-         * @return A data de término associada ao destino.
+         *
+         * Recupera a data de término da viagem para o destino.
+         *
+         * @return A data de término da viagem.
          */
         Data getDataTermino() const;
 
         /**
          * @brief Define a avaliação do destino.
-         * 
-         * @param avaliacao Objeto do tipo Avaliacao a ser associado ao destino.
+         *
+         * Atribui uma avaliação ao destino. A avaliação pode ser usada para indicar a qualidade ou experiência do destino.
+         *
+         * @param avaliacao A avaliação a ser atribuída ao destino.
+         *
+         * @throw invalid_argument Se a avaliação fornecida for inválida.
          */
         void setAvaliacao(const Avaliacao&);
 
         /**
          * @brief Retorna a avaliação do destino.
-         * 
-         * @return A avaliação atribuída ao destino.
+         *
+         * Recupera a avaliação atribuída ao destino.
+         *
+         * @return A avaliação do destino.
          */
         Avaliacao getAvaliacao() const;
 };
@@ -235,9 +286,10 @@ inline Avaliacao Destino::getAvaliacao() const{
 /**
  * @brief Classe que representa uma Conta.
  *
- * A classe Conta contém os atributos e métodos para manipulação dos dados
- * de uma conta no sistema, incluindo código e senha.
- * 
+ * A classe Conta armazena o código e a senha de um usuário. A conta permite a autenticação no sistema e o acesso aos recursos disponíveis.
+ *
+ * @throw invalid_argument Se o código ou senha fornecidos forem inválidos.
+ *
  * Desenvolvido por: Mauro Ribeiro da Silva - 231013592
  */
 class Conta{
@@ -247,29 +299,41 @@ class Conta{
     public:
         /**
          * @brief Define o código da conta.
-         * 
-         * @param codigo Objeto do tipo Codigo a ser associado à conta.
+         *
+         * Atribui um código único à conta. O código deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param codigo O código da conta a ser atribuído.
+         *
+         * @throw invalid_argument Se o código fornecido for inválido.
          */
         void setCodigo(const Codigo&);
 
         /**
          * @brief Retorna o código da conta.
-         * 
-         * @return O código associado à conta.
+         *
+         * Recupera o código da conta armazenado no objeto.
+         *
+         * @return O código da conta.
          */
         Codigo getCodigo() const;
 
         /**
          * @brief Define a senha da conta.
-         * 
-         * @param senha Objeto do tipo Senha a ser associada à conta.
+         *
+         * Atribui uma senha à conta. A senha deve ser válida, caso contrário, uma exceção será lançada.
+         *
+         * @param senha A senha da conta a ser atribuída.
+         *
+         * @throw invalid_argument Se a senha fornecida for inválida.
          */
         void setSenha(const Senha&);
 
-         /**
+        /**
          * @brief Retorna a senha da conta.
-         * 
-         * @return A senha associada à conta.
+         *
+         * Recupera a senha armazenada para a conta.
+         *
+         * @return A senha da conta.
          */
         Senha getSenha() const;
 
@@ -297,9 +361,10 @@ inline Senha Conta::getSenha() const{
 /**
  * @brief Classe que representa uma Hospedagem.
  *
- * A classe Hospedagem contém os atributos e métodos para manipulação dos dados
- * de uma hospedagem, incluindo código, nome, diária e avaliação.
- * 
+ * A classe Hospedagem armazena informações sobre o local de hospedagem, incluindo código, nome, valor da diária e avaliação.
+ *
+ * @throw invalid_argument Se o código, nome, valor da diária ou avaliação forem inválidos.
+ *
  * Desenvolvido por: Gabriel Balder Oliveira Lemos - 231013618
  */
 class Hospedagem {
@@ -311,57 +376,81 @@ class Hospedagem {
     public:
         /**
          * @brief Define o código da hospedagem.
-         * 
-         * @param codigo Objeto do tipo Codigo a ser associado à hospedagem.
+         *
+         * Atribui um código único para identificar a hospedagem. O código deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param codigo O código da hospedagem a ser atribuído.
+         *
+         * @throw invalid_argument Se o código fornecido for inválido.
          */
         void setCodigo(const Codigo&);
 
         /**
          * @brief Retorna o código da hospedagem.
-         * 
-         * @return O código associado à hospedagem.
+         *
+         * Recupera o código da hospedagem armazenado no objeto.
+         *
+         * @return O código da hospedagem.
          */
         Codigo getCodigo() const;
 
         /**
          * @brief Define o nome da hospedagem.
-         * 
-         * @param nome Objeto do tipo Nome a ser associado à hospedagem.
+         *
+         * Atribui um nome à hospedagem. O nome deve ser uma string válida, caso contrário, uma exceção será lançada.
+         *
+         * @param nome O nome da hospedagem a ser atribuído.
+         *
+         * @throw invalid_argument Se o nome fornecido for inválido.
          */
         void setNome(const Nome&);
 
-         /**
+        /**
          * @brief Retorna o nome da hospedagem.
-         * 
-         * @return O nome associado à hospedagem.
+         *
+         * Recupera o nome da hospedagem armazenado no objeto.
+         *
+         * @return O nome da hospedagem.
          */
         Nome getNome() const;
 
         /**
          * @brief Define o valor da diária da hospedagem.
-         * 
-         * @param diaria Objeto do tipo Dinheiro representando o valor da diária.
+         *
+         * Atribui o valor da diária para a hospedagem. O valor deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param diaria O valor da diária a ser atribuído.
+         *
+         * @throw invalid_argument Se o valor da diária fornecido for inválido.
          */
         void setDinheiro(const Dinheiro&);
 
         /**
          * @brief Retorna o valor da diária da hospedagem.
-         * 
-         * @return O valor da diária associado à hospedagem.
+         *
+         * Recupera o valor da diária da hospedagem armazenado no objeto.
+         *
+         * @return O valor da diária.
          */
         Dinheiro getDinheiro() const;
 
         /**
          * @brief Define a avaliação da hospedagem.
-         * 
-         * @param avaliacao Objeto do tipo Avaliacao a ser associado à hospedagem.
+         *
+         * Atribui uma avaliação à hospedagem. A avaliação pode ser usada para indicar a qualidade ou experiência da hospedagem.
+         *
+         * @param avaliacao A avaliação a ser atribuída à hospedagem.
+         *
+         * @throw invalid_argument Se o valor da avaliação fornecida for inválido.
          */
         void setAvaliacao(const Avaliacao&);
 
-         /**
+        /**
          * @brief Retorna a avaliação da hospedagem.
-         * 
-         * @return A avaliação atribuída à hospedagem.
+         *
+         * Recupera a avaliação atribuída à hospedagem.
+         *
+         * @return A avaliação da hospedagem.
          */
         Avaliacao getAvaliacao() const;
 };
@@ -405,9 +494,10 @@ inline Avaliacao Hospedagem::getAvaliacao() const{
 /**
  * @brief Classe que representa uma Atividade.
  *
- * A classe Atividades contém os atributos e métodos para manipulação dos dados
- * de uma atividade de viagem, incluindo código, nome, data, horário, duração, valor e avaliação.
- * 
+ * A classe Atividades contém informações sobre uma atividade programada durante a viagem, como código, nome, data, horário, duração, custo e avaliação.
+ *
+ * @throw invalid_argument Se os dados fornecidos forem inválidos.
+ *
  * Desenvolvido por: Nikolas Negrão Pessoa - 202024722
  */
 
@@ -423,99 +513,142 @@ class Atividades {
         Avaliacao avaliacao;  ///< Avaliação atribuída à atividade.
     public:
         /**
-         * @brief Define o código da atividade.         * 
-         * @param codigo Objeto do tipo Codigo representando o código da atividade.
+         * @brief Define o código da atividade.
+         *
+         * Atribui um código único à atividade. O código deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param codigo O código da atividade a ser atribuído.
+         *
+         * @throw invalid_argument Se o código fornecido for inválido.
          */
         void setCodigo(const Codigo&);
 
         /**
-         * @brief Define o nome da atividade.
-         * 
-         * @param nome Objeto do tipo Nome representando o nome da atividade.
-         */
-        void setNome(const Nome&);
-
-        /**
-         * @brief Define a data da atividade.
-         * 
-         * @param data Objeto do tipo Data representando a data da atividade.
-         */
-        void setData(const Data&);
-
-        /**
-         * @brief Define o horário da atividade.
-         * 
-         * @param horario Objeto do tipo Horario representando o horário da atividade.
-         */
-        void setHorario(const Horario&);
-
-        /**
-         * @brief Define a duração da atividade.
-         * 
-         * @param duracao Objeto do tipo Duracao representando a duração da atividade.
-         */
-        void setDuracao(const Duracao&);
-
-        /**
-         * @brief Define o valor associado à atividade.
-         * 
-         * @param dinheiro Objeto do tipo Dinheiro representando o custo da atividade.
-         */
-        void setDinheiro(const Dinheiro&);
-
-        /**
-         * @brief Define a avaliação da atividade.
-         * 
-         * @param avaliacao Objeto do tipo Avaliacao representando a avaliação da atividade.
-         */
-        void setAvaliacao(const Avaliacao&);
-
-        /**
          * @brief Retorna o código da atividade.
-         * 
-         * @return O código da atividade como um objeto do tipo Codigo.
+         *
+         * Recupera o código da atividade armazenado no objeto.
+         *
+         * @return O código da atividade.
          */
         Codigo getCodigo() const;
 
         /**
+         * @brief Define o nome da atividade.
+         *
+         * Atribui um nome à atividade. O nome deve ser uma string válida, caso contrário, uma exceção será lançada.
+         *
+         * @param nome O nome da atividade a ser atribuído.
+         *
+         * @throw invalid_argument Se o nome fornecido for inválido.
+         */
+        void setNome(const Nome&);
+
+        /**
          * @brief Retorna o nome da atividade.
-         * 
-         * @return O nome da atividade como um objeto do tipo Nome.
+         *
+         * Recupera o nome da atividade armazenado no objeto.
+         *
+         * @return O nome da atividade.
          */
         Nome getNome() const;
 
         /**
+         * @brief Define a data da atividade.
+         *
+         * Atribui a data da atividade. A data deve ser válida, caso contrário, uma exceção será lançada.
+         *
+         * @param data A data da atividade a ser atribuída.
+         *
+         * @throw invalid_argument Se a data fornecida for inválida.
+         */
+        void setData(const Data&);
+
+        /**
          * @brief Retorna a data da atividade.
-         * 
-         * @return A data da atividade como um objeto do tipo Data.
+         *
+         * Recupera a data da atividade armazenada no objeto.
+         *
+         * @return A data da atividade.
          */
         Data getData() const;
 
         /**
+         * @brief Define o horário da atividade.
+         *
+         * Atribui o horário da atividade. O horário deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param horario O horário da atividade a ser atribuído.
+         *
+         * @throw invalid_argument Se o horário fornecido for inválido.
+         */
+        void setHorario(const Horario&);
+
+        /**
          * @brief Retorna o horário da atividade.
-         * 
-         * @return O horário da atividade como um objeto do tipo Horario.
+         *
+         * Recupera o horário da atividade armazenado no objeto.
+         *
+         * @return O horário da atividade.
          */
         Horario getHorario() const;
 
         /**
+         * @brief Define a duração da atividade.
+         *
+         * Atribui a duração da atividade. A duração deve ser válida, caso contrário, uma exceção será lançada.
+         *
+         * @param duracao A duração da atividade a ser atribuída.
+         *
+         * @throw invalid_argument Se a duração fornecida for inválida.
+         */
+        void setDuracao(const Duracao&);
+
+        /**
          * @brief Retorna a duração da atividade.
-         * 
-         * @return A duração da atividade como um objeto do tipo Duracao.
+         *
+         * Recupera a duração da atividade armazenada no objeto.
+         *
+         * @return A duração da atividade.
          */
         Duracao getDuracao() const;
 
         /**
-         * @brief Retorna o valor associado à atividade.
-         * 
-         * @return O custo da atividade como um objeto do tipo Dinheiro.
+         * @brief Define o custo da atividade.
+         *
+         * Atribui o custo da atividade. O custo deve ser válido, caso contrário, uma exceção será lançada.
+         *
+         * @param dinheiro O custo da atividade a ser atribuído.
+         *
+         * @throw invalid_argument Se o valor fornecido for inválido.
+         */
+        void setDinheiro(const Dinheiro&);
+
+        /**
+         * @brief Retorna o custo da atividade.
+         *
+         * Recupera o custo da atividade armazenado no objeto.
+         *
+         * @return O custo da atividade.
          */
         Dinheiro getDinheiro() const;
 
         /**
+         * @brief Define a avaliação da atividade.
+         *
+         * Atribui uma avaliação à atividade. A avaliação pode ser usada para indicar a qualidade ou experiência da atividade.
+         *
+         * @param avaliacao A avaliação a ser atribuída à atividade.
+         *
+         * @throw invalid_argument Se a avaliação fornecida for inválida.
+         */
+        void setAvaliacao(const Avaliacao&);
+
+        /**
          * @brief Retorna a avaliação da atividade.
-         * 
-         * @return A avaliação da atividade como um objeto do tipo Avaliacao.
+         *
+         * Recupera a avaliação atribuída à atividade.
+         *
+         * @return A avaliação da atividade.
          */
         Avaliacao getAvaliacao() const;
 

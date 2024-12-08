@@ -25,7 +25,7 @@ using namespace std;
  *
  * @throw invalid_argument Se o código, nome ou avaliação fornecido for inválido.
  *
- * Desenvolvido por: João Victor Prata Tavares Pereira - 202028857
+ * Desenvolvido por: Mariana Soares Oliveira - 231011663
  */
 class Viagem{
     private:
@@ -290,7 +290,7 @@ inline Avaliacao Destino::getAvaliacao() const{
  *
  * @throw invalid_argument Se o código ou senha fornecidos forem inválidos.
  *
- * Desenvolvido por: Mauro Ribeiro da Silva - 231013592
+ * Desenvolvido por: Nikolas Negrão Pessoa - 202024722
  */
 class Conta{
     private:
@@ -423,7 +423,7 @@ class Hospedagem {
          *
          * @throw invalid_argument Se o valor da diária fornecido for inválido.
          */
-        void setDinheiro(const Dinheiro&);
+        void setDiaria(const Dinheiro&);
 
         /**
          * @brief Retorna o valor da diária da hospedagem.
@@ -432,7 +432,7 @@ class Hospedagem {
          *
          * @return O valor da diária.
          */
-        Dinheiro getDinheiro() const;
+        Dinheiro getDiaria() const;
 
         /**
          * @brief Define a avaliação da hospedagem.
@@ -464,7 +464,7 @@ inline void Hospedagem::setNome(const Nome &nome){
     this->nome = nome;
 }
 
-inline void Hospedagem::setDinheiro(const Dinheiro &diaria){
+inline void Hospedagem::setDiaria(const Dinheiro &diaria){
     this ->diaria = diaria;
 }
 
@@ -480,7 +480,7 @@ inline Nome Hospedagem::getNome() const{
     return nome;
 }
 
-inline Dinheiro Hospedagem::getDinheiro() const{
+inline Dinheiro Hospedagem::getDiaria() const{
     return diaria;
 }
 
@@ -489,27 +489,26 @@ inline Avaliacao Hospedagem::getAvaliacao() const{
 }
 
 //---------------------------------------------------------------------
-// ENTIDADE ATIVIDADES
+// ENTIDADE ATIVIDADE
 
 /**
  * @brief Classe que representa uma Atividade.
  *
- * A classe Atividades contém informações sobre uma atividade programada durante a viagem, como código, nome, data, horário, duração, custo e avaliação.
+ * A classe Atividade contém informações sobre uma atividade programada durante a viagem, como código, nome, data, horário, duração, custo e avaliação.
  *
  * @throw invalid_argument Se os dados fornecidos forem inválidos.
  *
- * Desenvolvido por: Nikolas Negrão Pessoa - 202024722
+ * Desenvolvido por: Mauro Ribeiro da Silva - 231013592
  */
 
-class Atividades {
-
+class Atividade {
     private:
         Codigo codigo; ///< Código da atividade.
         Nome nome;  ///< Nome da atividade.
         Data data;  ///< Data em que a atividade ocorre.
         Horario horario;  ///< Horário da atividade.
         Duracao duracao;  ///< Duração da atividade.
-        Dinheiro dinheiro;  ///< Valor associado à atividade.
+        Dinheiro preco;  ///< Valor associado à atividade.
         Avaliacao avaliacao;  ///< Avaliação atribuída à atividade.
     public:
         /**
@@ -621,7 +620,7 @@ class Atividades {
          *
          * @throw invalid_argument Se o valor fornecido for inválido.
          */
-        void setDinheiro(const Dinheiro&);
+        void setPreco(const Dinheiro&);
 
         /**
          * @brief Retorna o custo da atividade.
@@ -630,7 +629,7 @@ class Atividades {
          *
          * @return O custo da atividade.
          */
-        Dinheiro getDinheiro() const;
+        Dinheiro getPreco() const;
 
         /**
          * @brief Define a avaliação da atividade.
@@ -654,59 +653,59 @@ class Atividades {
 
     };
 
-    inline void Atividades::setCodigo(const Codigo &codigo) {
+    inline void Atividade::setCodigo(const Codigo &codigo) {
         this->codigo = codigo;
     }
 
-    inline void Atividades::setNome(const Nome &nome) {
+    inline void Atividade::setNome(const Nome &nome) {
         this->nome = nome;
     }
 
-    inline void Atividades::setData(const Data &data) {
+    inline void Atividade::setData(const Data &data) {
         this->data = data;
     }
 
-    inline void Atividades::setHorario(const Horario &horario) {
+    inline void Atividade::setHorario(const Horario &horario) {
         this->horario = horario;
     }
 
-    inline void Atividades::setDuracao(const Duracao &duracao) {
+    inline void Atividade::setDuracao(const Duracao &duracao) {
         this->duracao = duracao;
     }
 
-    inline void Atividades::setDinheiro(const Dinheiro &dinheiro) {
-        this->dinheiro = dinheiro;
+    inline void Atividade::setPreco(const Dinheiro &preco) {
+        this->preco = preco;
     }
 
-    inline void Atividades::setAvaliacao(const Avaliacao &avaliacao) {
+    inline void Atividade::setAvaliacao(const Avaliacao &avaliacao) {
         this->avaliacao = avaliacao;
     }
 
-    inline Codigo Atividades::getCodigo() const {
+    inline Codigo Atividade::getCodigo() const {
         return codigo;
     }
 
-    inline Nome Atividades::getNome() const {
+    inline Nome Atividade::getNome() const {
         return nome;
     }
 
-    inline Data Atividades::getData() const {
+    inline Data Atividade::getData() const {
         return data;
     }
 
-    inline Horario Atividades::getHorario() const {
+    inline Horario Atividade::getHorario() const {
         return horario;
     }
 
-    inline Duracao Atividades::getDuracao() const {
+    inline Duracao Atividade::getDuracao() const {
         return duracao;
     }
 
-    inline Dinheiro Atividades::getDinheiro() const {
-        return dinheiro;
+    inline Dinheiro Atividade::getPreco() const {
+        return preco;
     }
 
-    inline Avaliacao Atividades::getAvaliacao() const {
+    inline Avaliacao Atividade::getAvaliacao() const {
         return avaliacao;
     }
 

@@ -75,7 +75,7 @@ class TUCodigo {
 class TUSenha {
 
     private:
-        
+
         static constexpr const char* SENHA_VALIDO = "21345";
         static constexpr const char* SENHA_INVALIDO = "12345";
         Senha *senha;
@@ -85,7 +85,7 @@ class TUSenha {
         void testarCenarioSenhaValido();
         void testarCenarioSenhaInvalido();
     public:
-        
+
         const static int SUCESSO = 0;
         const static int FALHA = -1;
         int run();
@@ -127,7 +127,7 @@ class TUDuracao {
 
 class TUDinheiro {
     private:
-        const int DINHEIRO_VALIDO = 200.00;
+        const int DINHEIRO_VALIDO = 200.01;
         const int DINHEIRO_INVALIDO = 300000.00;
         Dinheiro *dinheiro;
         int estado;
@@ -142,6 +142,22 @@ class TUDinheiro {
         int run();
 };
 
+class TUConta{
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string SENHA_VALIDO = "21345";
+        Conta *conta;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenario();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+
+};
+
 class TUDestino {
     private:
         const string CODIGO_VALIDO = "uba123";
@@ -154,6 +170,59 @@ class TUDestino {
         void setUp();
         void tearDown();
         void testarCenarioDestino();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
+class TUAtividades {
+    private:
+        const string NOME_VALIDO = "Mauro";
+        const string DATA_VALIDA = "11-02-04";
+        const string HORARIO_VALIDO = "12:00";
+        const static int DURACAO_VALIDA = 120;
+        const double PRECO_VALIDO = 150.00;
+        const static int AVALIACAO_VALIDA = 3;
+        Atividades *atividades;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioAtividades();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
+class TUViagem {
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string NOME_VALIDO = "Juninho Silva";
+        const static int AVALIACAO_VALIDA = 5;
+        Viagem *viagem;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioViagem();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int run();
+};
+
+class TUHospedagem{
+    private:
+        const string CODIGO_VALIDO = "uba123";
+        const string NOME_VALIDO = "Pedro";
+        const static int DIARIA_VALIDA = 120.01;
+        const static int AVALIACAO_VALIDA = 5;
+        Hospedagem *hospedagem;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioHospedagem();
+
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;

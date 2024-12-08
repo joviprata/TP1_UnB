@@ -82,6 +82,14 @@ $(function() {
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dominios_8hpp_source.html">dominios.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para Data:</div>
+<div class="dyncontent">
+<div class="center"><img src="classData__coll__graph.png" border="0" usemap="#aData_coll__map" alt="Collaboration graph"/></div>
+<map name="aData_coll__map" id="aData_coll__map">
+<area shape="rect" title="Classe que representa uma data no formato DD&#45;MM&#45;AA." alt="" coords="5,5,96,91"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
@@ -96,16 +104,19 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>getData</b> () cons
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe que representa uma data no formato DD-MM-AA. </p>
-<p>Regras de formato:</p><ul>
-<li>Formato: DD-MM-AA</li>
-<li>DD: de 00 a 31</li>
-<li>MM: de 01 a 12</li>
-<li>AA: de 00 a 99</li>
+<hr  />
+<p> DOMÍNIO DATA </p>
+<p>A classe gerencia e valida datas, incluindo anos bissextos.</p>
+<p><b>Regras de formato</b>:</p><ul>
+<li>O formato deve ser DD-MM-AA.</li>
+<li>DD: entre 01 e 31</li>
+<li>MM: entre 01 e 12.</li>
+<li>AA: entre 00 e 99.</li>
 <li>Levar em consideração anos bissextos.</li>
 </ul>
 <dl class="exception"><dt>Exceções</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>se a data não atender aos requisitos.</td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>Se a data não for válida.</td></tr>
   </table>
   </dd>
 </dl>

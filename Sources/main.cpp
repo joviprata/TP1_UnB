@@ -66,7 +66,15 @@ int main() {
 
     // Declaração de testes unitários de entidades:
 
+    TUConta testeConta;
+
     TUDestino testeDestino;
+
+    TUAtividades testeAtividades;
+
+    TUViagem testeViagem;
+
+    TUHospedagem testeHospedagem;
 
     // Testes:
 
@@ -101,10 +109,10 @@ int main() {
 
     switch (testeSenha.run())
     {
-    case TUSenha::SUCESSO:cout<<"SUCESSO"<<endl;
+    case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
         break;
-    
-    case TUSenha::FALHA:cout<<"FALHA"<<endl;
+
+    case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
         break;
     }
 
@@ -143,13 +151,52 @@ int main() {
             break;
     }
 
-    
+
+    // Teste de Conta conforme o roteiro
+
+    switch (testeConta.run())
+    {
+    case TUConta::SUCESSO:cout<<"SUCESSO (CONTA)"<<endl;
+        break;
+
+    case TUConta::FALHA:cout<<"FALHA (CONTA)"<<endl;
+        break;
+    }
+
     // Teste de Destino conforme o roteiro
-    
+
     switch(testeDestino.run()){
         case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
             break;
         case TUDestino::FALHA: cout << "FALHA (DESTINO)" << endl;
+            break;
+    }
+
+    //  Teste de Atividades
+
+    switch(testeAtividades.run()){
+        case TUAtividades::SUCESSO: cout << "SUCESSO (ATIVIDADES)" << endl;
+            break;
+        case TUAtividades::FALHA: cout << "FALHA (ATIVIDADES)" << endl;
+            break;
+    }
+
+    // Teste de Viagem, conforme roteiro.
+
+    switch(testeViagem.run()){
+        case TUViagem::SUCESSO: cout << "SUCESSO (VIAGEM)" << endl;
+            break;
+        case TUViagem::FALHA: cout << "FALHA (VIAGEM)" << endl;
+            break;
+    }
+
+
+    // Teste de Hospedagem, conforme roteiro.
+
+    switch(testeHospedagem.run()){
+        case TUHospedagem::SUCESSO: cout << "SUCESSO (HOSPEDAGEM)" << endl;
+            break;
+        case TUHospedagem::FALHA: cout << "FALHA (HOSPEDAGEM)" << endl;
             break;
     }
 

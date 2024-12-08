@@ -156,10 +156,10 @@ int main() {
 
     switch (testeConta.run())
     {
-    case TUConta::SUCESSO:cout<<"SUCESSO"<<endl;
+    case TUConta::SUCESSO:cout<<"SUCESSO (CONTA)"<<endl;
         break;
-    
-    case TUConta::FALHA:cout<<"FALHA"<<endl;
+
+    case TUConta::FALHA:cout<<"FALHA (CONTA)"<<endl;
         break;
     }
 

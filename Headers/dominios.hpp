@@ -141,7 +141,7 @@ inline float Dinheiro::getDinheiro() const {
 // --------------------------------------------------------------------
 // DOMÍNIO DURAÇÃO
 /**
- * @brief Representa uma duração em dias.
+ * @brief Classe que representa uma duração em dias.
  *
  * A classe gerencia a duração de atividades.
  *

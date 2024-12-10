@@ -4,15 +4,6 @@
 #include <stdexcept> // facilita tratar erros como de argumento inválido
 using namespace std;
 
-// Função auxiliar usada nas classes Data e Horario:
-bool string_eh_int(string str) {
-    for (char chr : str) {
-        if (!isdigit(chr))
-            return false;
-    }
-    return true;
-}
-
 
 // Funções para classe Avaliacao:
 void Avaliacao::validar(int avaliacao){
@@ -51,8 +42,20 @@ void Data::validar(string data){
     string str_MM = data.substr(3,2);
     string str_AA = data.substr(6,2);
 
-    if (!string_eh_int(str_DD) or !string_eh_int(str_MM) or !string_eh_int(str_AA))
-         throw invalid_argument("Argumento invalido");
+    for (char chr : str_DD) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
+
+    for (char chr : str_MM) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
+
+    for (char chr : str_AA) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
 
     int DD = stoi(str_DD);
     int MM = stoi(str_MM);
@@ -116,8 +119,16 @@ void Horario::validar(string horario) {
 
     string str_HH = horario.substr(0, 2);
     string str_mm = horario.substr(3, 2);
-    if (!string_eh_int(str_HH) or !string_eh_int(str_mm))
-        throw invalid_argument("Argumento invalido");
+
+    for (char chr : str_HH) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
+
+    for (char chr : str_mm) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
 
     int HH = stoi(str_HH);
     int mm = stoi(str_mm);

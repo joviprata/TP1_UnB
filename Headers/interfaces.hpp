@@ -5,6 +5,8 @@
 #include "entidades.hpp"
 #include <stdexcept>
 
+// INL = InterfaceLogicaNegocio
+
 class InterfaceLogicaNegocioEntidadesServico;
 
 class InterfaceEntidadesServico {
@@ -59,10 +61,10 @@ public:
 };
 
 
-class InterfaceLogicaNegocioContaServico;
+class ILNContaServico; 
 
 
-class InterfaceContaServico{
+class IContaServico{
 public:
 
     virtual bool criar(Conta) = 0;

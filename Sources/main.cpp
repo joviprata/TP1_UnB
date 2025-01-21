@@ -40,9 +40,10 @@ int main() {
 
     Hospedagem hospedagem;
 
-    Atividades atividades;
+    Atividade atividade;
 
     */
+
 
     // Declaração de testes unitários de domínios:
 
@@ -60,72 +61,28 @@ int main() {
 
     TUNome testeNome;
 
-    //TUSenha
-
     TUSenha testeSenha;
+
 
     // Declaração de testes unitários de entidades:
 
+    TUConta testeConta;
+
     TUDestino testeDestino;
 
-    TUAtividades testeAtividades;
+    TUAtividade testeAtividade;
 
     TUViagem testeViagem;
 
     TUHospedagem testeHospedagem;
 
+
     // Testes:
 
-    // Teste de classe Horario:
+    // Testes de domínios:
 
-    switch(testeHorario.run()){
-        case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
-        break;
-    case TUHorario::FALHA: cout << "FALHA (HORARIO)" << endl;
-        break;
-    }
+    // Teste de classe Avaliacao:
 
-    // Teste de classe Nome:
-
-    switch(testeNome.run()){
-        case TUNome::SUCESSO: cout << "SUCESSO (NOME)" << endl;
-        break;
-    case TUNome::FALHA: cout << "FALHA (NOME)" << endl;
-        break;
-    }
-
-    // Testes de classe Data
-
-    switch(testeData.run()){
-        case TUData::SUCESSO: cout<<"SUCESSO (DATA)"<<endl;
-        break;
-    case TUData::FALHA: cout<<"FALHA (DATA)" <<endl;
-        break;
-    }
-
-    // Teste de classe Senha
-
-    switch (testeSenha.run())
-    {
-    case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
-        break;
-
-    case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
-        break;
-    }
-
-    //TODO
-
-    // Teste do Código, feito conforme roteiro do projeto
-
-    switch(testeCodigo.run()){
-        case TUCodigo::SUCESSO: cout << "SUCESSO (CODIGO)" << endl;
-        break;
-    case TUCodigo::FALHA : cout << "FALHA (CODIGO)" << endl;
-        break;
-    }
-
-    // Teste da Avaliação, feito conforme roteiro do projeto
     switch(testeAvaliacao.run()){
         case TUAvaliacao::SUCESSO: cout << "SUCESSO (AVALIACAO)" << endl;
             break;
@@ -133,14 +90,25 @@ int main() {
             break;
     }
 
-    // Teste de Duracao e Dinheiro conforme o roteiro
+    // Teste de classe Codigo:
 
-    switch(testeDuracao.run()) {
-        case TUDuracao::SUCESSO: cout << "SUCESSO (DURACAO)" << endl;
+    switch(testeCodigo.run()){
+        case TUCodigo::SUCESSO: cout << "SUCESSO (CODIGO)" << endl;
             break;
-        case TUDuracao::FALHA: cout << "FALHA (DURACAO)" << endl;
+        case TUCodigo::FALHA : cout << "FALHA (CODIGO)" << endl;
             break;
     }
+
+    // Testes de classe Data:
+
+    switch(testeData.run()){
+        case TUData::SUCESSO: cout << "SUCESSO (DATA)" << endl;
+            break;
+        case TUData::FALHA: cout << "FALHA (DATA)" << endl;
+            break;
+    }
+
+    // Teste de classe Dinheiro:
 
     switch(testeDinheiro.run()) {
         case TUDinheiro::SUCESSO: cout << "SUCESSO (DINHEIRO)" << endl;
@@ -149,8 +117,56 @@ int main() {
             break;
     }
 
+    // Teste de classe Duracao:
 
-    // Teste de Destino conforme o roteiro
+    switch(testeDuracao.run()) {
+        case TUDuracao::SUCESSO: cout << "SUCESSO (DURACAO)" << endl;
+            break;
+        case TUDuracao::FALHA: cout << "FALHA (DURACAO)" << endl;
+            break;
+    }
+
+    // Teste de classe Horario:
+
+    switch(testeHorario.run()){
+        case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
+            break;
+        case TUHorario::FALHA: cout << "FALHA (HORARIO)" << endl;
+            break;
+    }
+
+    // Teste de classe Nome:
+
+    switch(testeNome.run()){
+        case TUNome::SUCESSO: cout << "SUCESSO (NOME)" << endl;
+            break;
+        case TUNome::FALHA: cout << "FALHA (NOME)" << endl;
+            break;
+    }
+
+    // Teste de classe Senha:
+
+    switch (testeSenha.run()) {
+        case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
+            break;
+        case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
+            break;
+    }
+
+
+    // Testes de entidades:
+
+    // Teste de classe Conta:
+
+    switch (testeConta.run()) {
+        case TUConta::SUCESSO:cout << "SUCESSO (CONTA)" << endl;
+            break;
+
+        case TUConta::FALHA:cout << "FALHA (CONTA)" << endl;
+            break;
+    }
+
+    // Teste de classe Destino:
 
     switch(testeDestino.run()){
         case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
@@ -159,16 +175,16 @@ int main() {
             break;
     }
 
-    //  Teste de Atividades
+    //  Teste de classe Atividade:
 
-    switch(testeAtividades.run()){
-        case TUAtividades::SUCESSO: cout << "SUCESSO (ATIVIDADES)" << endl;
+    switch(testeAtividade.run()){
+        case TUAtividade::SUCESSO: cout << "SUCESSO (ATIVIDADE)" << endl;
             break;
-        case TUAtividades::FALHA: cout << "FALHA (ATIVIDADES)" << endl;
+        case TUAtividade::FALHA: cout << "FALHA (ATIVIDADE)" << endl;
             break;
     }
 
-    // Teste de Viagem, conforme roteiro.
+    // Teste de classe Viagem:
 
     switch(testeViagem.run()){
         case TUViagem::SUCESSO: cout << "SUCESSO (VIAGEM)" << endl;
@@ -177,8 +193,7 @@ int main() {
             break;
     }
 
-
-    // Teste de Hospedagem, conforme roteiro.
+    // Teste de classe Hospedagem:
 
     switch(testeHospedagem.run()){
         case TUHospedagem::SUCESSO: cout << "SUCESSO (HOSPEDAGEM)" << endl;
@@ -189,3 +204,4 @@ int main() {
 
     return 0;
 }
+

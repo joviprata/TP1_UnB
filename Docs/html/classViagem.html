@@ -82,6 +82,14 @@ $(function() {
  <a href="#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="entidades_8hpp_source.html">entidades.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para Viagem:</div>
+<div class="dyncontent">
+<div class="center"><img src="classViagem__coll__graph.png" border="0" usemap="#aViagem_coll__map" alt="Collaboration graph"/></div>
+<map name="aViagem_coll__map" id="aViagem_coll__map">
+<area shape="rect" title="Classe que representa uma Viagem." alt="" coords="5,5,128,171"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
@@ -106,8 +114,14 @@ Membros Públicos</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe que representa uma <a class="el" href="classViagem.html" title="Classe que representa uma Viagem.">Viagem</a>. </p>
-<p>A classe <a class="el" href="classViagem.html" title="Classe que representa uma Viagem.">Viagem</a> contém os atributos e métodos para manipulação dos dados de uma viagem, incluindo código, nome e avaliação.</p>
-<p>Desenvolvido por: João Victor Prata Tavares Pereira - 202028857 </p>
+<p>A classe <a class="el" href="classViagem.html" title="Classe que representa uma Viagem.">Viagem</a> contém os atributos necessários para armazenar informações sobre uma viagem, como código, nome e avaliação. Essas informações são usadas para descrever uma viagem específica dentro do sistema.</p>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Se o código, nome ou avaliação fornecido for inválido.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Desenvolvido por: Mariana Soares Oliveira - 231011663 </p>
 </div><h2 class="groupheader">Documentação das funções</h2>
 <a id="a42db61ac0f02f1a84d7ca399b808577c" name="a42db61ac0f02f1a84d7ca399b808577c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42db61ac0f02f1a84d7ca399b808577c">&#9670;&#160;</a></span>getAvaliacao()</h2>
@@ -133,7 +147,8 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna a avaliação da viagem. </p>
-<dl class="section return"><dt>Retorna</dt><dd>A avaliação da viagem como um objeto do tipo <a class="el" href="classAvaliacao.html" title="Classe que representa uma avaliação de 0 a 5.">Avaliacao</a>. </dd></dl>
+<p>Recupera a avaliação atribuída à viagem.</p>
+<dl class="section return"><dt>Retorna</dt><dd>A avaliação da viagem. </dd></dl>
 
 </div>
 </div>
@@ -161,7 +176,8 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna o código da viagem. </p>
-<dl class="section return"><dt>Retorna</dt><dd>O código da viagem como um objeto do tipo <a class="el" href="classCodigo.html" title="Classe que representa um código de seis caracteres.">Codigo</a>. </dd></dl>
+<p>Recupera o código da viagem armazenado no objeto.</p>
+<dl class="section return"><dt>Retorna</dt><dd>O código da viagem. </dd></dl>
 
 </div>
 </div>
@@ -189,7 +205,8 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retorna o nome da viagem. </p>
-<dl class="section return"><dt>Retorna</dt><dd>O nome da viagem como um objeto do tipo <a class="el" href="classNome.html" title="Classe que representa um nome com até 30 caracteres.">Nome</a>. </dd></dl>
+<p>Recupera o nome da viagem armazenado no objeto.</p>
+<dl class="section return"><dt>Retorna</dt><dd>O nome da viagem. </dd></dl>
 
 </div>
 </div>
@@ -217,9 +234,16 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Define a avaliação da viagem. </p>
+<p>Atribui uma avaliação à viagem. A avaliação pode ser usada para indicar a qualidade ou experiência da viagem.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">avaliacao</td><td>Objeto do tipo <a class="el" href="classAvaliacao.html" title="Classe que representa uma avaliação de 0 a 5.">Avaliacao</a> representando a avaliação da viagem. </td></tr>
+    <tr><td class="paramname">avaliacao</td><td>A avaliação a ser atribuída à viagem.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Se a avaliação fornecida for inválida. </td></tr>
   </table>
   </dd>
 </dl>
@@ -250,9 +274,16 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Define o código da viagem. </p>
+<p>Atribui um código único para identificar a viagem. O código deve ser válido, caso contrário, uma exceção será lançada.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">codigo</td><td>Objeto do tipo <a class="el" href="classCodigo.html" title="Classe que representa um código de seis caracteres.">Codigo</a> representando o código da viagem. </td></tr>
+    <tr><td class="paramname">codigo</td><td>O código da viagem a ser atribuído.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Se o código fornecido for inválido. </td></tr>
   </table>
   </dd>
 </dl>
@@ -283,9 +314,16 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Define o nome da viagem. </p>
+<p>Atribui um nome para a viagem. O nome deve ser uma string válida, caso contrário, uma exceção será lançada.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nome</td><td>Objeto do tipo <a class="el" href="classNome.html" title="Classe que representa um nome com até 30 caracteres.">Nome</a> representando o nome da viagem. </td></tr>
+    <tr><td class="paramname">nome</td><td>O nome da viagem a ser atribuído.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>Se o nome fornecido for inválido. </td></tr>
   </table>
   </dd>
 </dl>

@@ -5,11 +5,10 @@
 #include "entidades.hpp"
 #include <stdexcept>
 
-// INL = InterfaceLogicaNegocio
+class InterfaceLogicaNegocioEntidadesServico;
+class InterfaceEntidadesApresentacao;
 
-class ILNEntidadesServico;
-
-class IEntidadesServico {
+class InterfaceEntidadesServico {
 public:
     virtual bool criar(Viagem) = 0;
     virtual bool excluir(Viagem) = 0;
@@ -31,11 +30,11 @@ public:
     virtual bool ler(Hospedagem*) = 0;
     virtual bool atualizar(Hospedagem) = 0;
 
-    virtual void setCntrLNEntidadesServico(ILNEntidadesServico*) = 0;
-    virtual ~IEntidadesServico(){};
+    virtual void setCntrLogicaNegocioEntidadesServico(InterfaceLogicaNegocioEntidadesServico*) = 0;
+    virtual ~InterfaceEntidadesServico(){};
 };
 
-class ILNEntidadesServico {
+class InterfaceLogicaNegocioEntidadesServico {
 public:
     virtual bool criar(const Viagem&) = 0;
     virtual bool excluir(const Viagem&) = 0;
@@ -57,41 +56,24 @@ public:
     virtual bool ler(const Hospedagem&) = 0;
     virtual bool atualizar(const Hospedagem&) = 0;
 
-    virtual ~ILNEntidadesServico(){};
+    virtual ~InterfaceLogicaNegocioEntidadesServico(){};
 };
 
+// --------------------------------------------------------------------
+// CLASSE IEA
+/**
+ * @brief Classe que representa a interface de entidades na camada de apresentação.
+ *
+ * A classe gerencia as execuções referentes as entidades.
+ *
+ *
+ * Desenvolvido por: Mauro Ribeiro da Silva - 231013592
+ */
 
-class ILNContaServico; 
-
-class IContaServico{
+class InterfaceEntidadesApresentacao{
 public:
-    virtual bool criar(Conta) = 0;
-    virtual bool excluir(Codigo) = 0;
-    virtual bool ler(Conta) = 0;
-    virtual bool atualizar(Conta) = 0;
-
-    virtual void setCntrLNContaServico(ILNContaServico*) = 0;
-    virtual ~IContaServico(){};
-};
-
-class INLContaServico{
-public:
-    virtual bool criar(const Conta&) = 0;
-    virtual bool excluir(const Codigo&) = 0;
-    virtual bool ler(const Conta&) = 0;
-    virtual bool atualizar(const Conta&) = 0;
-
-    virtual ~INEContaServico(){};
-};
-
-class IContaApresentacao{
-    virtual void criar(codigo) = 0;
-    virtual void executar(codigo) =0;
-
-    virtual void criar(senha) = 0;
-    virtual void executar(senha) =0;
-};
-
-    
+    virtual void executar(Codigo) = 0;
+    virtual ~InterfaceEntidadesApresentacao(){};
+}
 
 #endif // INTERFACES_HPP_INCLUDED

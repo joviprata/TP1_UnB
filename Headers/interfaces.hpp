@@ -58,4 +58,16 @@ public:
     virtual ~InterfaceLogicaNegocioEntidadesServico(){};
 };
 
+
+class InterfaceLogicaNegocioContaServico;
+
+
+class InterfaceContaServico{
+public:
+
+    virtual bool criar(Conta) = 0;
+    virtual bool excluir(Codigo) = 0;
+    virtual bool ler(Conta) = 0;
+    virtual bool atualizar(Conta) = 0;
+
 #endif // INTERFACES_HPP_INCLUDED

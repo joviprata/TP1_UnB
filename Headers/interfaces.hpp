@@ -5,9 +5,11 @@
 #include "entidades.hpp"
 #include <stdexcept>
 
-class InterfaceLogicaNegocioEntidadesServico;
+// INL = InterfaceLogicaNegocio
 
-class InterfaceEntidadesServico {
+class ILNEntidadesServico;
+
+class IEntidadesServico {
 public:
     virtual bool criar(Viagem) = 0;
     virtual bool excluir(Viagem) = 0;
@@ -29,11 +31,11 @@ public:
     virtual bool ler(Hospedagem*) = 0;
     virtual bool atualizar(Hospedagem) = 0;
 
-    virtual void setCntrLogicaNegocioEntidadesServico(InterfaceLogicaNegocioEntidadesServico*) = 0;
-    virtual ~InterfaceEntidadesServico(){};
+    virtual void setCntrLNEntidadesServico(ILNEntidadesServico*) = 0;
+    virtual ~IEntidadesServico(){};
 };
 
-class InterfaceLogicaNegocioEntidadesServico {
+class ILNEntidadesServico {
 public:
     virtual bool criar(const Viagem&) = 0;
     virtual bool excluir(const Viagem&) = 0;
@@ -55,7 +57,33 @@ public:
     virtual bool ler(const Hospedagem&) = 0;
     virtual bool atualizar(const Hospedagem&) = 0;
 
-    virtual ~InterfaceLogicaNegocioEntidadesServico(){};
+    virtual ~ILNEntidadesServico(){};
 };
+
+
+class ILNContaServico; 
+
+class IContaServico{
+public:
+    virtual bool criar(Conta) = 0;
+    virtual bool excluir(Codigo) = 0;
+    virtual bool ler(Conta) = 0;
+    virtual bool atualizar(Conta) = 0;
+
+    virtual void setCntrLNContaServico(ILNContaServico*) = 0;
+    virtual ~IContaServico(){};
+};
+
+class INLContaServico{
+public:
+    virtual bool criar(const Conta&) = 0;
+    virtual bool excluir(const Codigo&) = 0;
+    virtual bool ler(const Conta&) = 0;
+    virtual bool atualizar(const Conta&) = 0;
+
+    virtual ~INEContaServico(){};
+};
+
+    
 
 #endif // INTERFACES_HPP_INCLUDED

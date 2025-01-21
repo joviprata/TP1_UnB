@@ -84,6 +84,14 @@ public:
     virtual ~INEContaServico(){};
 };
 
+class IContaApresentacao{
+    virtual void criar(codigo) = 0;
+    virtual void executar(codigo) =0;
+
+    virtual void criar(senha) = 0;
+    virtual void executar(senha) =0;
+};
+
     
 
 #endif // INTERFACES_HPP_INCLUDED

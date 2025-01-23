@@ -3,18 +3,28 @@
 
 #include "interfaces.hpp"
 
+/** 
+ * @brief Controladora para a interface serviço de autenticação.
+*/
 class CntrIServicoAutenticacao:public IServicoAutenticacao {
     private:
-        ILNAutenticacao *cntrILNAutenticacao;
+        ILNSAutenticacao *cntrILNSAutenticacao;
 
     public:
-        bool autenticar(Conta*);
-        void setCntrLNAutenticacao(ILNAutenticacao*);
+        bool autenticar(Conta); ///< Autentica conta.
+        void setCntrLNSAutenticacao(ILNSAutenticacao*); ///< Define o ponteiro a instância de ILNSAutenticacao.
 
 };
 
-void inline CntrIServicoAutenticacao::setCntrLNAutenticacao(ILNAutenticacao *cntrILNAutenticacao) {
-    this->cntrILNAutenticacao = cntrILNAutenticacao;
+/** 
+ * @brief Método inline para configurar o serviço de autenticação.
+ * 
+ * Conecta o serviço de autenticação e a controladora.
+ * 
+ * @param cntrILNSAutenticacao
+*/
+void inline CntrIServicoAutenticacao::setCntrLNSAutenticacao(ILNSAutenticacao *cntrILNSAutenticacao) {
+    this->cntrILNSAutenticacao = cntrILNSAutenticacao;
 };
 
 #endif // CONTROLADORAS_HPP_INCLUDED

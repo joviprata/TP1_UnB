@@ -5,7 +5,8 @@
 
 using namespace std;
 
-bool CntrIServicoAutenticacao::autenticar(Conta *conta) {
+
+bool CntrIServicoAutenticacao::autenticar(Conta conta) {
     Senha senha;
     Codigo codigo;
     string entrada;
@@ -16,7 +17,7 @@ bool CntrIServicoAutenticacao::autenticar(Conta *conta) {
         try {
             cout << "" << endl;
             cin >> entrada;
-            conta->setCodigo(entrada);
+            codigo.setCodigo(entrada);
 
             cout << "Digite a senha: " << endl;
             cin >> entrada;
@@ -28,7 +29,7 @@ bool CntrIServicoAutenticacao::autenticar(Conta *conta) {
             cout << endl << "Dado em formato incorreto." << endl;
         }
     }
-    bool resultado = cntrILNAutenticacao->autenticar(*codigo, senha);
+    bool resultado = cntrILNSAutenticacao->autenticar(codigo, senha);
     
     return resultado;
 

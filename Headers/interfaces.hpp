@@ -7,24 +7,34 @@
 
 using namespace std;
 
-// Foraward declaration
-class ILNAutenticacao;
+/** 
+ * @brief Foraward declaration (Declaração adiantada) da interface ILNSAutenticacao
+*/
+class ILNSAutenticacao;
 
-// Classes abstratas -> métodos vistuais puros
+// --------------------------------------------------------------------
+// INTERFACE SERVIÇO AUTENTICAÇÃO
+/** 
+ * @brief Classe abstrata Interface Serviço Autenticação
+ * 
+ * 
+*/
 class IServicoAutenticacao {
     public:
-        virtual bool autenticar(Conta*) = 0;
-        virtual void setCntrLNAutenticacao(ILNAutenticacao*) = 0;
+        virtual bool autenticar(Conta) = 0; ///< Autenticar conta.
+        virtual void setCntrLNSAutenticacao(ILNSAutenticacao*) = 0; ///< Define o ponteiro a instância de ILNSAutenticacao.
 
-        virtual ~IServicoAutenticacao() {} // Destrutor
+        virtual ~IServicoAutenticacao() {} ///< Método destrutor da classe.
 };
 
-// Declaração de interface p/ serviço
-
-class ILNAutenticacao {
+/** 
+ * @brief Classe abstrata da lógica de negócio Interface Serviço Autenticação
+ * 
+*/
+class ILNSAutenticacao {
     public:
-        virtual bool autenticar(const Codigo&, const Senha&) = 0;
-        virtual ~ILNAutenticacao() {} // Destrutor
+        virtual bool autenticar(const Codigo&, const Senha&) = 0; ///< Autentica a conta verificando código e senha.
+        virtual ~ILNSAutenticacao() {} ///< Método destrutor da classe.
 };
 
 #endif // INTERFACES_HPP_INCLUDED

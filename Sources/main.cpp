@@ -3,6 +3,9 @@
 #include "dominios.hpp"
 #include "entidades.hpp"
 #include "testes.hpp"
+#include "interfaces.hpp"
+#include "stubs.hpp"
+#include "controladoras.hpp"
 
 using namespace std;
 
@@ -202,7 +205,45 @@ int main() {
             break;
     }
 
-    
+    // IAS - instaciando controladora e stub.
+    // LN - Lógica de Negócios; S - Serviço.
+
+    IServicoAutenticacao *cntrIServicoAutenticacao = new CntrIServicoAutenticacao();
+    ILNSAutenticacao *stubLNSAutenticacao = new StubLNSAutenticacao();
+
+    cntrIServicoAutenticacao->setCntrLNSAutenticacao(stubLNSAutenticacao);
+
+    bool resultado;
+
+    Conta conta;
+    Senha senha;
+    Codigo codigo;
+
+    while(true) {
+        cout << endl << "Tela inicial de sistema." << endl;
+
+        try {
+            resultado = cntrIServicoAutenticacao->autenticar(conta);
+        } catch(const runtime_error &exp) {
+            cout << "Erro de sistema." << endl;
+            break;
+        }
+
+        if(resultado) {
+            cout << endl << "Sucesso autenticação." << endl;
+            cout << endl << "Código = " << codigo.getCodigo() << endl;
+            break;
+
+        } else {
+            cout << endl << "Erro autenticação." << endl;
+            break;
+
+        }
+
+    }
+
+    delete cntrIServicoAutenticacao;
+    delete stubLNSAutenticacao;
 
     return 0;
 }

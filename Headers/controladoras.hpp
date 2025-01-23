@@ -3,6 +3,9 @@
 
 #include "interfaces.hpp"
 
+
+// --------------------------------------------------------------------
+// INTERFACE SERVIÇO AUTENTICAÇÃO
 /** 
  * @brief Controladora para a interface serviço de autenticação.
 */

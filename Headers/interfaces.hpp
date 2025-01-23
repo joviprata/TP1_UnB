@@ -7,13 +7,13 @@
 
 using namespace std;
 
+// --------------------------------------------------------------------
+// INTERFACE SERVIÇO AUTENTICAÇÃO
 /** 
  * @brief Foraward declaration (Declaração adiantada) da interface ILNSAutenticacao
 */
 class ILNSAutenticacao;
 
-// --------------------------------------------------------------------
-// INTERFACE SERVIÇO AUTENTICAÇÃO
 /** 
  * @brief Classe abstrata Interface Serviço Autenticação
  * 

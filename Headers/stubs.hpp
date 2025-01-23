@@ -5,7 +5,8 @@
 
 using namespace std;
 
-
+// --------------------------------------------------------------------
+// INTERFACE SERVIÇO AUTENTICAÇÃO
 /** 
  * @brief Classe stub para ILNSAutenticacao.
  * 

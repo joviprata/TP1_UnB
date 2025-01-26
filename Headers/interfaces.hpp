@@ -7,8 +7,11 @@
 
 using namespace std;
 
+// INL = InterfaceLogicaNegocio
+
 class InterfaceLogicaNegocioEntidadesServico;
 class InterfaceEntidadesApresentacao;
+class ILNContaServico; 
 
 class InterfaceEntidadesServico {
 public:
@@ -108,5 +111,25 @@ class ILNSAutenticacao {
         virtual ~ILNSAutenticacao() {} ///< Método destrutor da classe.
 };
 
+class IContaServico{
+public:
+    virtual bool criar(Conta) = 0;
+    virtual bool excluir(Codigo) = 0;
+    virtual bool ler(Conta) = 0;
+    virtual bool atualizar(Conta) = 0;
+
+    virtual void setCntrLNContaServico(ILNContaServico*) = 0;
+    virtual ~IContaServico(){};
+};
+
+class INLContaServico{
+public:
+    virtual bool criar(const Conta&) = 0;
+    virtual bool excluir(const Codigo&) = 0;
+    virtual bool ler(const Conta&) = 0;
+    virtual bool atualizar(const Conta&) = 0;
+
+    virtual ~INEContaServico(){};
+};
 
 #endif // INTERFACES_HPP_INCLUDED

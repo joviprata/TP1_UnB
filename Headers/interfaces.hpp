@@ -25,10 +25,10 @@ public:
     virtual bool ler(Viagem*) = 0;
     virtual bool atualizar(Viagem) = 0;
 
-    virtual bool criar(Atividades) = 0;
-    virtual bool excluir(Atividades) = 0;
-    virtual bool ler(Atividades*) = 0;
-    virtual bool atualizar(Atividades) = 0;
+    virtual bool criar(Atividade) = 0;
+    virtual bool excluir(Atividade) = 0;
+    virtual bool ler(Atividade*) = 0;
+    virtual bool atualizar(Atividade) = 0;
 
     virtual bool criar(Destino) = 0;
     virtual bool excluir(Destino) = 0;
@@ -51,10 +51,10 @@ public:
     virtual bool ler(const Viagem&) = 0;
     virtual bool atualizar(const Viagem&) = 0;
 
-    virtual bool criar(const Atividades&) = 0;
-    virtual bool excluir(const Atividades&) = 0;
-    virtual bool ler(const Atividades&) = 0;
-    virtual bool atualizar(const Atividades&) = 0;
+    virtual bool criar(const Atividade&) = 0;
+    virtual bool excluir(const Atividade&) = 0;
+    virtual bool ler(const Atividade&) = 0;
+    virtual bool atualizar(const Atividade&) = 0;
 
     virtual bool criar(const Destino&) = 0;
     virtual bool excluir(const Destino&) = 0;

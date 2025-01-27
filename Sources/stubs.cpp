@@ -1,4 +1,4 @@
-#include "./Headers/stubs.hpp"
+#include "stubs.hpp"
 #include <iostream>
 #include <stdexcept>
 

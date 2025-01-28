@@ -2,32 +2,28 @@
 #define CONTROLADORAS_HPP_INCLUDED
 
 #include "interfaces.hpp"
+#include "entidades.hpp"
+#include "dominios.hpp"
 
+#include <stdexcept>
+#include <iostream>
 
-// --------------------------------------------------------------------
-// INTERFACE SERVIÇO AUTENTICAÇÃO
-/** 
- * @brief Controladora para a interface serviço de autenticação.
-*/
-class CntrIServicoAutenticacao:public IServicoAutenticacao {
-    private:
-        ILNSAutenticacao *cntrILNSAutenticacao;
+using namespace std;
 
-    public:
-        bool autenticar(Conta); ///< Autentica conta.
-        void setCntrLNSAutenticacao(ILNSAutenticacao*); ///< Define o ponteiro a instância de ILNSAutenticacao.
+// ---------------------------------------------------------------------------------
+// Declaração de classe controladora e implementação de método.
 
+class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
+private:
+    IServicoAutenticacao *cntrServicoAutenticacao;        // Referência para servidor.
+public:
+    bool autenticar(Codigo*);
+    void setCntrServicoAutenticacao(IServicoAutenticacao*);
 };
 
-/** 
- * @brief Método inline para configurar o serviço de autenticação.
- * 
- * Conecta o serviço de autenticação e a controladora.
- * 
- * @param cntrILNSAutenticacao
-*/
-void inline CntrIServicoAutenticacao::setCntrLNSAutenticacao(ILNSAutenticacao *cntrILNSAutenticacao) {
-    this->cntrILNSAutenticacao = cntrILNSAutenticacao;
-};
+void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntrServicoAutenticacao){
+        this->cntrServicoAutenticacao = cntrServicoAutenticacao;
+}
+
 
 #endif // CONTROLADORAS_HPP_INCLUDED

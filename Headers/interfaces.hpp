@@ -9,14 +9,16 @@ using namespace std;
 
 // INL = InterfaceLogicaNegocio
 
-/**
- * @brief Foraward declaration (Declaração adiantada)
-*/
+// -------------------------------------------------------------------------------------------
+// Declaração adiantada (forward declaration)
 
 class InterfaceLogicaNegocioEntidadesServico;
 class InterfaceEntidadesApresentacao;
 class ILNContaServico;
-class ILNSAutenticacao;
+class IServicoAutenticacao;
+
+// --------------------------------------------------------------------
+// Interface Entidades Servico
 
 class InterfaceEntidadesServico {
 public:
@@ -92,25 +94,17 @@ public:
 /**
  * @brief Classe abstrata Interface Serviço Autenticação
  *
- *
+ * Desenvolvido por: Isabela Soares Furlan - 231013636
 */
 class IServicoAutenticacao {
     public:
-        virtual bool autenticar(Conta) = 0; ///< Autenticar conta.
-        virtual void setCntrLNSAutenticacao(ILNSAutenticacao*) = 0; ///< Define o ponteiro a instância de ILNSAutenticacao.
-
+        virtual bool autenticar(const Codigo&, const Senha&) = 0; ///< Autentica a conta verificando código e senha.
         virtual ~IServicoAutenticacao() {} ///< Método destrutor da classe.
 };
 
-/**
- * @brief Classe abstrata da lógica de negócio Interface Serviço Autenticação
- *
-*/
-class ILNSAutenticacao {
-    public:
-        virtual bool autenticar(const Codigo&, const Senha&) = 0; ///< Autentica a conta verificando código e senha.
-        virtual ~ILNSAutenticacao() {} ///< Método destrutor da classe.
-};
+// --------------------------------------------------------------------
+// INTERFACE CONTA SERVIÇO
+
 
 class IContaServico{
 public:
@@ -131,6 +125,21 @@ public:
     virtual bool atualizar(const Conta&) = 0;
 
     virtual ~INLContaServico(){};
+};
+
+// --------------------------------------------------------------------
+// INTERFACE APRESENTACAO AUTENTICACAO 
+/**
+*@brief Interface para a apresentação da autenticação.
+*Camada responsável por lidar com a interação do usuário no processo de autenticação e delegar a validação das credenciais para o serviço correspondente.
+*Desenvolvido por: Mariana Soares Oliveira (231013663)
+*/
+
+class IApresentacaoAutenticacao {
+    public:
+        virtual bool autenticar(Codigo*) = 0;
+        virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
+        virtual ~IApresentacaoAutenticacao(){}
 };
 
 #endif // INTERFACES_HPP_INCLUDED

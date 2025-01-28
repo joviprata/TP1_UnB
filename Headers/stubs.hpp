@@ -3,24 +3,21 @@
 
 #include "interfaces.hpp"
 
-using namespace std;
+// -------------------------------------------------------------------------------------------
+// Declaração de classe stub.
+//
+// Classe StubServicoAutenticacao implementa a interface IServicoAutenticacao.
 
-// --------------------------------------------------------------------
-// INTERFACE SERVIÇO AUTENTICAÇÃO
-/** 
- * @brief Classe stub para ILNSAutenticacao.
- * 
- * Simula o comportamento de ILNSautenticacao.
- * 
-*/
-class StubLNSAutenticacao: public ILNSAutenticacao {
-    private:
-        const static string TRIGGER_FALHA; ///< Gatilho para erro (com é string, precisa ser definida na implementação).
-        const static string TRIGGER_ERRO_SISTEMA; ///< Gatilho para erro (com é string, precisa ser definida na implementação).
-        
-    public:
-        bool autenticar(const Codigo&, const Senha&); ///< Autentica a conta verificando código e senha.
+class StubServicoAutenticacao:public IServicoAutenticacao{
+
+private:
+
+    const static string TRIGGER_FALHA_AUTENTICACAO;
+    const static string TRIGGER_ERRO_SISTEMA_AUTENTICACAO;
+
+public:
+
+    bool autenticar(const Codigo&, const Senha&);
 };
-
 
 #endif // STUBS_HPP_INCLUDED

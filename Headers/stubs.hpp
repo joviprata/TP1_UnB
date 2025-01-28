@@ -32,7 +32,7 @@ private:
 public:
 
     bool criar(Conta*);
-    bool excluir(Codigo*):
+    bool excluir(Codigo*);
     bool ler(Conta*);
     bool atualizar(Conta*);
 };

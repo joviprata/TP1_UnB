@@ -22,7 +22,7 @@ class IServicoAutenticacao;
 /**
 *@brief Interface para a apresentação da autenticação.
 *Camada responsável por lidar com a interação do usuário no processo de autenticação e delegar a validação das credenciais para o serviço correspondente.
-*Desenvolvido por: Mariana Soares Oliveira (231013663)
+*Desenvolvido por: Mariana Soares Oliveira - 231013663
 */
 
 class IApresentacaoAutenticacao {

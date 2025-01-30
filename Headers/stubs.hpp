@@ -20,9 +20,9 @@ public:
     bool autenticar(const Codigo&, const Senha&);
 };
 
-// Classe StubContaServiço implementa a interface IContaServiço.
+// Classe StubServicoConta implementa a interface IServiçoConta.
 
-class StubContaServico:public IContaServico{
+class StubServicoConta:public IServicoConta{
 
 private:
 

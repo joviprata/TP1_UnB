@@ -25,5 +25,16 @@ void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
         this->cntrServicoAutenticacao = cntrServicoAutenticacao;
 }
 
+class CntrApresentacaoConta:public IApresentacaoConta {
+    private:
+        IApresentacaoConta *cntrApresentacaoConta;
+    public:
+        bool autenticar(Conta*)
+        void setCntrApresentacaoConta(IApresentacaoConta*);
+};
+
+void inline CntrApresentacaoConta::setCntrApresentacaoConta(IApresentacaoConta *cntrApresentacaoConta){
+    this -> cntrApresentacaoConta = cntrApresentacaoConta;
+}
 
 #endif // CONTROLADORAS_HPP_INCLUDED

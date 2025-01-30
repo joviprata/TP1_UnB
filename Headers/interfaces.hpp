@@ -88,6 +88,23 @@ public:
 };
 
 // --------------------------------------------------------------------
+// INTERFACE CONTA APRESENTAÇÃO
+/**
+*@brief Interface para a apresentação da conta.
+*Camada responsável por lidar com a interação do usuário no processo de criação e exclusão de contas.
+*Desenvolvido por: Nikolas Negrão Pessoa (202024722)
+*/
+
+class IApresentacaoConta{
+    public:
+        virtual void criar(const Conta&) = 0;
+        virtual void excluir(Conta&)= 0;
+        virtual void setCntrApresentacaoConta(IApresentacaoConta*) = 0;
+
+        virtual ~IApresentacaoConta(){};
+};
+
+// --------------------------------------------------------------------
 // INTERFACE SERVIÇO ENTIDADES
 /**
  * @brief Interface para serviços de gerenciamento de entidades do sistema.

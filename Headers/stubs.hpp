@@ -20,21 +20,41 @@ public:
     bool autenticar(const Codigo&, const Senha&);
 };
 
-// Classe StubContaServiço implementa a interface IContaServiço.
+// Classe StubServiçoConta implementa a interface IServicoConta.
 
-class StubContaServico:public IContaServico{
+class StubServicoConta:public IServicoConta{
 
 private:
 
-    const static string TRIGGER_FALHA_AUTENTICACAO;
-    const static string TRIGGER_ERRO_SISTEMA_AUTENTICACAO;
+    const static string TRIGGER_FALHA_CONTA;
+    const static string TRIGGER_ERRO_SISTEMA_CONTA;
 
 public:
 
-    bool criar(Conta*);
-    bool excluir(Codigo*);
+    bool criar(Conta);
+    bool excluir(Codigo);
     bool ler(Conta*);
-    bool atualizar(Conta*);
+    bool atualizar(Conta);
+};
+
+class StubServicoEntidades:public IServicoEntidades {
+
+private:
+
+    const static string TRIGGER_FALHA_CODIGO_INVALIDO;
+    const static string TRIGGER_ERRO_CODIGO_INVALIDO;
+    const static string TRIGGER_FALHA_NOME_INVALIDO;
+    const static string TRIGGER_ERRO_NOME_INVALIDO;
+    const static int TRIGGER_FALHA_AVALIACAO_INVALIDA;
+    const static int TRIGGER_ERRO_AVALIACAO_INVALIDA;
+
+public:
+
+    bool criar(Viagem) = 0;
+    bool excluir(Viagem) = 0;
+    bool ler(Viagem*) = 0;
+    bool atualizar(Viagem) = 0;
 };
 
 #endif // STUBS_HPP_INCLUDED
+

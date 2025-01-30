@@ -22,7 +22,7 @@ class IServicoAutenticacao;
 /**
 *@brief Interface para a apresentação da autenticação.
 *Camada responsável por lidar com a interação do usuário no processo de autenticação e delegar a validação das credenciais para o serviço correspondente.
-*Desenvolvido por: Mariana Soares Oliveira (231013663)
+*Desenvolvido por: Mariana Soares Oliveira - 231013663
 */
 
 class IApresentacaoAutenticacao {
@@ -46,6 +46,7 @@ class IApresentacaoAutenticacao {
 class IApresentacaoEntidades{
 public:
     virtual void executar(Codigo) = 0;
+    virtual void setCntrServicoEntidades(IServicoEntidades*) = 0;
     virtual ~IApresentacaoEntidades(){};
 };
 
@@ -68,6 +69,13 @@ class IServicoAutenticacao {
 
 // --------------------------------------------------------------------
 // INTERFACE SERVIÇO CONTA
+/**
+ * @brief Interface para serviços de gerenciamento de contas do sistema.
+ *
+ * Define operações básicas de CRUD (Create, Read, Update, Delete) para a entidade Conta.
+ *
+ * Desenvolvido por: Gabriel Balder Oliveira Lemos - 231013618
+ */
 
 class IServicoConta{
 public:
@@ -81,9 +89,18 @@ public:
 
 // --------------------------------------------------------------------
 // INTERFACE SERVIÇO ENTIDADES
+/**
+ * @brief Interface para serviços de gerenciamento de entidades do sistema.
+ *
+ * Define operações básicas de CRUD (Create, Read, Update, Delete) para
+ * diferentes tipos de entidades, como Viagem, Atividade, Destino e Hospedagem.
+ *
+ * Desenvolvido por: João Victor Prata Tavares Pereira - 202028857 e Mariana Soares Oliveira - 231013663
+ */
 
 class IServicoEntidades {
 public:
+
     virtual bool criar(Viagem) = 0;
     virtual bool excluir(Viagem) = 0;
     virtual bool ler(Viagem*) = 0;
@@ -104,7 +121,6 @@ public:
     virtual bool ler(Hospedagem*) = 0;
     virtual bool atualizar(Hospedagem) = 0;
 
-    virtual void setCntrServicoEntidades(IServicoEntidades*) = 0;
     virtual ~IServicoEntidades(){};
 };
 

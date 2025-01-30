@@ -76,7 +76,7 @@ class InterfaceEntidadesApresentacao{
 public:
     virtual void executar(Codigo) = 0;
     virtual ~InterfaceEntidadesApresentacao(){};
-}
+};
 
 // --------------------------------------------------------------------
 // INTERFACE SERVIÇO AUTENTICAÇÃO

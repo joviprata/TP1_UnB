@@ -205,45 +205,45 @@ int main() {
             break;
     }
 
-    // IAS - instaciando controladora e stub.
-    // LN - Lógica de Negócios; S - Serviço.
+    // ---------------------------------------------------------------------------------
+    // Tela Inicial do Sistema
 
-    IServicoAutenticacao *cntrIServicoAutenticacao = new CntrIServicoAutenticacao();
-    ILNSAutenticacao *stubLNSAutenticacao = new StubLNSAutenticacao();
+    IApresentacaoAutenticacao  *cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
+    IServicoAutenticacao *stubServicoAutenticacao = new StubServicoAutenticacao();
 
-    cntrIServicoAutenticacao->setCntrLNSAutenticacao(stubLNSAutenticacao);
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
 
     bool resultado;
 
-    Conta conta;
-    Senha senha;
     Codigo codigo;
 
-    while(true) {
+    while(true){
+
         cout << endl << "Tela inicial de sistema." << endl;
 
-        try {
-            resultado = cntrIServicoAutenticacao->autenticar(conta);
-        } catch(const runtime_error &exp) {
-            cout << "Erro de sistema." << endl;
-            break;
+        try{
+
+            // Soliciatar serviço de autenticação.
+
+            resultado = cntrApresentacaoAutenticacao->autenticar(&codigo);
+        }
+        catch(const runtime_error &exp){
+                 cout << "Erro de sistema." << endl;
+                 break;
         }
 
         if(resultado) {
-            cout << endl << "Sucesso autenticação." << endl;
-            cout << endl << "Código = " << codigo.getCodigo() << endl;
+            cout << endl << "Sucesso autenticacao." << endl;
             break;
-
-        } else {
-            cout << endl << "Erro autenticação." << endl;
-            break;
-
         }
-
+        else {
+            cout << endl << "Erro autenticacao." << endl;
+            break;
+        }
     }
 
-    delete cntrIServicoAutenticacao;
-    delete stubLNSAutenticacao;
+    delete cntrApresentacaoAutenticacao;
+    delete stubServicoAutenticacao;
 
     return 0;
 }

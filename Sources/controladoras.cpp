@@ -1,36 +1,66 @@
-#include <iostream>
-#include <stdexcept>
-
 #include "controladoras.hpp"
 
-using namespace std;
+// ---------------------------------------------------------------------------------
+// Implementações de métodos de classe Apresentacao Autenticacao.
 
-
-bool CntrIServicoAutenticacao::autenticar(Conta conta) {
+bool CntrApresentacaoAutenticacao::autenticar(Codigo *codigo) {
     Senha senha;
-    Codigo codigo;
     string entrada;
 
-    while (true) {
-        cout << endl << "Autenticação de conta." << endl;
+    // Solicitar codigo e senha.
+
+    while(true) {
+
+        cout << endl << "Autenticacao de usuario." << endl << endl;
 
         try {
-            cout << "" << endl;
+            cout << "Digite o codigo : ";
             cin >> entrada;
-            codigo.setCodigo(entrada);
-
-            cout << "Digite a senha: " << endl;
+            codigo->setCodigo(entrada);
+            cout << "Digite a senha     : ";
             cin >> entrada;
             senha.setSenha(entrada);
-            
             break;
-
-        } catch(const invalid_argument &exp) {
+        }
+        catch (const invalid_argument &exp) {
             cout << endl << "Dado em formato incorreto." << endl;
         }
     }
-    bool resultado = cntrILNSAutenticacao->autenticar(codigo, senha);
-    
-    return resultado;
 
+    // Solicitar autenticação.
+
+    bool resultado = cntrServicoAutenticacao->autenticar(*codigo, senha);
+
+    // Retornar resultado da autenticação.
+
+    return resultado;
+}
+
+// ---------------------------------------------------------------------------------
+// Implementações de métodos de classe Apresentacao Conta.
+
+void CntrApresentacaoConta::criar(Conta *conta){
+    Codigo codigo;
+    Senha senha;
+    string entrada;
+
+    while(true){
+        cout << endl << "Criacao da conta" << endl << endl;
+
+        try {
+            cout << "Digite o codigo : ";
+            cin >> entrada;
+            codigo.setCodigo(entrada);
+            conta -> setCodigo(entrada);
+            cout << "Digite a senha     : ";
+            cin >> entrada;
+            senha.setSenha(entrada);
+            conta -> setSenha(entrada);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            cout << endl << "Dado em formato incorreto." << endl;
+        }
+
+    }
 }

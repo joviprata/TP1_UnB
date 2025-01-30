@@ -2,32 +2,39 @@
 #define CONTROLADORAS_HPP_INCLUDED
 
 #include "interfaces.hpp"
+#include "entidades.hpp"
+#include "dominios.hpp"
 
+#include <stdexcept>
+#include <iostream>
 
-// --------------------------------------------------------------------
-// INTERFACE SERVIÇO AUTENTICAÇÃO
-/** 
- * @brief Controladora para a interface serviço de autenticação.
-*/
-class CntrIServicoAutenticacao:public IServicoAutenticacao {
+using namespace std;
+
+// ---------------------------------------------------------------------------------
+// Declaração de classe controladora e implementação de método.
+
+class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
+private:
+    IServicoAutenticacao *cntrServicoAutenticacao;        // Referência para servidor.
+public:
+    bool autenticar(Codigo*);
+    void setCntrServicoAutenticacao(IServicoAutenticacao*);
+};
+
+void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntrServicoAutenticacao){
+        this->cntrServicoAutenticacao = cntrServicoAutenticacao;
+}
+
+class CntrApresentacaoConta:public IApresentacaoConta {
     private:
-        ILNSAutenticacao *cntrILNSAutenticacao;
-
+        IApresentacaoConta *cntrApresentacaoConta;
     public:
-        bool autenticar(Conta); ///< Autentica conta.
-        void setCntrLNSAutenticacao(ILNSAutenticacao*); ///< Define o ponteiro a instância de ILNSAutenticacao.
-
+        bool autenticar(Conta*);
+        void setCntrApresentacaoConta(IApresentacaoConta*);
 };
 
-/** 
- * @brief Método inline para configurar o serviço de autenticação.
- * 
- * Conecta o serviço de autenticação e a controladora.
- * 
- * @param cntrILNSAutenticacao
-*/
-void inline CntrIServicoAutenticacao::setCntrLNSAutenticacao(ILNSAutenticacao *cntrILNSAutenticacao) {
-    this->cntrILNSAutenticacao = cntrILNSAutenticacao;
-};
+void inline CntrApresentacaoConta::setCntrApresentacaoConta(IApresentacaoConta *cntrApresentacaoConta){
+    this -> cntrApresentacaoConta = cntrApresentacaoConta;
+}
 
 #endif // CONTROLADORAS_HPP_INCLUDED

@@ -120,10 +120,10 @@ bool StubContaServico::criar(Conta conta){
 }
 
 bool StubContaServico::excluir(Conta conta){
-    if (conta.getCodigo().getcodigo() == TRIGGER_FALHA_CONTA){
+    if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
         return false;
     }
-    if (conta.getCodigo().getcodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
+    if (conta.getCodigo().getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
         throw runtime_error("Erro de sistema");
     }
 

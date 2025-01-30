@@ -3,15 +3,17 @@
 // Implementação da classe ContainerViagem
 
 bool ContainerViagem::criar(Viagem viagem) {
-    if (container.find(viagem.getCodigo().getCodigo()) != container.end()) {
+    string chave = viagem.getCodigo().getCodigo();
+    if (container.find(chave) != container.end()) {
         return false;
     }
-    container[viagem.getCodigo().getCodigo()] = viagem;
+    container[chave] = viagem;
     return true;
 }
 
 bool ContainerViagem::excluir(Codigo codigo) {
-    auto it = container.find(codigo.getCodigo());
+    string chave = codigo.getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
         return true;
@@ -20,7 +22,8 @@ bool ContainerViagem::excluir(Codigo codigo) {
 }
 
 bool ContainerViagem::ler(Viagem* viagem) {
-    auto it = container.find(viagem->getCodigo().getCodigo());
+    string chave = viagem->getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         *viagem = it->second;
         return true;
@@ -29,7 +32,8 @@ bool ContainerViagem::ler(Viagem* viagem) {
 }
 
 bool ContainerViagem::atualizar(Viagem viagem) {
-    auto it = container.find(viagem.getCodigo().getCodigo());
+    string chave = viagem.getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         it->second = viagem;
         return true;
@@ -40,15 +44,17 @@ bool ContainerViagem::atualizar(Viagem viagem) {
 // Implementação da classe ContainerDestino
 
 bool ContainerDestino::criar(Destino destino) {
-    if (container.find(destino.getCodigo().getCodigo()) != container.end()) {
+    string chave = destino.getCodigo().getCodigo();
+    if (container.find(chave) != container.end()) {
         return false;
     }
-    container[destino.getCodigo().getCodigo()] = destino;
+    container[chave] = destino;
     return true;
 }
 
 bool ContainerDestino::excluir(Codigo codigo) {
-    auto it = container.find(codigo.getCodigo());
+    string chave = codigo.getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
         return true;
@@ -57,7 +63,8 @@ bool ContainerDestino::excluir(Codigo codigo) {
 }
 
 bool ContainerDestino::ler(Destino* destino) {
-    auto it = container.find(destino->getCodigo().getCodigo());
+    string chave = destino->getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         *destino = it->second;
         return true;
@@ -66,7 +73,8 @@ bool ContainerDestino::ler(Destino* destino) {
 }
 
 bool ContainerDestino::atualizar(Destino destino) {
-    auto it = container.find(destino.getCodigo().getCodigo());
+    string chave = destino.getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         it->second = destino;
         return true;
@@ -77,15 +85,17 @@ bool ContainerDestino::atualizar(Destino destino) {
 // Implementação da classe ContainerConta
 
 bool ContainerConta::criar(Conta conta) {
-    if (container.find(conta.getCodigo().getCodigo()) != container.end()) {
+    string chave = conta.getCodigo().getCodigo();
+    if (container.find(chave) != container.end()) {
         return false;
     }
-    container[conta.getCodigo().getCodigo()] = conta;
+    container[chave] = conta;
     return true;
 }
 
 bool ContainerConta::excluir(Codigo codigo) {
-    auto it = container.find(codigo.getCodigo());
+    string chave = codigo.getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
         return true;
@@ -94,7 +104,8 @@ bool ContainerConta::excluir(Codigo codigo) {
 }
 
 bool ContainerConta::ler(Conta* conta) {
-    auto it = container.find(conta->getCodigo().getCodigo());
+    string chave = conta->getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         *conta = it->second;
         return true;
@@ -103,7 +114,8 @@ bool ContainerConta::ler(Conta* conta) {
 }
 
 bool ContainerConta::atualizar(Conta conta) {
-    auto it = container.find(conta.getCodigo().getCodigo());
+    string chave = conta.getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         it->second = conta;
         return true;
@@ -114,15 +126,17 @@ bool ContainerConta::atualizar(Conta conta) {
 // Implementação da classe ContainerHospedagem
 
 bool ContainerHospedagem::criar(Hospedagem hospedagem) {
-    if (container.find(hospedagem.getCodigo().getCodigo()) != container.end()) {
-        return false;
+    string chave = hospedagem.getCodigo().getCodigo();
+    if (container.find(chave) != container.end()) {
+        return false; // Hospedagem já existe
     }
-    container[hospedagem.getCodigo().getCodigo()] = hospedagem;
+    container[chave] = hospedagem;
     return true;
 }
 
 bool ContainerHospedagem::excluir(Codigo codigo) {
-    auto it = container.find(codigo.getCodigo());
+    string chave = codigo.getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
         return true;
@@ -131,16 +145,18 @@ bool ContainerHospedagem::excluir(Codigo codigo) {
 }
 
 bool ContainerHospedagem::ler(Hospedagem* hospedagem) {
-    auto it = container.find(hospedagem->getCodigo().getCodigo());
+    string chave = hospedagem->getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         *hospedagem = it->second;
         return true;
     }
-    return false;
+    return false; //
 }
 
 bool ContainerHospedagem::atualizar(Hospedagem hospedagem) {
-    auto it = container.find(hospedagem.getCodigo().getCodigo());
+    string chave = hospedagem.getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         it->second = hospedagem;
         return true;
@@ -151,15 +167,17 @@ bool ContainerHospedagem::atualizar(Hospedagem hospedagem) {
 // Implementação da classe ContainerAtividade
 
 bool ContainerAtividade::criar(Atividade atividade) {
-    if (container.find(atividade.getCodigo().getCodigo()) != container.end()) {
+    string chave = atividade.getCodigo().getCodigo();
+    if (container.find(chave) != container.end()) {
         return false;
     }
-    container[atividade.getCodigo().getCodigo()] = atividade;
+    container[chave] = atividade;
     return true;
 }
 
 bool ContainerAtividade::excluir(Codigo codigo) {
-    auto it = container.find(codigo.getCodigo());
+    string chave = codigo.getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
         return true;
@@ -168,7 +186,8 @@ bool ContainerAtividade::excluir(Codigo codigo) {
 }
 
 bool ContainerAtividade::ler(Atividade* atividade) {
-    auto it = container.find(atividade->getCodigo().getCodigo());
+    string chave = atividade->getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         *atividade = it->second;
         return true;
@@ -177,7 +196,8 @@ bool ContainerAtividade::ler(Atividade* atividade) {
 }
 
 bool ContainerAtividade::atualizar(Atividade atividade) {
-    auto it = container.find(atividade.getCodigo().getCodigo());
+    string chave = atividade.getCodigo().getCodigo();
+    auto it = container.find(chave);
     if (it != container.end()) {
         it->second = atividade;
         return true;

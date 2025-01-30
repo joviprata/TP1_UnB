@@ -29,7 +29,7 @@ class CntrApresentacaoConta:public IApresentacaoConta {
     private:
         IApresentacaoConta *cntrApresentacaoConta;
     public:
-        bool autenticar(Conta*)
+        bool autenticar(Conta*);
         void setCntrApresentacaoConta(IApresentacaoConta*);
 };
 

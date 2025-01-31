@@ -2,249 +2,164 @@
 #include <stdexcept>
 #include "dominios.hpp"
 #include "entidades.hpp"
-#include "testes.hpp"
 #include "interfaces.hpp"
-#include "stubs.hpp"
 #include "controladoras.hpp"
+#include "stubs.hpp"
 
 using namespace std;
 
 int main() {
 
-    // Declaração de domínios:
-    /*
-    Avaliacao avaliacao;
-
-    Codigo codigo;
-
-    Data data;
-
-    Dinheiro dinheiro;
-
-    Duracao duracao;
-
-    Horario horario;
-
-    Nome nome;
-
-    Senha senha;
-
-    */
-
-    // Declaração de entidades:
-
-    /*
-
-    Viagem viagem;
-
-    Destino destino;
-
-    Conta conta;
-
-    Hospedagem hospedagem;
-
-    Atividade atividade;
-
-    */
-
-
-    // Declaração de testes unitários de domínios:
-
-    TUAvaliacao testeAvaliacao;
-
-    TUCodigo testeCodigo;
-
-    TUData testeData;
-
-    TUDinheiro testeDinheiro;
-
-    TUDuracao testeDuracao;
-
-    TUHorario testeHorario;
-
-    TUNome testeNome;
-
-    TUSenha testeSenha;
-
-
-    // Declaração de testes unitários de entidades:
-
-    TUConta testeConta;
-
-    TUDestino testeDestino;
-
-    TUAtividade testeAtividade;
-
-    TUViagem testeViagem;
-
-    TUHospedagem testeHospedagem;
-
-
-    // Testes:
-
-    // Testes de domínios:
-
-    // Teste de classe Avaliacao:
-
-    switch(testeAvaliacao.run()){
-        case TUAvaliacao::SUCESSO: cout << "SUCESSO (AVALIACAO)" << endl;
-            break;
-        case TUAvaliacao::FALHA : cout << "FALHA (AVALIACAO)" << endl;
-            break;
-    }
-
-    // Teste de classe Codigo:
-
-    switch(testeCodigo.run()){
-        case TUCodigo::SUCESSO: cout << "SUCESSO (CODIGO)" << endl;
-            break;
-        case TUCodigo::FALHA : cout << "FALHA (CODIGO)" << endl;
-            break;
-    }
-
-    // Testes de classe Data:
-
-    switch(testeData.run()){
-        case TUData::SUCESSO: cout << "SUCESSO (DATA)" << endl;
-            break;
-        case TUData::FALHA: cout << "FALHA (DATA)" << endl;
-            break;
-    }
-
-    // Teste de classe Dinheiro:
-
-    switch(testeDinheiro.run()) {
-        case TUDinheiro::SUCESSO: cout << "SUCESSO (DINHEIRO)" << endl;
-            break;
-        case TUDinheiro::FALHA: cout << "FALHA (DINHEIRO)" << endl;
-            break;
-    }
-
-    // Teste de classe Duracao:
-
-    switch(testeDuracao.run()) {
-        case TUDuracao::SUCESSO: cout << "SUCESSO (DURACAO)" << endl;
-            break;
-        case TUDuracao::FALHA: cout << "FALHA (DURACAO)" << endl;
-            break;
-    }
-
-    // Teste de classe Horario:
-
-    switch(testeHorario.run()){
-        case TUHorario::SUCESSO: cout << "SUCESSO (HORARIO)" << endl;
-            break;
-        case TUHorario::FALHA: cout << "FALHA (HORARIO)" << endl;
-            break;
-    }
-
-    // Teste de classe Nome:
-
-    switch(testeNome.run()){
-        case TUNome::SUCESSO: cout << "SUCESSO (NOME)" << endl;
-            break;
-        case TUNome::FALHA: cout << "FALHA (NOME)" << endl;
-            break;
-    }
-
-    // Teste de classe Senha:
-
-    switch (testeSenha.run()) {
-        case TUSenha::SUCESSO:cout<<"SUCESSO (SENHA)"<<endl;
-            break;
-        case TUSenha::FALHA:cout<<"FALHA (SENHA)"<<endl;
-            break;
-    }
-
-
-    // Testes de entidades:
-
-    // Teste de classe Conta:
-
-    switch (testeConta.run()) {
-        case TUConta::SUCESSO:cout << "SUCESSO (CONTA)" << endl;
-            break;
-
-        case TUConta::FALHA:cout << "FALHA (CONTA)" << endl;
-            break;
-    }
-
-    // Teste de classe Destino:
-
-    switch(testeDestino.run()){
-        case TUDestino::SUCESSO: cout << "SUCESSO (DESTINO)" << endl;
-            break;
-        case TUDestino::FALHA: cout << "FALHA (DESTINO)" << endl;
-            break;
-    }
-
-    //  Teste de classe Atividade:
-
-    switch(testeAtividade.run()){
-        case TUAtividade::SUCESSO: cout << "SUCESSO (ATIVIDADE)" << endl;
-            break;
-        case TUAtividade::FALHA: cout << "FALHA (ATIVIDADE)" << endl;
-            break;
-    }
-
-    // Teste de classe Viagem:
-
-    switch(testeViagem.run()){
-        case TUViagem::SUCESSO: cout << "SUCESSO (VIAGEM)" << endl;
-            break;
-        case TUViagem::FALHA: cout << "FALHA (VIAGEM)" << endl;
-            break;
-    }
-
-    // Teste de classe Hospedagem:
-
-    switch(testeHospedagem.run()){
-        case TUHospedagem::SUCESSO: cout << "SUCESSO (HOSPEDAGEM)" << endl;
-            break;
-        case TUHospedagem::FALHA: cout << "FALHA (HOSPEDAGEM)" << endl;
-            break;
-    }
-
     // ---------------------------------------------------------------------------------
-    // Tela Inicial do Sistema
+    // Instanciar classes controladoras e stubs.
 
-    IApresentacaoAutenticacao  *cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
+    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
     IServicoAutenticacao *stubServicoAutenticacao = new StubServicoAutenticacao();
 
+    IApresentacaoConta *cntrApresentacaoConta = new CntrApresentacaoConta();
+    IServicoConta *stubServicoConta = new StubServicoConta();
+
+    // Ligar instâncias de controladoras aos stubs correspondentes.
+
     cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
+    cntrApresentacaoConta->setCntrServicoConta(stubServicoConta);
 
     bool resultado;
-
     Codigo codigo;
 
-    while(true){
+    // ---------------------------------------------------------------------------------
+    // Simular apresentação de tela inicial do sistema.
 
-        cout << endl << "Tela inicial de sistema." << endl;
+    cout << endl << "Bem-vindo ao sistema!" << endl;
 
-        try{
+    while (true) {
+        cout << endl << "Escolha uma opcao:" << endl;
+        cout << "1. Autenticar" << endl;
+        cout << "2. Criar conta" << endl;
+        cout << "3. Executar conta" << endl;
+        cout << "4. Sair" << endl;
+        cout << "Opcao: ";
 
-            // Soliciatar serviço de autenticação.
+        int opcao;
+        cin >> opcao;
 
-            resultado = cntrApresentacaoAutenticacao->autenticar(&codigo);
-        }
-        catch(const runtime_error &exp){
-                 cout << "Erro de sistema." << endl;
-                 break;
-        }
+        try {
+            switch (opcao) {
+                case 1: { // Autenticar
+                    resultado = cntrApresentacaoAutenticacao->autenticar(&codigo);
 
-        if(resultado) {
-            cout << endl << "Sucesso autenticacao." << endl;
-            break;
-        }
-        else {
-            cout << endl << "Erro autenticacao." << endl;
-            break;
+                    if (resultado) {
+                        cout << endl << "Autenticacao bem-sucedida!" << endl;
+                    } else {
+                        cout << endl << "Falha na autenticacao." << endl;
+                    }
+                    break;
+                }
+
+                case 2: { // Criar conta
+                    cntrApresentacaoConta->criar();
+                    cout << endl << "Conta criada com sucesso!" << endl;
+                    break;
+                }
+
+                case 3: { // Executar conta (menu de operações)
+                    string entrada;
+                    cout << endl << "Digite o codigo da conta: ";
+                    cin >> entrada;
+                    codigo.setCodigo(entrada);
+
+                    while (true) {
+                        cout << endl << "Escolha uma operacao:" << endl;
+                        cout << "1. Alterar senha" << endl;
+                        cout << "2. Excluir conta" << endl;
+                        cout << "3. Voltar" << endl;
+                        cout << "Opcao: ";
+
+                        int opcaoOperacao;
+                        cin >> opcaoOperacao;
+
+                        try {
+                            switch (opcaoOperacao) {
+                                case 1: { // Alterar senha
+                                    string novaSenha;
+                                    cout << "Digite a nova senha: ";
+                                    cin >> novaSenha;
+
+                                    // Cria um objeto Senha e define a nova senha
+                                    Senha senhaAtualizada;
+                                    try {
+                                        senhaAtualizada.setSenha(novaSenha); // Valida e define a senha
+                                    } catch (const invalid_argument &exp) {
+                                        cout << "Erro: Senha invalida. " << exp.what() << endl;
+                                        break;
+                                    }
+
+                                    // Cria um objeto Conta com o código e a nova senha
+                                    Conta contaAtualizada;
+                                    contaAtualizada.setCodigo(codigo);
+                                    contaAtualizada.setSenha(senhaAtualizada); // Passa o objeto Senha, não a string
+
+                                    // Atualiza a conta
+                                    if (stubServicoConta->atualizar(contaAtualizada)) {
+                                        cout << "Senha alterada com sucesso!" << endl;
+                                    } else {
+                                        cout << "Falha ao alterar a senha." << endl;
+                                    }
+                                    break;
+                                }
+
+                                case 2: { // Excluir conta
+                                    if (stubServicoConta->excluir(codigo)) {
+                                        cout << "Conta excluida com sucesso!" << endl;
+                                        return 0; // Sai do programa após excluir a conta
+                                    } else {
+                                        cout << "Falha ao excluir a conta." << endl;
+                                    }
+                                    break;
+                                }
+
+                                case 3: { // Voltar
+                                    break;
+                                }
+
+                                default: {
+                                    cout << "Opcao invalida. Tente novamente." << endl;
+                                    break;
+                                }
+                            }
+                        } catch (const invalid_argument &exp) {
+                            cout << "Erro: Dado em formato incorreto." << endl;
+                        } catch (const runtime_error &exp) {
+                            cout << "Erro de sistema: " << exp.what() << endl;
+                        }
+
+                        if (opcaoOperacao == 3) {
+                            break; // Volta ao menu principal
+                        }
+                    }
+                    break;
+                }
+
+                case 4: { // Sair
+                    cout << endl << "Saindo do sistema..." << endl;
+                    delete cntrApresentacaoAutenticacao;
+                    delete stubServicoAutenticacao;
+                    delete cntrApresentacaoConta;
+                    delete stubServicoConta;
+                    return 0;
+                }
+
+                default: {
+                    cout << endl << "Opcao invalida. Tente novamente." << endl;
+                    break;
+                }
+            }
+        } catch (const invalid_argument &exp) {
+            cout << endl << "Erro: Dado em formato incorreto." << endl;
+        } catch (const runtime_error &exp) {
+            cout << endl << "Erro de sistema: " << exp.what() << endl;
         }
     }
-
-    delete cntrApresentacaoAutenticacao;
-    delete stubServicoAutenticacao;
 
     return 0;
 }
-

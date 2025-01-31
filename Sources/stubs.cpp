@@ -11,8 +11,8 @@ const string StubServicoEntidades::TRIGGER_FALHA_NOME_INVALIDO = "";
 const string StubServicoEntidades::TRIGGER_ERRO_NOME_INVALIDO = "";
 const int StubServicoEntidades::TRIGGER_FALHA_AVALIACAO_INVALIDA = 6;
 const int StubServicoEntidades::TRIGGER_ERRO_AVALIACAO_INVALIDA = 6;
-const string StubContaServico::TRIGGER_FALHA_CONTA= "%*/*";
-const string StubContaServico::TRIGGER_ERRO_SISTEMA_CONTA = "";
+const string StubServicoConta::TRIGGER_FALHA_CONTA= "%*/*";
+const string StubServicoConta::TRIGGER_ERRO_SISTEMA_CONTA = "";
 
 // -------------------------------------------------------------------------------------------
 // Implementação de método.
@@ -102,7 +102,7 @@ bool StubServicoEntidades::atualizar(Viagem viagem) {
     return true;
 }
 
-bool StubContaServico::criar(Conta conta){
+bool StubServicoConta::criar(Conta conta){
     if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
         return false;
     }
@@ -119,18 +119,18 @@ bool StubContaServico::criar(Conta conta){
     return true;
 }
 
-bool StubContaServico::excluir(Conta conta){
-    if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
+bool StubServicoConta::excluir(Codigo codigo){
+    if (codigo.getCodigo() == TRIGGER_FALHA_CONTA){
         return false;
     }
-    if (conta.getCodigo().getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
+    if (codigo.getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
         throw runtime_error("Erro de sistema");
     }
 
     return true;
 }
 
-bool StubContaServico::ler(Conta* conta){
+bool StubServicoConta::ler(Conta* conta){
     if (conta->getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
         return false;
     }
@@ -141,7 +141,7 @@ bool StubContaServico::ler(Conta* conta){
     return true;
 }
 
-bool StubContaServico::atualizar(Conta conta) {
+bool StubServicoConta::atualizar(Conta conta) {
     if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA) {
         return false;
     }

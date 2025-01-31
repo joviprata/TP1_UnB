@@ -5,6 +5,8 @@
 
 const string StubServicoAutenticacao::TRIGGER_FALHA_AUTENTICACAO = "%*/*";
 const string StubServicoAutenticacao::TRIGGER_ERRO_SISTEMA_AUTENTICACAO = "%*/*";
+const string StubServicoAutenticacao::TRIGGER_FALHA_SENHA_INVALIDA = "12345";
+const string StubServicoAutenticacao::TRIGGER_ERRO_SENHA_INVALIDA = "12345";
 const string StubServicoEntidades::TRIGGER_FALHA_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_ERRO_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_FALHA_NOME_INVALIDO = "";
@@ -23,11 +25,18 @@ const string StubServicoEntidades::TRIGGER_ERRO_DATA_TERMINO_INVALIDA = "32-13-2
 bool StubServicoAutenticacao::autenticar(const Codigo &codigo, const Senha &senha) {
 
     std::string codigoValor = codigo.getCodigo();
-
-    if (codigo.getCodigo() == TRIGGER_FALHA_AUTENTICACAO) {
+    std::string senhaValor = senha.getSenha();
+    
+    if (codigoValor == TRIGGER_FALHA_AUTENTICACAO) {
         return false;
     }
-    if (codigo.getCodigo() == TRIGGER_ERRO_SISTEMA_AUTENTICACAO) {
+    if (codigoValor == TRIGGER_ERRO_SISTEMA_AUTENTICACAO) {
+        throw runtime_error("Erro de sistema");
+    }
+    if (senhaValor == TRIGGER_FALHA_SENHA_INVALIDA) {
+        return false;
+    }
+    if (senhaValor == TRIGGER_ERRO_SENHA_INVALIDA) {
         throw runtime_error("Erro de sistema");
     }
     return true;

@@ -14,6 +14,8 @@ private:
 
     const static string TRIGGER_FALHA_AUTENTICACAO;
     const static string TRIGGER_ERRO_SISTEMA_AUTENTICACAO;
+    const static string TRIGGER_FALHA_SENHA_INVALIDA;
+    const static string TRIGGER_ERRO_SENHA_INVALIDA;
 
 public:
 

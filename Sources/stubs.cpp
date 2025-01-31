@@ -4,7 +4,7 @@
 // Definições de constantes.
 
 const string StubServicoAutenticacao::TRIGGER_FALHA_AUTENTICACAO = "%*/*";
-const string StubServicoAutenticacao::TRIGGER_ERRO_SISTEMA_AUTENTICACAO = "7891011";
+const string StubServicoAutenticacao::TRIGGER_ERRO_SISTEMA_AUTENTICACAO = "%*/*";
 const string StubServicoEntidades::TRIGGER_FALHA_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_ERRO_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_FALHA_NOME_INVALIDO = "";

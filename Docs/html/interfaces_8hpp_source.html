@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho 2 - TP1: Código-Fonte de /home/masolivs/T1-TP1/TP1_UnB/Headers/interfaces.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho 2 - TP1
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_692516b589a32b3bfce781ca9f6d1534.html">Headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">interfaces.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interfaces_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef INTERFACES_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define INTERFACES_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="dominios_8hpp.html">dominios.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="entidades_8hpp.html">entidades.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Declaração adiantada (forward declaration)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="classIServicoEntidades.html">IServicoEntidades</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span><a class="code hl_class" href="classIServicoConta.html">IServicoConta</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="classIServicoAutenticacao.html">IServicoAutenticacao</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Declarações das interfaces da camada de apresentação.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// INTERFACE APRESENTACAO AUTENTICACAO</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classIApresentacaoAutenticacao.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="classIApresentacaoAutenticacao.html">IApresentacaoAutenticacao</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classIApresentacaoAutenticacao.html#a9d9de997de5ff80b3007cdb2c14b8193">   51</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIApresentacaoAutenticacao.html#a9d9de997de5ff80b3007cdb2c14b8193">autenticar</a>(<a class="code hl_class" href="classCodigo.html">Codigo</a>*) = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classIApresentacaoAutenticacao.html#a285838591d3db83e00ab377169d49787">   58</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoAutenticacao.html#a285838591d3db83e00ab377169d49787">setCntrServicoAutenticacao</a>(<a class="code hl_class" href="classIServicoAutenticacao.html">IServicoAutenticacao</a>*) = 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classIApresentacaoAutenticacao.html#abf1863be8e6fa8b487e8e4c5f978aa59">   63</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classIApresentacaoAutenticacao.html#abf1863be8e6fa8b487e8e4c5f978aa59">~IApresentacaoAutenticacao</a>(){}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// INTERFACE CONTA APRESENTAÇÃO</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classIApresentacaoConta.html">   75</a></span><span class="keyword">class </span><a class="code hl_class" href="classIApresentacaoConta.html">IApresentacaoConta</a>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classIApresentacaoConta.html#a35fdfab6d1fd06a645da5d408edfa0d8">   82</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoConta.html#a35fdfab6d1fd06a645da5d408edfa0d8">criar</a>() = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classIApresentacaoConta.html#a3a000403e2b24000c4f3d1b1f037c5a0">   89</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoConta.html#a3a000403e2b24000c4f3d1b1f037c5a0">executar</a>(<a class="code hl_class" href="classCodigo.html">Codigo</a>)= 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classIApresentacaoConta.html#a9ef95cf5f96b10fb30d262ca4b93fd08">   96</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoConta.html#a9ef95cf5f96b10fb30d262ca4b93fd08">setCntrServicoConta</a>(<a class="code hl_class" href="classIServicoConta.html">IServicoConta</a>*) = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classIApresentacaoConta.html#aca2c24f24901db3e5b5b5b7f2135df4b">  101</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classIApresentacaoConta.html#aca2c24f24901db3e5b5b5b7f2135df4b">~IApresentacaoConta</a>(){};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">// INTERFACE APRESENTAÇÃO ENTIDADES</span></div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="};">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classIApresentacaoEntidades.html">  113</a></span><span class="keyword">class </span><a class="code hl_class" href="classIApresentacaoEntidades.html">IApresentacaoEntidades</a>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classIApresentacaoEntidades.html#a5304c87b00fbdff32cfe0f6d79919be3">  120</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoEntidades.html#a5304c87b00fbdff32cfe0f6d79919be3">executar</a>(<a class="code hl_class" href="classCodigo.html">Codigo</a>) = 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classIApresentacaoEntidades.html#a09ba7e2e3fa241855b2e470c140103cb">  127</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classIApresentacaoEntidades.html#a09ba7e2e3fa241855b2e470c140103cb">setCntrServicoEntidades</a>(<a class="code hl_class" href="classIServicoEntidades.html">IServicoEntidades</a>*) = 0;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classIApresentacaoEntidades.html#a143cdc1b9e8b56389637b9d8700e8e42">  132</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classIApresentacaoEntidades.html#a143cdc1b9e8b56389637b9d8700e8e42">~IApresentacaoEntidades</a>(){};</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">// Declarações das interfaces da camada de Serviço.</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// INTERFACE SERVIÇO AUTENTICAÇÃO</span></div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="};">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classIServicoAutenticacao.html">  147</a></span><span class="keyword">class </span><a class="code hl_class" href="classIServicoAutenticacao.html">IServicoAutenticacao</a> {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classIServicoAutenticacao.html#a3a4a2dd35d56e32493949e955837860d">  156</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoAutenticacao.html#a3a4a2dd35d56e32493949e955837860d">autenticar</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCodigo.html">Codigo</a>&amp;, <span class="keyword">const</span> <a class="code hl_class" href="classSenha.html">Senha</a>&amp;) = 0;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classIServicoAutenticacao.html#aa2f9ad33148b3b12a205e992079e4368">  161</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classIServicoAutenticacao.html#aa2f9ad33148b3b12a205e992079e4368">~IServicoAutenticacao</a>() {}</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">// INTERFACE SERVIÇO CONTA</span></div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="};">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classIServicoConta.html">  173</a></span><span class="keyword">class </span><a class="code hl_class" href="classIServicoConta.html">IServicoConta</a>{</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classIServicoConta.html#abc04fbd67300db708c0d86509958a0ae">  181</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoConta.html#abc04fbd67300db708c0d86509958a0ae">criar</a>(<a class="code hl_class" href="classConta.html">Conta</a>) = 0;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classIServicoConta.html#a26366d5a542bbbb4e245273e4c2ec7f0">  189</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoConta.html#a26366d5a542bbbb4e245273e4c2ec7f0">excluir</a>(<a class="code hl_class" href="classCodigo.html">Codigo</a>) = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classIServicoConta.html#ac8b3afb00cb56a7a2fe07ab00c72b477">  197</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoConta.html#ac8b3afb00cb56a7a2fe07ab00c72b477">ler</a>(<a class="code hl_class" href="classConta.html">Conta</a>*) = 0;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="classIServicoConta.html#a0a8026a149da6b656f65f53d0f1a1664">  205</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoConta.html#a0a8026a149da6b656f65f53d0f1a1664">atualizar</a>(<a class="code hl_class" href="classConta.html">Conta</a>) = 0;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classIServicoConta.html#a1fd15db988d679f95a43646ba7a823ec">  210</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classIServicoConta.html#a1fd15db988d679f95a43646ba7a823ec">~IServicoConta</a>(){};</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>};</div>
+</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">// --------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">// INTERFACE SERVIÇO ENTIDADES</span></div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="};">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html">  223</a></span><span class="keyword">class </span><a class="code hl_class" href="classIServicoEntidades.html">IServicoEntidades</a> {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a3932950c6315c4e7fdf80c31c231d0a0">  231</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a3932950c6315c4e7fdf80c31c231d0a0">criar</a>(<a class="code hl_class" href="classViagem.html">Viagem</a>) = 0;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a409d53c3c4450f3c46e20edfd2ebcdaf">  239</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a409d53c3c4450f3c46e20edfd2ebcdaf">excluir</a>(<a class="code hl_class" href="classViagem.html">Viagem</a>) = 0;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a07041b7b46d79a853ad4d5ae123bf376">  247</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a07041b7b46d79a853ad4d5ae123bf376">ler</a>(<a class="code hl_class" href="classViagem.html">Viagem</a>*) = 0;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#afb87f82552a9822404afa866f9194140">  255</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#afb87f82552a9822404afa866f9194140">atualizar</a>(<a class="code hl_class" href="classViagem.html">Viagem</a>) = 0;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#accfda67a9c3c8abe3d2a66e4cadccf1a">  263</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#accfda67a9c3c8abe3d2a66e4cadccf1a">criar</a>(<a class="code hl_class" href="classAtividade.html">Atividade</a>) = 0;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a68334abce35bf777317c8bb7c4dd3178">  271</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a68334abce35bf777317c8bb7c4dd3178">excluir</a>(<a class="code hl_class" href="classAtividade.html">Atividade</a>) = 0;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a43a5669f657a200941b72188b7b2d8a4">  279</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a43a5669f657a200941b72188b7b2d8a4">ler</a>(<a class="code hl_class" href="classAtividade.html">Atividade</a>*) = 0;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a24e9a0bf4eae3880cc8f0f5239acc84a">  287</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a24e9a0bf4eae3880cc8f0f5239acc84a">atualizar</a>(<a class="code hl_class" href="classAtividade.html">Atividade</a>) = 0;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#ae18567f8e5092adb1e8906d3f1cdd060">  295</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#ae18567f8e5092adb1e8906d3f1cdd060">criar</a>(<a class="code hl_class" href="classDestino.html">Destino</a>) = 0;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#ab7c73777b045c8da50b09d71966c8e00">  303</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#ab7c73777b045c8da50b09d71966c8e00">excluir</a>(<a class="code hl_class" href="classDestino.html">Destino</a>) = 0;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a72035a3d56c9895347f2fe0894563178">  311</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a72035a3d56c9895347f2fe0894563178">ler</a>(<a class="code hl_class" href="classDestino.html">Destino</a>*) = 0;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a55d0b00d7ce4ea70f5b4685af4d6a20a">  319</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a55d0b00d7ce4ea70f5b4685af4d6a20a">atualizar</a>(<a class="code hl_class" href="classDestino.html">Destino</a>) = 0;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#af73b5d6b356f9347828bceda568a48e2">  327</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#af73b5d6b356f9347828bceda568a48e2">criar</a>(<a class="code hl_class" href="classHospedagem.html">Hospedagem</a>) = 0;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a889bdcd01cdece7b771b5eb50266c362">  335</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a889bdcd01cdece7b771b5eb50266c362">excluir</a>(<a class="code hl_class" href="classHospedagem.html">Hospedagem</a>) = 0;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#adc597fde7fcdd929a569c33aefc65f41">  343</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#adc597fde7fcdd929a569c33aefc65f41">ler</a>(<a class="code hl_class" href="classHospedagem.html">Hospedagem</a>*) = 0;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a1bd92696e91462c1f4b7cb4e02bb2c44">  351</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classIServicoEntidades.html#a1bd92696e91462c1f4b7cb4e02bb2c44">atualizar</a>(<a class="code hl_class" href="classHospedagem.html">Hospedagem</a>) = 0;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="classIServicoEntidades.html#a9d61d5ae1fe8de90d8b0c9da258b9cb2">  356</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classIServicoEntidades.html#a9d61d5ae1fe8de90d8b0c9da258b9cb2">~IServicoEntidades</a>(){};</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>};</div>
+</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="preprocessor">#endif </span><span class="comment">// INTERFACES_HPP_INCLUDED</span></div>
+<div class="ttc" id="aclassAtividade_html"><div class="ttname"><a href="classAtividade.html">Atividade</a></div><div class="ttdoc">Classe que representa uma Atividade.</div><div class="ttdef"><b>Definição</b> entidades.hpp:506</div></div>
+<div class="ttc" id="aclassCodigo_html"><div class="ttname"><a href="classCodigo.html">Codigo</a></div><div class="ttdoc">Classe que representa um código de 6 caracteres.</div><div class="ttdef"><b>Definição</b> dominios.hpp:64</div></div>
+<div class="ttc" id="aclassConta_html"><div class="ttname"><a href="classConta.html">Conta</a></div><div class="ttdoc">Classe que representa uma Conta.</div><div class="ttdef"><b>Definição</b> entidades.hpp:297</div></div>
+<div class="ttc" id="aclassDestino_html"><div class="ttname"><a href="classDestino.html">Destino</a></div><div class="ttdoc">Classe que representa um Destino.</div><div class="ttdef"><b>Definição</b> entidades.hpp:135</div></div>
+<div class="ttc" id="aclassHospedagem_html"><div class="ttname"><a href="classHospedagem.html">Hospedagem</a></div><div class="ttdoc">Classe que representa uma Hospedagem.</div><div class="ttdef"><b>Definição</b> entidades.hpp:372</div></div>
+<div class="ttc" id="aclassIApresentacaoAutenticacao_html"><div class="ttname"><a href="classIApresentacaoAutenticacao.html">IApresentacaoAutenticacao</a></div><div class="ttdoc">Interface para a apresentação da autenticação.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:43</div></div>
+<div class="ttc" id="aclassIApresentacaoAutenticacao_html_a285838591d3db83e00ab377169d49787"><div class="ttname"><a href="classIApresentacaoAutenticacao.html#a285838591d3db83e00ab377169d49787">IApresentacaoAutenticacao::setCntrServicoAutenticacao</a></div><div class="ttdeci">virtual void setCntrServicoAutenticacao(IServicoAutenticacao *)=0</div><div class="ttdoc">Define o controlador de serviço de autenticação.</div></div>
+<div class="ttc" id="aclassIApresentacaoAutenticacao_html_a9d9de997de5ff80b3007cdb2c14b8193"><div class="ttname"><a href="classIApresentacaoAutenticacao.html#a9d9de997de5ff80b3007cdb2c14b8193">IApresentacaoAutenticacao::autenticar</a></div><div class="ttdeci">virtual bool autenticar(Codigo *)=0</div><div class="ttdoc">Autentica o usuário com base no código fornecido.</div></div>
+<div class="ttc" id="aclassIApresentacaoAutenticacao_html_abf1863be8e6fa8b487e8e4c5f978aa59"><div class="ttname"><a href="classIApresentacaoAutenticacao.html#abf1863be8e6fa8b487e8e4c5f978aa59">IApresentacaoAutenticacao::~IApresentacaoAutenticacao</a></div><div class="ttdeci">virtual ~IApresentacaoAutenticacao()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:63</div></div>
+<div class="ttc" id="aclassIApresentacaoConta_html"><div class="ttname"><a href="classIApresentacaoConta.html">IApresentacaoConta</a></div><div class="ttdoc">Interface para a apresentação da conta.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:75</div></div>
+<div class="ttc" id="aclassIApresentacaoConta_html_a35fdfab6d1fd06a645da5d408edfa0d8"><div class="ttname"><a href="classIApresentacaoConta.html#a35fdfab6d1fd06a645da5d408edfa0d8">IApresentacaoConta::criar</a></div><div class="ttdeci">virtual void criar()=0</div><div class="ttdoc">Cria uma nova conta.</div></div>
+<div class="ttc" id="aclassIApresentacaoConta_html_a3a000403e2b24000c4f3d1b1f037c5a0"><div class="ttname"><a href="classIApresentacaoConta.html#a3a000403e2b24000c4f3d1b1f037c5a0">IApresentacaoConta::executar</a></div><div class="ttdeci">virtual void executar(Codigo)=0</div><div class="ttdoc">Executa uma conta existente.</div></div>
+<div class="ttc" id="aclassIApresentacaoConta_html_a9ef95cf5f96b10fb30d262ca4b93fd08"><div class="ttname"><a href="classIApresentacaoConta.html#a9ef95cf5f96b10fb30d262ca4b93fd08">IApresentacaoConta::setCntrServicoConta</a></div><div class="ttdeci">virtual void setCntrServicoConta(IServicoConta *)=0</div><div class="ttdoc">Define o controlador de serviço da conta.</div></div>
+<div class="ttc" id="aclassIApresentacaoConta_html_aca2c24f24901db3e5b5b5b7f2135df4b"><div class="ttname"><a href="classIApresentacaoConta.html#aca2c24f24901db3e5b5b5b7f2135df4b">IApresentacaoConta::~IApresentacaoConta</a></div><div class="ttdeci">virtual ~IApresentacaoConta()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:101</div></div>
+<div class="ttc" id="aclassIApresentacaoEntidades_html"><div class="ttname"><a href="classIApresentacaoEntidades.html">IApresentacaoEntidades</a></div><div class="ttdoc">Interface para a apresentação de entidades.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:113</div></div>
+<div class="ttc" id="aclassIApresentacaoEntidades_html_a09ba7e2e3fa241855b2e470c140103cb"><div class="ttname"><a href="classIApresentacaoEntidades.html#a09ba7e2e3fa241855b2e470c140103cb">IApresentacaoEntidades::setCntrServicoEntidades</a></div><div class="ttdeci">virtual void setCntrServicoEntidades(IServicoEntidades *)=0</div><div class="ttdoc">Define o controlador de serviço de entidades.</div></div>
+<div class="ttc" id="aclassIApresentacaoEntidades_html_a143cdc1b9e8b56389637b9d8700e8e42"><div class="ttname"><a href="classIApresentacaoEntidades.html#a143cdc1b9e8b56389637b9d8700e8e42">IApresentacaoEntidades::~IApresentacaoEntidades</a></div><div class="ttdeci">virtual ~IApresentacaoEntidades()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:132</div></div>
+<div class="ttc" id="aclassIApresentacaoEntidades_html_a5304c87b00fbdff32cfe0f6d79919be3"><div class="ttname"><a href="classIApresentacaoEntidades.html#a5304c87b00fbdff32cfe0f6d79919be3">IApresentacaoEntidades::executar</a></div><div class="ttdeci">virtual void executar(Codigo)=0</div><div class="ttdoc">Executa uma ação relacionada a uma entidade.</div></div>
+<div class="ttc" id="aclassIServicoAutenticacao_html"><div class="ttname"><a href="classIServicoAutenticacao.html">IServicoAutenticacao</a></div><div class="ttdoc">Interface para o serviço de autenticação.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:147</div></div>
+<div class="ttc" id="aclassIServicoAutenticacao_html_a3a4a2dd35d56e32493949e955837860d"><div class="ttname"><a href="classIServicoAutenticacao.html#a3a4a2dd35d56e32493949e955837860d">IServicoAutenticacao::autenticar</a></div><div class="ttdeci">virtual bool autenticar(const Codigo &amp;, const Senha &amp;)=0</div><div class="ttdoc">Autentica uma conta com base no código e senha fornecidos.</div></div>
+<div class="ttc" id="aclassIServicoAutenticacao_html_aa2f9ad33148b3b12a205e992079e4368"><div class="ttname"><a href="classIServicoAutenticacao.html#aa2f9ad33148b3b12a205e992079e4368">IServicoAutenticacao::~IServicoAutenticacao</a></div><div class="ttdeci">virtual ~IServicoAutenticacao()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:161</div></div>
+<div class="ttc" id="aclassIServicoConta_html"><div class="ttname"><a href="classIServicoConta.html">IServicoConta</a></div><div class="ttdoc">Interface para serviços de gerenciamento de contas do sistema.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:173</div></div>
+<div class="ttc" id="aclassIServicoConta_html_a0a8026a149da6b656f65f53d0f1a1664"><div class="ttname"><a href="classIServicoConta.html#a0a8026a149da6b656f65f53d0f1a1664">IServicoConta::atualizar</a></div><div class="ttdeci">virtual bool atualizar(Conta)=0</div><div class="ttdoc">Atualiza os dados de uma conta existente.</div></div>
+<div class="ttc" id="aclassIServicoConta_html_a1fd15db988d679f95a43646ba7a823ec"><div class="ttname"><a href="classIServicoConta.html#a1fd15db988d679f95a43646ba7a823ec">IServicoConta::~IServicoConta</a></div><div class="ttdeci">virtual ~IServicoConta()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:210</div></div>
+<div class="ttc" id="aclassIServicoConta_html_a26366d5a542bbbb4e245273e4c2ec7f0"><div class="ttname"><a href="classIServicoConta.html#a26366d5a542bbbb4e245273e4c2ec7f0">IServicoConta::excluir</a></div><div class="ttdeci">virtual bool excluir(Codigo)=0</div><div class="ttdoc">Exclui uma conta existente.</div></div>
+<div class="ttc" id="aclassIServicoConta_html_abc04fbd67300db708c0d86509958a0ae"><div class="ttname"><a href="classIServicoConta.html#abc04fbd67300db708c0d86509958a0ae">IServicoConta::criar</a></div><div class="ttdeci">virtual bool criar(Conta)=0</div><div class="ttdoc">Cria uma nova conta.</div></div>
+<div class="ttc" id="aclassIServicoConta_html_ac8b3afb00cb56a7a2fe07ab00c72b477"><div class="ttname"><a href="classIServicoConta.html#ac8b3afb00cb56a7a2fe07ab00c72b477">IServicoConta::ler</a></div><div class="ttdeci">virtual bool ler(Conta *)=0</div><div class="ttdoc">Lê os dados de uma conta existente.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html"><div class="ttname"><a href="classIServicoEntidades.html">IServicoEntidades</a></div><div class="ttdoc">Interface para serviços de gerenciamento de entidades do sistema.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:223</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a07041b7b46d79a853ad4d5ae123bf376"><div class="ttname"><a href="classIServicoEntidades.html#a07041b7b46d79a853ad4d5ae123bf376">IServicoEntidades::ler</a></div><div class="ttdeci">virtual bool ler(Viagem *)=0</div><div class="ttdoc">Lê os dados de uma entidade do tipo Viagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a1bd92696e91462c1f4b7cb4e02bb2c44"><div class="ttname"><a href="classIServicoEntidades.html#a1bd92696e91462c1f4b7cb4e02bb2c44">IServicoEntidades::atualizar</a></div><div class="ttdeci">virtual bool atualizar(Hospedagem)=0</div><div class="ttdoc">Atualiza os dados de uma entidade do tipo Hospedagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a24e9a0bf4eae3880cc8f0f5239acc84a"><div class="ttname"><a href="classIServicoEntidades.html#a24e9a0bf4eae3880cc8f0f5239acc84a">IServicoEntidades::atualizar</a></div><div class="ttdeci">virtual bool atualizar(Atividade)=0</div><div class="ttdoc">Atualiza os dados de uma entidade do tipo Atividade.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a3932950c6315c4e7fdf80c31c231d0a0"><div class="ttname"><a href="classIServicoEntidades.html#a3932950c6315c4e7fdf80c31c231d0a0">IServicoEntidades::criar</a></div><div class="ttdeci">virtual bool criar(Viagem)=0</div><div class="ttdoc">Cria uma nova entidade do tipo Viagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a409d53c3c4450f3c46e20edfd2ebcdaf"><div class="ttname"><a href="classIServicoEntidades.html#a409d53c3c4450f3c46e20edfd2ebcdaf">IServicoEntidades::excluir</a></div><div class="ttdeci">virtual bool excluir(Viagem)=0</div><div class="ttdoc">Exclui uma entidade do tipo Viagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a43a5669f657a200941b72188b7b2d8a4"><div class="ttname"><a href="classIServicoEntidades.html#a43a5669f657a200941b72188b7b2d8a4">IServicoEntidades::ler</a></div><div class="ttdeci">virtual bool ler(Atividade *)=0</div><div class="ttdoc">Lê os dados de uma entidade do tipo Atividade.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a55d0b00d7ce4ea70f5b4685af4d6a20a"><div class="ttname"><a href="classIServicoEntidades.html#a55d0b00d7ce4ea70f5b4685af4d6a20a">IServicoEntidades::atualizar</a></div><div class="ttdeci">virtual bool atualizar(Destino)=0</div><div class="ttdoc">Atualiza os dados de uma entidade do tipo Destino.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a68334abce35bf777317c8bb7c4dd3178"><div class="ttname"><a href="classIServicoEntidades.html#a68334abce35bf777317c8bb7c4dd3178">IServicoEntidades::excluir</a></div><div class="ttdeci">virtual bool excluir(Atividade)=0</div><div class="ttdoc">Exclui uma entidade do tipo Atividade.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a72035a3d56c9895347f2fe0894563178"><div class="ttname"><a href="classIServicoEntidades.html#a72035a3d56c9895347f2fe0894563178">IServicoEntidades::ler</a></div><div class="ttdeci">virtual bool ler(Destino *)=0</div><div class="ttdoc">Lê os dados de uma entidade do tipo Destino.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a889bdcd01cdece7b771b5eb50266c362"><div class="ttname"><a href="classIServicoEntidades.html#a889bdcd01cdece7b771b5eb50266c362">IServicoEntidades::excluir</a></div><div class="ttdeci">virtual bool excluir(Hospedagem)=0</div><div class="ttdoc">Exclui uma entidade do tipo Hospedagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_a9d61d5ae1fe8de90d8b0c9da258b9cb2"><div class="ttname"><a href="classIServicoEntidades.html#a9d61d5ae1fe8de90d8b0c9da258b9cb2">IServicoEntidades::~IServicoEntidades</a></div><div class="ttdeci">virtual ~IServicoEntidades()</div><div class="ttdoc">Destrutor virtual da interface.</div><div class="ttdef"><b>Definição</b> interfaces.hpp:356</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_ab7c73777b045c8da50b09d71966c8e00"><div class="ttname"><a href="classIServicoEntidades.html#ab7c73777b045c8da50b09d71966c8e00">IServicoEntidades::excluir</a></div><div class="ttdeci">virtual bool excluir(Destino)=0</div><div class="ttdoc">Exclui uma entidade do tipo Destino.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_accfda67a9c3c8abe3d2a66e4cadccf1a"><div class="ttname"><a href="classIServicoEntidades.html#accfda67a9c3c8abe3d2a66e4cadccf1a">IServicoEntidades::criar</a></div><div class="ttdeci">virtual bool criar(Atividade)=0</div><div class="ttdoc">Cria uma nova entidade do tipo Atividade.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_adc597fde7fcdd929a569c33aefc65f41"><div class="ttname"><a href="classIServicoEntidades.html#adc597fde7fcdd929a569c33aefc65f41">IServicoEntidades::ler</a></div><div class="ttdeci">virtual bool ler(Hospedagem *)=0</div><div class="ttdoc">Lê os dados de uma entidade do tipo Hospedagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_ae18567f8e5092adb1e8906d3f1cdd060"><div class="ttname"><a href="classIServicoEntidades.html#ae18567f8e5092adb1e8906d3f1cdd060">IServicoEntidades::criar</a></div><div class="ttdeci">virtual bool criar(Destino)=0</div><div class="ttdoc">Cria uma nova entidade do tipo Destino.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_af73b5d6b356f9347828bceda568a48e2"><div class="ttname"><a href="classIServicoEntidades.html#af73b5d6b356f9347828bceda568a48e2">IServicoEntidades::criar</a></div><div class="ttdeci">virtual bool criar(Hospedagem)=0</div><div class="ttdoc">Cria uma nova entidade do tipo Hospedagem.</div></div>
+<div class="ttc" id="aclassIServicoEntidades_html_afb87f82552a9822404afa866f9194140"><div class="ttname"><a href="classIServicoEntidades.html#afb87f82552a9822404afa866f9194140">IServicoEntidades::atualizar</a></div><div class="ttdeci">virtual bool atualizar(Viagem)=0</div><div class="ttdoc">Atualiza os dados de uma entidade do tipo Viagem.</div></div>
+<div class="ttc" id="aclassSenha_html"><div class="ttname"><a href="classSenha.html">Senha</a></div><div class="ttdoc">Classe que representa uma senha de cinco dígitos.</div><div class="ttdef"><b>Definição</b> dominios.hpp:244</div></div>
+<div class="ttc" id="aclassViagem_html"><div class="ttname"><a href="classViagem.html">Viagem</a></div><div class="ttdoc">Classe que representa uma Viagem.</div><div class="ttdef"><b>Definição</b> entidades.hpp:32</div></div>
+<div class="ttc" id="adominios_8hpp_html"><div class="ttname"><a href="dominios_8hpp.html">dominios.hpp</a></div><div class="ttdoc">Declaração de classes que representam domínios do sistema.</div></div>
+<div class="ttc" id="aentidades_8hpp_html"><div class="ttname"><a href="entidades_8hpp.html">entidades.hpp</a></div><div class="ttdoc">Declaração de classes que representam as entidades do sistema.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

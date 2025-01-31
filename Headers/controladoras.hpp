@@ -26,15 +26,17 @@ void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
 }
 
 class CntrApresentacaoConta:public IApresentacaoConta {
-    private:
-        IApresentacaoConta *cntrApresentacaoConta;
-    public:
-        bool autenticar(Conta*);
-        void setCntrApresentacaoConta(IApresentacaoConta*);
+private:
+    IServicoConta *cntrServicoConta;
+public:
+    void criar();
+    void executar(Codigo);
+    void setCntrServicoConta(IServicoConta*);
 };
 
-void inline CntrApresentacaoConta::setCntrApresentacaoConta(IApresentacaoConta *cntrApresentacaoConta){
-    this -> cntrApresentacaoConta = cntrApresentacaoConta;
+void inline CntrApresentacaoConta::setCntrServicoConta(IServicoConta *cntrServicoConta){
+    this->cntrServicoConta = cntrServicoConta;
 }
 
 #endif // CONTROLADORAS_HPP_INCLUDED
+

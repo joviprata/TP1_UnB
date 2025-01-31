@@ -5,19 +5,20 @@
 
 const string StubServicoAutenticacao::TRIGGER_FALHA_AUTENTICACAO = "%*/*";
 const string StubServicoAutenticacao::TRIGGER_ERRO_SISTEMA_AUTENTICACAO = "%*/*";
-const string StubServicoAutenticacao::TRIGGER_FALHA_SENHA_INVALIDA = "12345";
-const string StubServicoAutenticacao::TRIGGER_ERRO_SENHA_INVALIDA = "12345";
 const string StubServicoEntidades::TRIGGER_FALHA_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_ERRO_CODIGO_INVALIDO = "%*/*";
 const string StubServicoEntidades::TRIGGER_FALHA_NOME_INVALIDO = "";
 const string StubServicoEntidades::TRIGGER_ERRO_NOME_INVALIDO = "";
 const int StubServicoEntidades::TRIGGER_FALHA_AVALIACAO_INVALIDA = 6;
 const int StubServicoEntidades::TRIGGER_ERRO_AVALIACAO_INVALIDA = 6;
+const string StubServicoConta::TRIGGER_FALHA_CONTA= "%*/*";
+const string StubServicoConta::TRIGGER_ERRO_SISTEMA_CONTA = "";
+const string StubServicoAutenticacao::TRIGGER_FALHA_SENHA_INVALIDA = "12345";
+const string StubServicoAutenticacao::TRIGGER_ERRO_SENHA_INVALIDA = "12345";
 const string StubServicoEntidades::TRIGGER_FALHA_DATA_INICIO_INVALIDA = "32-13-24";
 const string StubServicoEntidades::TRIGGER_ERRO_DATA_INICIO_INVALIDA = "32-13-24";
 const string StubServicoEntidades::TRIGGER_FALHA_DATA_TERMINO_INVALIDA = "32-13-24";
 const string StubServicoEntidades::TRIGGER_ERRO_DATA_TERMINO_INVALIDA = "32-13-24";
-
 
 // -------------------------------------------------------------------------------------------
 // Implementação de método.
@@ -25,18 +26,11 @@ const string StubServicoEntidades::TRIGGER_ERRO_DATA_TERMINO_INVALIDA = "32-13-2
 bool StubServicoAutenticacao::autenticar(const Codigo &codigo, const Senha &senha) {
 
     std::string codigoValor = codigo.getCodigo();
-    std::string senhaValor = senha.getSenha();
-    
-    if (codigoValor == TRIGGER_FALHA_AUTENTICACAO) {
+
+    if (codigo.getCodigo() == TRIGGER_FALHA_AUTENTICACAO) {
         return false;
     }
-    if (codigoValor == TRIGGER_ERRO_SISTEMA_AUTENTICACAO) {
-        throw runtime_error("Erro de sistema");
-    }
-    if (senhaValor == TRIGGER_FALHA_SENHA_INVALIDA) {
-        return false;
-    }
-    if (senhaValor == TRIGGER_ERRO_SENHA_INVALIDA) {
+    if (codigo.getCodigo() == TRIGGER_ERRO_SISTEMA_AUTENTICACAO) {
         throw runtime_error("Erro de sistema");
     }
     return true;
@@ -111,7 +105,64 @@ bool StubServicoEntidades::atualizar(Viagem viagem) {
         throw runtime_error("Erro de sistema");
     }
 
-    return true; 
+    return true;
+}
+
+bool StubServicoConta::criar(Conta conta){
+    if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
+        return false;
+    }
+    if (conta.getCodigo().getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
+        throw runtime_error("Erro de sistema");
+    }
+    if (conta.getSenha().getSenha() == TRIGGER_FALHA_CONTA){
+        return false;
+    }
+    if (conta.getSenha().getSenha() == TRIGGER_ERRO_SISTEMA_CONTA){
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoConta::excluir(Codigo codigo){
+    if (codigo.getCodigo() == TRIGGER_FALHA_CONTA){
+        return false;
+    }
+    if (codigo.getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoConta::ler(Conta* conta){
+    if (conta->getCodigo().getCodigo() == TRIGGER_FALHA_CONTA){
+        return false;
+    }
+    if (conta->getCodigo().getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA){
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoConta::atualizar(Conta conta) {
+    if (conta.getCodigo().getCodigo() == TRIGGER_FALHA_CONTA) {
+        return false;
+    }
+    if (conta.getCodigo().getCodigo() == TRIGGER_ERRO_SISTEMA_CONTA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (conta.getSenha().getSenha() == TRIGGER_FALHA_CONTA) {
+        return false;
+    }
+    if (conta.getSenha().getSenha() == TRIGGER_ERRO_SISTEMA_CONTA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
 }
 
 bool StubServicoEntidades::criar(Destino destino) {
@@ -213,3 +264,4 @@ bool StubServicoEntidades::atualizar(Destino destino) {
 
     return true; 
 }
+

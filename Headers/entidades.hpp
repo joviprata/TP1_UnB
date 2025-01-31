@@ -2,6 +2,8 @@
 #define ENTIDADES_HPP_INCLUDED
 using namespace std;
 
+#include "dominios.hpp"
+
 //---------------------------------------------------------------------
 // DOCUMENTAÇÃO FEITA POR MARIANA SOARES OLIVEIRA (231011663) E ISABELA SOARES FURLAN (231013636)
 

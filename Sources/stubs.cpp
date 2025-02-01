@@ -19,6 +19,16 @@ const string StubServicoEntidades::TRIGGER_FALHA_DATA_INICIO_INVALIDA = "32-13-2
 const string StubServicoEntidades::TRIGGER_ERRO_DATA_INICIO_INVALIDA = "32-13-24";
 const string StubServicoEntidades::TRIGGER_FALHA_DATA_TERMINO_INVALIDA = "32-13-24";
 const string StubServicoEntidades::TRIGGER_ERRO_DATA_TERMINO_INVALIDA = "32-13-24";
+const string StubServicoEntidades::TRIGGER_FALHA_DATA_INVALIDA = "32-13-24";
+const string StubServicoEntidades::TRIGGER_ERRO_DATA_INVALIDA = "32-13-24";
+const string StubServicoEntidades::TRIGGER_FALHA_HORARIO_INVALIDO = "24:60";
+const string StubServicoEntidades::TRIGGER_ERRO_HORARIO_INVALIDO = "24:60";
+const int StubServicoEntidades::TRIGGER_FALHA_DURACAO_INVALIDA = 361;
+const int StubServicoEntidades::TRIGGER_ERRO_DURACAO_INVALIDA = 361;
+const int StubServicoEntidades::TRIGGER_FALHA_PRECO_INVALIDO = 361;
+const int StubServicoEntidades::TRIGGER_ERRO_PRECO_INVALIDO = 361;
+const float StubServicoEntidades::TRIGGER_FALHA_DIARIA_INVALIDA = 200001.0;
+const float StubServicoEntidades::TRIGGER_ERRO_DIARIA_INVALIDA = 200001.0;
 
 // -------------------------------------------------------------------------------------------
 // Implementação de método.
@@ -265,3 +275,218 @@ bool StubServicoEntidades::atualizar(Destino destino) {
     return true; 
 }
 
+
+bool StubServicoEntidades::criar(Hospedagem hospedagem) {
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getNome().getNome() == TRIGGER_FALHA_NOME_INVALIDO) {
+        return false;
+    }
+    if (hospedagem.getNome().getNome() == TRIGGER_ERRO_NOME_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getDiaria().getDinheiro() == TRIGGER_FALHA_DIARIA_INVALIDA) {
+        return false;
+    }
+    if (hospedagem.getDiaria().getDinheiro() == TRIGGER_ERRO_DIARIA_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getAvaliacao().getAvaliacao() == TRIGGER_FALHA_AVALIACAO_INVALIDA) {
+        return false;
+    }
+    if (hospedagem.getAvaliacao().getAvaliacao() == TRIGGER_ERRO_AVALIACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::excluir(Hospedagem hospedagem) {
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::ler(Hospedagem* hospedagem) {
+    if (hospedagem->getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (hospedagem->getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::atualizar(Hospedagem hospedagem) {
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (hospedagem.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getNome().getNome() == TRIGGER_FALHA_NOME_INVALIDO) {
+        return false;
+    }
+    if (hospedagem.getNome().getNome() == TRIGGER_ERRO_NOME_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getDiaria().getDinheiro() == TRIGGER_FALHA_DIARIA_INVALIDA) {
+        return false;
+    }
+    if (hospedagem.getDiaria().getDinheiro() == TRIGGER_ERRO_DIARIA_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (hospedagem.getAvaliacao().getAvaliacao() == TRIGGER_FALHA_AVALIACAO_INVALIDA) {
+        return false;
+    }
+    if (hospedagem.getAvaliacao().getAvaliacao() == TRIGGER_ERRO_AVALIACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+
+bool StubServicoEntidades::criar(Atividade atividade) {
+    if (atividade.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getNome().getNome() == TRIGGER_FALHA_NOME_INVALIDO) {
+        return false;
+    }
+    if (atividade.getNome().getNome() == TRIGGER_ERRO_NOME_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getData().getData() == TRIGGER_FALHA_DATA_INVALIDA) {
+        return false;
+    }
+    if (atividade.getData().getData() == TRIGGER_ERRO_DATA_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getHorario().getHorario() == TRIGGER_FALHA_HORARIO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getHorario().getHorario() == TRIGGER_ERRO_HORARIO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getDuracao().getDuracao() == TRIGGER_FALHA_DURACAO_INVALIDA) {
+        return false;
+    }
+    if (atividade.getDuracao().getDuracao() == TRIGGER_ERRO_DURACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getPreco().getDinheiro() == TRIGGER_FALHA_PRECO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getPreco().getDinheiro() == TRIGGER_ERRO_PRECO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getAvaliacao().getAvaliacao() == TRIGGER_FALHA_AVALIACAO_INVALIDA) {
+        return false;
+    }
+    if (atividade.getAvaliacao().getAvaliacao() == TRIGGER_ERRO_AVALIACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::excluir(Atividade atividade) {
+    if (atividade.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::ler(Atividade* atividade) {
+    if (atividade->getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (atividade->getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}
+
+bool StubServicoEntidades::atualizar(Atividade atividade) {
+    if (atividade.getCodigo().getCodigo() == TRIGGER_FALHA_CODIGO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getCodigo().getCodigo() == TRIGGER_ERRO_CODIGO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getNome().getNome() == TRIGGER_FALHA_NOME_INVALIDO) {
+        return false;
+    }
+    if (atividade.getNome().getNome() == TRIGGER_ERRO_NOME_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getData().getData() == TRIGGER_FALHA_DATA_INVALIDA) {
+        return false;
+    }
+    if (atividade.getData().getData() == TRIGGER_ERRO_DATA_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getHorario().getHorario() == TRIGGER_FALHA_HORARIO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getHorario().getHorario() == TRIGGER_ERRO_HORARIO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getDuracao().getDuracao() == TRIGGER_FALHA_DURACAO_INVALIDA) {
+        return false;
+    }
+    if (atividade.getDuracao().getDuracao() == TRIGGER_ERRO_DURACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getPreco().getDinheiro() == TRIGGER_FALHA_PRECO_INVALIDO) {
+        return false;
+    }
+    if (atividade.getPreco().getDinheiro() == TRIGGER_ERRO_PRECO_INVALIDO) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    if (atividade.getAvaliacao().getAvaliacao() == TRIGGER_FALHA_AVALIACAO_INVALIDA) {
+        return false;
+    }
+    if (atividade.getAvaliacao().getAvaliacao() == TRIGGER_ERRO_AVALIACAO_INVALIDA) {
+        throw runtime_error("Erro de sistema");
+    }
+
+    return true;
+}

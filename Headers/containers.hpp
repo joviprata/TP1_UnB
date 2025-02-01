@@ -4,9 +4,12 @@
 #include <map>
 #include <string>
 #include "entidades.hpp"
-#include "dominios.hpp"
+#include "interfaces.hpp"
 
 using namespace std;
+
+// Declaração adiantada (forward declaration) de ContainerAutenticacao
+class ContainerAutenticacao;
 
 class ContainerViagem {
 private:
@@ -28,16 +31,6 @@ public:
     bool atualizar(Destino);
 };
 
-class ContainerConta {
-private:
-    map<string, Conta> container;
-public:
-    bool criar(Conta);
-    bool excluir(Codigo);
-    bool ler(Conta*);
-    bool atualizar(Conta);
-};
-
 class ContainerHospedagem {
 private:
     map<string, Hospedagem> container;
@@ -56,6 +49,27 @@ public:
     bool excluir(Codigo);
     bool ler(Atividade*);
     bool atualizar(Atividade);
+};
+
+class ContainerAutenticacao : public IServicoAutenticacao {
+private:
+    map<string, Conta> container;
+public:
+    bool autenticar(const Codigo&, const Senha&);
+    bool criar(const Conta&);
+    bool atualizar(const Conta&);
+};
+
+class ContainerConta : public IServicoConta {
+private:
+    map<string, Conta> container;
+    ContainerAutenticacao* containerAutenticacao;
+public:
+    ContainerConta(ContainerAutenticacao* containerAutenticacao);
+    bool criar(Conta);
+    bool excluir(Codigo);
+    bool ler(Conta*);
+    bool atualizar(Conta);
 };
 
 #endif // CONTAINERS_HPP_INCLUDED

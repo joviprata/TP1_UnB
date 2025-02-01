@@ -14,6 +14,8 @@ private:
 
     const static string TRIGGER_FALHA_AUTENTICACAO;
     const static string TRIGGER_ERRO_SISTEMA_AUTENTICACAO;
+    const static string TRIGGER_FALHA_SENHA_INVALIDA;
+    const static string TRIGGER_ERRO_SENHA_INVALIDA;
 
 public:
 
@@ -32,7 +34,7 @@ private:
 public:
 
     bool criar(Conta);
-    bool excluir(Conta);
+    bool excluir(Codigo);
     bool ler(Conta*);
     bool atualizar(Conta);
 };
@@ -47,6 +49,10 @@ private:
     const static string TRIGGER_ERRO_NOME_INVALIDO;
     const static int TRIGGER_FALHA_AVALIACAO_INVALIDA;
     const static int TRIGGER_ERRO_AVALIACAO_INVALIDA;
+    const static string TRIGGER_FALHA_DATA_INICIO_INVALIDA;
+    const static string TRIGGER_ERRO_DATA_INICIO_INVALIDA;
+    const static string TRIGGER_FALHA_DATA_TERMINO_INVALIDA;
+    const static string TRIGGER_ERRO_DATA_TERMINO_INVALIDA;
 
 public:
 
@@ -54,6 +60,11 @@ public:
     bool excluir(Viagem) = 0;
     bool ler(Viagem*) = 0;
     bool atualizar(Viagem) = 0;
+
+    bool criar(Destino) = 0;
+    bool excluir(Destino) = 0;
+    bool ler(Destino*) = 0;
+    bool atualizar(Destino) = 0;
 };
 
 #endif // STUBS_HPP_INCLUDED

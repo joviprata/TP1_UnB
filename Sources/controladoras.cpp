@@ -39,7 +39,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Codigo *codigo) {
 // ---------------------------------------------------------------------------------
 // Implementações de métodos de classe Apresentacao Conta.
 
-void CntrApresentacaoConta::criar(Conta *conta){
+void CntrApresentacaoConta::criar() {
     Codigo codigo;
     Senha senha;
     string entrada;
@@ -51,16 +51,19 @@ void CntrApresentacaoConta::criar(Conta *conta){
             cout << "Digite o codigo : ";
             cin >> entrada;
             codigo.setCodigo(entrada);
-            conta -> setCodigo(entrada);
             cout << "Digite a senha     : ";
             cin >> entrada;
             senha.setSenha(entrada);
-            conta -> setSenha(entrada);
             break;
         }
         catch (const invalid_argument &exp) {
             cout << endl << "Dado em formato incorreto." << endl;
         }
-
     }
+}
+
+void CntrApresentacaoConta::executar(Codigo codigo) {
+
+    cout << endl << "Executando conta com codigo: " << codigo.getCodigo() << endl;
+
 }

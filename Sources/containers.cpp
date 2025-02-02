@@ -10,8 +10,8 @@ bool ContainerViagem::criar(Viagem viagem) {
     return true;
 }
 
-bool ContainerViagem::excluir(Codigo codigo) {
-    string chave = codigo.getCodigo();
+bool ContainerViagem::excluir(Viagem viagem) {
+    string chave = viagem.getCodigo().getCodigo();
     auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
@@ -50,8 +50,8 @@ bool ContainerDestino::criar(Destino destino) {
     return true;
 }
 
-bool ContainerDestino::excluir(Codigo codigo) {
-    string chave = codigo.getCodigo();
+bool ContainerDestino::excluir(Destino destino) {
+    string chave = destino.getCodigo().getCodigo();
     auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
@@ -90,8 +90,8 @@ bool ContainerHospedagem::criar(Hospedagem hospedagem) {
     return true;
 }
 
-bool ContainerHospedagem::excluir(Codigo codigo) {
-    string chave = codigo.getCodigo();
+bool ContainerHospedagem::excluir(Hospedagem hospedagem) {
+    string chave = hospedagem.getCodigo().getCodigo();
     auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
@@ -130,8 +130,8 @@ bool ContainerAtividade::criar(Atividade atividade) {
     return true;
 }
 
-bool ContainerAtividade::excluir(Codigo codigo) {
-    string chave = codigo.getCodigo();
+bool ContainerAtividade::excluir(Atividade atividade) {
+    string chave = atividade.getCodigo().getCodigo();
     auto it = container.find(chave);
     if (it != container.end()) {
         container.erase(it);
@@ -188,6 +188,16 @@ bool ContainerAutenticacao::atualizar(const Conta& conta) {
     return false;
 }
 
+bool ContainerAutenticacao::excluir(const Conta& conta) {
+    string chave = conta.getCodigo().getCodigo();
+    auto it = container.find(chave);
+    if (it != container.end()) {
+        container.erase(it);
+        return true;
+    }
+    return false;
+}
+
 // Implementação da classe ContainerConta
 ContainerConta::ContainerConta(ContainerAutenticacao* containerAutenticacao)
     : containerAutenticacao(containerAutenticacao) {}
@@ -209,6 +219,13 @@ bool ContainerConta::excluir(Codigo codigo) {
     string chave = codigo.getCodigo();
     auto it = container.find(chave);
     if (it != container.end()) {
+        // Excluir a conta do ContainerAutenticacao
+        if (containerAutenticacao) {
+            Conta conta = it->second; // Obtém a conta antes de excluir
+            containerAutenticacao->excluir(conta); // Exclui a conta do ContainerAutenticacao
+        }
+
+        // Excluir a conta do ContainerConta
         container.erase(it);
         return true;
     }
@@ -222,7 +239,7 @@ bool ContainerConta::ler(Conta* conta) {
         *conta = it->second;
         return true;
     }
-    return false; // Conta não encontrada
+    return false;
 }
 
 bool ContainerConta::atualizar(Conta conta) {
@@ -231,7 +248,6 @@ bool ContainerConta::atualizar(Conta conta) {
     if (it != container.end()) {
         it->second = conta;
 
-        // Atualizar a conta no ContainerAutenticacao
         if (containerAutenticacao) {
             containerAutenticacao->atualizar(conta);
         }

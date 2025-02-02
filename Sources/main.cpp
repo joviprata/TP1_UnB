@@ -16,9 +16,13 @@ int main() {
     IApresentacaoConta* cntrApresentacaoConta = new CntrApresentacaoConta();
     IServicoConta* containerConta = new ContainerConta(containerAutenticacao);
 
+    IApresentacaoEntidades* cntrApresentacaoEntidades = new CntrApresentacaoEntidades();
+    IServicoEntidades* containerEntidades = new ContainerEntidades();
+
     // Ligar controladoras aos containers
     cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(containerAutenticacao);
     cntrApresentacaoConta->setCntrServicoConta(containerConta);
+    cntrApresentacaoEntidades->setCntrServicoEntidades(containerEntidades);
 
     Codigo codigo;
 
@@ -29,7 +33,8 @@ int main() {
         cout << "1. Autenticar" << endl;
         cout << "2. Criar conta" << endl;
         cout << "3. Executar conta" << endl;
-        cout << "4. Sair" << endl;
+        cout << "4. Gerenciar entidades" << endl;
+        cout << "5. Sair" << endl;
         cout << "Opcao: ";
 
         int opcao;
@@ -138,12 +143,19 @@ int main() {
                     break;
                 }
 
-                case 4: { // Sair
+                case 4: { // Gerenciar entidades
+                    cntrApresentacaoEntidades->executar(codigo);
+                    break;
+                }
+
+                case 5: { // Sair
                     cout << endl << "Saindo do sistema..." << endl;
                     delete cntrApresentacaoAutenticacao;
                     delete containerAutenticacao;
                     delete cntrApresentacaoConta;
                     delete containerConta;
+                    delete cntrApresentacaoEntidades;
+                    delete containerEntidades;
                     return 0;
                 }
 

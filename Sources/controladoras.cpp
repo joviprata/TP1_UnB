@@ -21,15 +21,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Codigo* codigo) {
         }
     }
 
-    bool resultado = cntrServicoAutenticacao->autenticar(*codigo, senha);
-
-    if (resultado) {
-        cout << endl << "Autenticacao bem-sucedida!" << endl;
-    } else {
-        cout << endl << "Falha na autenticacao. Codigo ou senha incorretos." << endl;
-    }
-
-    return resultado;
+    return cntrServicoAutenticacao->autenticar(*codigo, senha);
 }
 
 void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao* cntrServicoAutenticacao) {
@@ -241,12 +233,12 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             nomeDestino.setNome(entrada);
                             destino.setNome(nomeDestino);
 
-                            cout << "Digite a data de inicio (DD/MM/AAAA): ";
+                            cout << "Digite a data de inicio (DD/MM/AA): ";
                             cin >> entrada;
                             dataInicio.setData(entrada);
                             destino.setDataInicio(dataInicio);
 
-                            cout << "Digite a data de termino (DD/MM/AAAA): ";
+                            cout << "Digite a data de termino (DD-MM-AA): ";
                             cin >> entrada;
                             dataTermino.setData(entrada);
                             destino.setDataTermino(dataTermino);
@@ -304,12 +296,12 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             nomeDestino.setNome(entrada);
                             destino.setNome(nomeDestino);
 
-                            cout << "Digite a nova data de inicio (DD/MM/AAAA): ";
+                            cout << "Digite a nova data de inicio (DD-MM-AA): ";
                             cin >> entrada;
                             dataInicio.setData(entrada);
                             destino.setDataInicio(dataInicio);
 
-                            cout << "Digite a nova data de termino (DD/MM/AAAA): ";
+                            cout << "Digite a nova data de termino (DD-MM-AA): ";
                             cin >> entrada;
                             dataTermino.setData(entrada);
                             destino.setDataTermino(dataTermino);
@@ -386,7 +378,7 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             nomeAtividade.setNome(entrada);
                             atividade.setNome(nomeAtividade);
 
-                            cout << "Digite a data da atividade (DD/MM/AAAA): ";
+                            cout << "Digite a data da atividade (DD-MM-AA): ";
                             cin >> entrada;
                             dataAtividade.setData(entrada);
                             atividade.setData(dataAtividade);
@@ -396,7 +388,7 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             horarioAtividade.setHorario(entrada);
                             atividade.setHorario(horarioAtividade);
 
-                            cout << "Digite a duracao da atividade (em horas): ";
+                            cout << "Digite a duracao da atividade: ";
                             cin >> entrada;
                             duracaoAtividade.setDuracao(stoi(entrada));
                             atividade.setDuracao(duracaoAtividade);
@@ -463,7 +455,7 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             nomeAtividade.setNome(entrada);
                             atividade.setNome(nomeAtividade);
 
-                            cout << "Digite a nova data da atividade (DD/MM/AAAA): ";
+                            cout << "Digite a nova data da atividade (DD-MM-AA): ";
                             cin >> entrada;
                             dataAtividade.setData(entrada);
                             atividade.setData(dataAtividade);
@@ -473,7 +465,7 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             horarioAtividade.setHorario(entrada);
                             atividade.setHorario(horarioAtividade);
 
-                            cout << "Digite a nova duracao da atividade (em horas): ";
+                            cout << "Digite a nova duracao da atividade: ";
                             cin >> entrada;
                             duracaoAtividade.setDuracao(stoi(entrada));
                             atividade.setDuracao(duracaoAtividade);

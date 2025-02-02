@@ -25,8 +25,8 @@ const string StubServicoEntidades::TRIGGER_FALHA_HORARIO_INVALIDO = "24:60";
 const string StubServicoEntidades::TRIGGER_ERRO_HORARIO_INVALIDO = "24:60";
 const int StubServicoEntidades::TRIGGER_FALHA_DURACAO_INVALIDA = 361;
 const int StubServicoEntidades::TRIGGER_ERRO_DURACAO_INVALIDA = 361;
-const int StubServicoEntidades::TRIGGER_FALHA_PRECO_INVALIDO = 361;
-const int StubServicoEntidades::TRIGGER_ERRO_PRECO_INVALIDO = 361;
+const float StubServicoEntidades::TRIGGER_FALHA_PRECO_INVALIDO = 200001.0;
+const float StubServicoEntidades::TRIGGER_ERRO_PRECO_INVALIDO = 200001.0;
 const float StubServicoEntidades::TRIGGER_FALHA_DIARIA_INVALIDA = 200001.0;
 const float StubServicoEntidades::TRIGGER_ERRO_DIARIA_INVALIDA = 200001.0;
 

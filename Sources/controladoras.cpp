@@ -233,7 +233,7 @@ void CntrApresentacaoEntidades::executar(Codigo codigo) {
                             nomeDestino.setNome(entrada);
                             destino.setNome(nomeDestino);
 
-                            cout << "Digite a data de inicio (DD/MM/AA): ";
+                            cout << "Digite a data de inicio (DD-MM-AA): ";
                             cin >> entrada;
                             dataInicio.setData(entrada);
                             destino.setDataInicio(dataInicio);

@@ -29,4 +29,12 @@ public:
     void setCntrServicoConta(IServicoConta*);
 };
 
+// Controladora de Apresentação de Entidades
+class CntrApresentacaoEntidades : public IApresentacaoEntidades {
+private:
+    IServicoEntidades* cntrServicoEntidades;
+public:
+    void executar(Codigo);
+    void setCntrServicoEntidades(IServicoEntidades* cntrServicoEntidades);
+};
 #endif // CONTROLADORAS_HPP_INCLUDED

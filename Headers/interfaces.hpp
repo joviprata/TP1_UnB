@@ -155,6 +155,8 @@ class IServicoAutenticacao {
          */
         virtual bool autenticar(const Codigo&, const Senha&) = 0;
 
+        virtual bool excluir(const Conta&) = 0;
+
         /**
          * @brief Destrutor virtual da interface.
          */

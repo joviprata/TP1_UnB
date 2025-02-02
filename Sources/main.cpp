@@ -16,20 +16,29 @@ int main() {
     IApresentacaoConta* cntrApresentacaoConta = new CntrApresentacaoConta();
     IServicoConta* containerConta = new ContainerConta(containerAutenticacao);
 
+    IApresentacaoEntidades* cntrApresentacaoEntidades = new CntrApresentacaoEntidades();
+    IServicoEntidades* containerEntidades = new ContainerEntidades();
+
     // Ligar controladoras aos containers
     cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(containerAutenticacao);
     cntrApresentacaoConta->setCntrServicoConta(containerConta);
+    cntrApresentacaoEntidades->setCntrServicoEntidades(containerEntidades);
 
     Codigo codigo;
+    bool autenticado = false; // Variável para controlar se o usuário está autenticado
 
     cout << endl << "Bem-vindo ao sistema!" << endl;
 
     while (true) {
         cout << endl << "Escolha uma opcao:" << endl;
-        cout << "1. Autenticar" << endl;
-        cout << "2. Criar conta" << endl;
-        cout << "3. Executar conta" << endl;
-        cout << "4. Sair" << endl;
+        if (!autenticado) {
+            cout << "1. Autenticar" << endl;
+            cout << "2. Criar conta" << endl;
+        } else {
+            cout << "3. Gerenciar conta" << endl;
+            cout << "4. Gerenciar entidades" << endl;
+        }
+        cout << "5. Sair" << endl;
         cout << "Opcao: ";
 
         int opcao;
@@ -38,20 +47,35 @@ int main() {
         try {
             switch (opcao) {
                 case 1: { // Autenticar
-                    cntrApresentacaoAutenticacao->autenticar(&codigo);
+                    if (autenticado) {
+                        cout << endl << "Erro: Voce ja esta autenticado." << endl;
+                        break;
+                    }
+
+                    if (cntrApresentacaoAutenticacao->autenticar(&codigo)) {
+                        autenticado = true; // Usuário autenticado com sucesso
+                        cout << endl << "Autenticacao bem-sucedida!" << endl;
+                    } else {
+                        cout << endl << "Falha na autenticacao. Codigo ou senha incorretos." << endl;
+                    }
                     break;
                 }
 
                 case 2: { // Criar conta
+                    if (autenticado) {
+                        cout << endl << "Erro: Voce ja esta autenticado." << endl;
+                        break;
+                    }
+
                     cntrApresentacaoConta->criar();
                     break;
                 }
 
                 case 3: { // Executar conta (menu de operações)
-                    string entrada;
-                    cout << endl << "Digite o codigo da conta: ";
-                    cin >> entrada;
-                    codigo.setCodigo(entrada);
+                    if (!autenticado) {
+                        cout << endl << "Erro: Voce precisa se autenticar primeiro." << endl;
+                        break;
+                    }
 
                     while (true) {
                         cout << endl << "Escolha uma operacao:" << endl;
@@ -95,6 +119,7 @@ int main() {
                                 case 2: { // Excluir conta
                                     if (containerConta->excluir(codigo)) {
                                         cout << "Conta excluida com sucesso!" << endl;
+                                        autenticado = false; // Usuário não está mais autenticado
                                         break;
                                     } else {
                                         cout << "Falha ao excluir a conta. Conta nao encontrada." << endl;
@@ -106,7 +131,7 @@ int main() {
                                     Conta conta;
                                     conta.setCodigo(codigo);
 
-                                    if (containerConta->ler(&conta)) { // Passar o objeto Conta
+                                    if (containerConta->ler(&conta)) {
                                         cout << "Conta encontrada:" << endl;
                                         cout << "Codigo: " << conta.getCodigo().getCodigo() << endl;
                                         cout << "Senha: " << conta.getSenha().getSenha() << endl;
@@ -138,12 +163,24 @@ int main() {
                     break;
                 }
 
-                case 4: { // Sair
+                case 4: { // Gerenciar entidades
+                    if (!autenticado) {
+                        cout << endl << "Erro: Voce precisa se autenticar primeiro." << endl;
+                        break;
+                    }
+
+                    cntrApresentacaoEntidades->executar(codigo);
+                    break;
+                }
+
+                case 5: { // Sair
                     cout << endl << "Saindo do sistema..." << endl;
                     delete cntrApresentacaoAutenticacao;
                     delete containerAutenticacao;
                     delete cntrApresentacaoConta;
                     delete containerConta;
+                    delete cntrApresentacaoEntidades;
+                    delete containerEntidades;
                     return 0;
                 }
 

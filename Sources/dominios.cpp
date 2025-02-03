@@ -156,9 +156,15 @@ void Nome::setNome(string nome) {
 
 // Funções para classe Senha:
 void Senha::validar(string senha) {
-    int contador = 0;
+    for (char chr : senha) {
+        if (!isdigit(chr))
+            throw invalid_argument("Argumento invalido");
+    }
+    
+    if (senha.size() != 5)
+        throw invalid_argument("Argumento invalido");
+    
     bool duplicata = false, crescente = true, decrescente = true;
-
     for (int i = 0; senha[i] != '\0'; i++) {
         for (int j = i + 1; senha[j] != '\0'; j++) {
             if (senha[i] == senha[j]) {
@@ -171,7 +177,6 @@ void Senha::validar(string senha) {
                 decrescente = false;
             }
         }
-        contador++;
     }
 
     if((!duplicata and !crescente and !decrescente) == false){
